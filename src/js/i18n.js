@@ -6,6 +6,22 @@ function getNestedValue(obj, path) {
   return path.split('.').reduce((acc, key) => acc?.[key], obj);
 }
 
+function detectBrowserLanguage() {
+  const languages = navigator.languages?.length
+    ? navigator.languages
+    : [navigator.language];
+
+  for (const lang of languages) {
+    if (!lang) continue;
+    const normalized = lang.toLowerCase();
+    if (normalized.startsWith('tr') || normalized.includes('tr')) {
+      return 'tr';
+    }
+  }
+
+  return defaultLanguage;
+}
+
 function getInitialLanguage() {
   const params = new URLSearchParams(window.location.search);
   const urlLang = params.get('lang');
@@ -18,12 +34,7 @@ function getInitialLanguage() {
     return stored;
   }
 
-  const browserLang = navigator.language?.slice(0, 2);
-  if (browserLang && supportedLanguages.includes(browserLang)) {
-    return browserLang;
-  }
-
-  return defaultLanguage;
+  return detectBrowserLanguage();
 }
 
 function updateMeta(lang) {
@@ -118,9 +129,10 @@ export function initI18n() {
   const lang = getInitialLanguage();
   setLanguage(lang);
 
-  document.querySelectorAll('.lang-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.lang-btn');
+    if (btn?.dataset.lang) {
       setLanguage(btn.dataset.lang);
-    });
+    }
   });
 }

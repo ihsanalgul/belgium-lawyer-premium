@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <title>Cabinet Juridique International | Ankara · Brussels</title>
@@ -32,16 +32,18 @@
         </a>
 
         <nav class="nav-desktop" aria-label="Main navigation">
-          <a href="#about" class="link-underline text-small" data-i18n="nav.about">About</a>
-          <a href="#expertise" class="link-underline text-small" data-i18n="nav.expertise">Expertise</a>
-          <a href="#why-us" class="link-underline text-small" data-i18n="nav.why">Why Us</a>
-          <a href="#contact" class="link-underline text-small" data-i18n="nav.contact">Contact</a>
+          <a href="#about" class="link-underline text-nav" data-i18n="nav.about">About</a>
+          <a href="#expertise" class="link-underline text-nav" data-i18n="nav.expertise">Expertise</a>
+          <a href="#why-us" class="link-underline text-nav" data-i18n="nav.why">Why Us</a>
+          <a href="#contact" class="link-underline text-nav" data-i18n="nav.contact">Contact</a>
           <div class="lang-switcher" role="group" aria-label="Language">
             <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
-            <span class="lang-sep" aria-hidden="true">|</span>
+            <span class="lang-sep" aria-hidden="true">·</span>
             <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
-            <span class="lang-sep" aria-hidden="true">|</span>
+            <span class="lang-sep" aria-hidden="true">·</span>
             <button type="button" class="lang-btn" data-lang="nl" aria-pressed="false">NL</button>
+            <span class="lang-sep" aria-hidden="true">·</span>
+            <button type="button" class="lang-btn" data-lang="tr" aria-pressed="false">TR</button>
           </div>
         </nav>
 
@@ -80,36 +82,37 @@
       <a href="#contact" data-i18n="nav.contact">Contact</a>
       <div class="lang-switcher">
         <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
-        <span class="lang-sep" aria-hidden="true">|</span>
+        <span class="lang-sep" aria-hidden="true">·</span>
         <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
-        <span class="lang-sep" aria-hidden="true">|</span>
+        <span class="lang-sep" aria-hidden="true">·</span>
         <button type="button" class="lang-btn" data-lang="nl" aria-pressed="false">NL</button>
+        <span class="lang-sep" aria-hidden="true">·</span>
+        <button type="button" class="lang-btn" data-lang="tr" aria-pressed="false">TR</button>
       </div>
     </div>
 
     <main id="main">
-      <!-- Hero -->
       <section id="hero" class="site-container">
         <div class="hero-grid">
-          <div class="reveal">
+          <div class="hero-content reveal">
             <p class="text-eyebrow" data-i18n="hero.eyebrow">Ankara · Brussels</p>
             <div class="rule-gold"></div>
             <h1 class="text-display-xl" data-i18n="hero.title">
               Counsel for cross-border matters of consequence
             </h1>
-            <p class="text-prose" style="margin-top: 1.5rem" data-i18n="hero.subtitle">
+            <p class="text-prose" data-i18n="hero.subtitle">
               We advise corporations, investors, and institutions on transactions, regulatory
               compliance, and dispute resolution across Turkey and the European Union.
             </p>
-            <a href="#contact" class="btn-primary" style="margin-top: 2.5rem" data-i18n="hero.cta">
+            <a href="#contact" class="btn-primary" data-i18n="hero.cta">
               Schedule consultation
             </a>
           </div>
           <div class="hero-image-wrap reveal">
             <img
-              src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80"
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
               data-i18n-alt="hero.imageAlt"
-              alt="European institutional architecture in Brussels"
+              alt="Modern European corporate architecture"
               width="600"
               height="750"
               loading="eager"
@@ -118,31 +121,30 @@
         </div>
       </section>
 
-      <!-- About -->
       <section id="about" class="site-section">
         <div class="site-container about-grid">
           <div class="about-image reveal">
             <img
-              src="https://images.unsplash.com/photo-1594818379496-da916e4eceb1?auto=format&fit=crop&w=800&q=80"
+              src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=900&q=80"
               data-i18n-alt="about.imageAlt"
               alt="Ankara cityscape representing our heritage office"
               width="500"
-              height="667"
+              height="625"
               loading="lazy"
             />
           </div>
-          <div class="reveal">
+          <div class="about-content reveal">
             <p class="text-eyebrow" data-i18n="about.eyebrow">Our Firm</p>
             <div class="rule-gold"></div>
             <h2 class="text-display-lg" data-i18n="about.title">
               Rooted in two capitals, practiced internationally
             </h2>
-            <p class="text-prose" style="margin-top: 1.5rem" data-i18n="about.p1">
+            <p class="text-prose" data-i18n="about.p1">
               Founded in Ankara and established in Brussels, Cabinet Juridique International brings
               together Turkish commercial law expertise with deep knowledge of EU regulatory
               frameworks.
             </p>
-            <p class="text-prose" style="margin-top: 1.25rem" data-i18n="about.p2">
+            <p class="text-prose" data-i18n="about.p2">
               Our lawyers advise on matters ranging from foreign direct investment and M&A to
               arbitration, competition law, and cross-border employment disputes.
             </p>
@@ -150,10 +152,9 @@
         </div>
       </section>
 
-      <!-- Expertise -->
       <section id="expertise" class="site-section">
         <div class="site-container">
-          <div class="reveal" style="max-width: 36rem; margin-bottom: 4rem">
+          <div class="section-intro reveal">
             <p class="text-eyebrow" data-i18n="expertise.eyebrow">Practice Areas</p>
             <div class="rule-gold"></div>
             <h2 class="text-display-lg" data-i18n="expertise.title">Domains of counsel</h2>
@@ -163,19 +164,10 @@
             <article class="expertise-item reveal">
               <div class="expertise-number" aria-hidden="true">01</div>
               <div class="expertise-content">
-                <h3
-                  class="text-display-md"
-                  data-i18n-expertise="0"
-                  data-i18n-field="title"
-                >
+                <h3 class="text-display-md" data-i18n-expertise="0" data-i18n-field="title">
                   Corporate &amp; Commercial
                 </h3>
-                <p
-                  class="text-prose"
-                  style="margin-top: 0.75rem"
-                  data-i18n-expertise="0"
-                  data-i18n-field="desc"
-                >
+                <p class="text-prose" data-i18n-expertise="0" data-i18n-field="desc">
                   Mergers, acquisitions, joint ventures, and corporate governance for international
                   enterprises operating across borders.
                 </p>
@@ -188,12 +180,7 @@
                 <h3 class="text-display-md" data-i18n-expertise="1" data-i18n-field="title">
                   EU Regulatory &amp; Compliance
                 </h3>
-                <p
-                  class="text-prose"
-                  style="margin-top: 0.75rem"
-                  data-i18n-expertise="1"
-                  data-i18n-field="desc"
-                >
+                <p class="text-prose" data-i18n-expertise="1" data-i18n-field="desc">
                   Navigation of European directives, state aid rules, and sector-specific regulation.
                 </p>
               </div>
@@ -205,12 +192,7 @@
                 <h3 class="text-display-md" data-i18n-expertise="2" data-i18n-field="title">
                   Investment &amp; Finance
                 </h3>
-                <p
-                  class="text-prose"
-                  style="margin-top: 0.75rem"
-                  data-i18n-expertise="2"
-                  data-i18n-field="desc"
-                >
+                <p class="text-prose" data-i18n-expertise="2" data-i18n-field="desc">
                   Structuring of foreign direct investment, project finance, and capital markets
                   transactions.
                 </p>
@@ -223,12 +205,7 @@
                 <h3 class="text-display-md" data-i18n-expertise="3" data-i18n-field="title">
                   Arbitration &amp; Dispute Resolution
                 </h3>
-                <p
-                  class="text-prose"
-                  style="margin-top: 0.75rem"
-                  data-i18n-expertise="3"
-                  data-i18n-field="desc"
-                >
+                <p class="text-prose" data-i18n-expertise="3" data-i18n-field="desc">
                   Representation in ICC, ISTAC, and ad hoc arbitration.
                 </p>
               </div>
@@ -240,12 +217,7 @@
                 <h3 class="text-display-md" data-i18n-expertise="4" data-i18n-field="title">
                   Employment &amp; Mobility
                 </h3>
-                <p
-                  class="text-prose"
-                  style="margin-top: 0.75rem"
-                  data-i18n-expertise="4"
-                  data-i18n-field="desc"
-                >
+                <p class="text-prose" data-i18n-expertise="4" data-i18n-field="desc">
                   Executive contracts, secondments, and workforce restructuring.
                 </p>
               </div>
@@ -254,10 +226,9 @@
         </div>
       </section>
 
-      <!-- Why Us -->
       <section id="why-us" class="site-section">
         <div class="site-container">
-          <div class="reveal" style="max-width: 36rem; margin-bottom: 4rem">
+          <div class="section-intro reveal">
             <p class="text-eyebrow" data-i18n="why.eyebrow">Why Cabinet Juridique</p>
             <div class="rule-gold"></div>
             <h2 class="text-display-lg" data-i18n="why.title">
@@ -270,12 +241,7 @@
               <h3 class="text-display-md" data-i18n-why="0" data-i18n-field="title">
                 Four decades of practice
               </h3>
-              <p
-                class="text-prose"
-                style="margin-top: 1rem"
-                data-i18n-why="0"
-                data-i18n-field="desc"
-              >
+              <p class="text-prose" data-i18n-why="0" data-i18n-field="desc">
                 Our partners have advised on transactions and disputes across three continents.
               </p>
             </div>
@@ -283,12 +249,7 @@
               <h3 class="text-display-md" data-i18n-why="1" data-i18n-field="title">
                 Dual-jurisdiction fluency
               </h3>
-              <p
-                class="text-prose"
-                style="margin-top: 1rem"
-                data-i18n-why="1"
-                data-i18n-field="desc"
-              >
+              <p class="text-prose" data-i18n-why="1" data-i18n-field="desc">
                 Native understanding of Turkish civil law and EU regulatory architecture.
               </p>
             </div>
@@ -296,12 +257,7 @@
               <h3 class="text-display-md" data-i18n-why="2" data-i18n-field="title">
                 Absolute discretion
               </h3>
-              <p
-                class="text-prose"
-                style="margin-top: 1rem"
-                data-i18n-why="2"
-                data-i18n-field="desc"
-              >
+              <p class="text-prose" data-i18n-why="2" data-i18n-field="desc">
                 We accept a limited number of mandates annually.
               </p>
             </div>
@@ -309,60 +265,44 @@
         </div>
       </section>
 
-      <!-- Contact -->
       <section id="contact" class="site-section">
         <div class="site-container contact-grid">
-          <div class="reveal">
+          <div class="contact-info reveal">
             <p class="text-eyebrow" data-i18n="contact.eyebrow">Contact</p>
             <div class="rule-gold"></div>
             <h2 class="text-display-lg" data-i18n="contact.title">
               Begin a confidential conversation
             </h2>
-            <p class="text-prose" style="margin-top: 1.25rem" data-i18n="contact.subtitle">
+            <p class="text-prose" data-i18n="contact.subtitle">
               Complete the form below or reach our Brussels office directly.
             </p>
 
-            <div style="margin-top: 3rem">
+            <div class="offices-wrap">
               <div class="office-block">
                 <p class="text-eyebrow" style="color: var(--color-muted)" data-i18n="contact.ankara.label">
                   Ankara Office
                 </p>
-                <p class="text-prose text-prose-light" style="margin-top: 0.5rem" data-i18n="contact.ankara.address">
+                <p class="text-prose text-prose-light" data-i18n="contact.ankara.address">
                   Kızılırmak Mah. 1443. Cad. No: 25, 06530 Çankaya, Ankara
                 </p>
-                <a
-                  href="tel:+903120000000"
-                  class="link-underline text-small"
-                  style="display: inline-block; margin-top: 0.75rem"
-                  data-i18n="contact.ankara.phone"
-                >
+                <a href="tel:+903120000000" class="link-underline text-small" data-i18n="contact.ankara.phone">
                   +90 312 000 00 00
                 </a>
               </div>
 
-              <div class="office-block" style="margin-top: 2rem">
+              <div class="office-block">
                 <p class="text-eyebrow" style="color: var(--color-muted)" data-i18n="contact.brussels.label">
                   Brussels Office
                 </p>
-                <p class="text-prose text-prose-light" style="margin-top: 0.5rem" data-i18n="contact.brussels.address">
+                <p class="text-prose text-prose-light" data-i18n="contact.brussels.address">
                   Avenue Louise 149, 1050 Brussels, Belgium
                 </p>
-                <a
-                  href="tel:+3220000000"
-                  class="link-underline text-small"
-                  style="display: inline-block; margin-top: 0.75rem"
-                  data-i18n="contact.brussels.phone"
-                >
+                <a href="tel:+3220000000" class="link-underline text-small" data-i18n="contact.brussels.phone">
                   +32 2 000 00 00
                 </a>
               </div>
 
-              <a
-                href="mailto:info@cabinet-juridique.be"
-                class="link-underline text-small"
-                style="display: inline-block; margin-top: 2rem"
-                data-i18n="contact.email"
-              >
+              <a href="mailto:info@cabinet-juridique.be" class="link-underline text-small contact-email" data-i18n="contact.email">
                 info@cabinet-juridique.be
               </a>
             </div>
@@ -426,7 +366,7 @@
 
     <footer class="site-footer">
       <div class="site-container footer-inner">
-        <p class="text-small" style="color: var(--color-muted); max-width: 48ch" data-i18n="footer.disclaimer">
+        <p class="text-small footer-disclaimer" data-i18n="footer.disclaimer">
           Cabinet Juridique International is a law firm registered in Belgium and Turkey. This
           website does not constitute legal advice.
         </p>

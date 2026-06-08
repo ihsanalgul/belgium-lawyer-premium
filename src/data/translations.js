@@ -355,7 +355,126 @@ export const translations = {
       label: 'Contacteer ons via WhatsApp',
     },
   },
+
+  tr: {
+    meta: {
+      title: 'Cabinet Juridique International | Ankara · Brüksel',
+      description:
+        'Ankara ve Brüksel merkezli uluslararası hukuk bürosu. Sınır ötesi işlemler, AB mevzuatı ve kurumsal hukuk alanlarında danışmanlık.',
+    },
+    skip: 'Ana içeriğe geç',
+    nav: {
+      about: 'Hakkımızda',
+      expertise: 'Uzmanlık',
+      why: 'Neden Biz',
+      contact: 'İletişim',
+      menuOpen: 'Menüyü aç',
+      menuClose: 'Menüyü kapat',
+    },
+    hero: {
+      eyebrow: 'Ankara · Brüksel',
+      title: 'Sınır ötesi kritik meselelerde kurumsal hukuk danışmanlığı',
+      subtitle:
+        'Türkiye ile Avrupa Birliği arasında yürütülen işlemler, mevzuata uyum ve uyuşmazlık çözümünde kurumlar, yatırımcılar ve holding yapılarına danışmanlık sunuyoruz.',
+      cta: 'Görüşme talep edin',
+      imageAlt: 'Brüksel Avrupa kurumsal mimarisi',
+    },
+    about: {
+      eyebrow: 'Büromuz',
+      title: 'İki başkente kök salmış, uluslararası bir hukuk pratiği',
+      p1: 'Ankara\'da kurulan ve Brüksel\'de temsil edilen Cabinet Juridique International; Türk ticaret hukuku uzmanlığını AB düzenleyici çerçevelerine dair derin bilgi birikimiyle bir araya getirir.',
+      p2: 'Doğrudan yabancı yatırım ve birleşme-devralma işlemlerinden tahkime, rekabet hukukuna ve sınır ötesi iş hukuku uyuşmazlıklarına kadar geniş bir yelpazede danışmanlık veriyoruz. Her iki yargı alanını da içeriden bilen, ölçülü ve gizlilik odaklı bir hukuk anlayışı arayan müvekkillerle çalışıyoruz.',
+      imageAlt: 'Ankara silüeti, köklü merkez ofisimizi simgeler',
+    },
+    expertise: {
+      eyebrow: 'Uzmanlık Alanları',
+      title: 'Danışmanlık alanlarımız',
+      items: [
+        {
+          title: 'Şirketler ve Ticaret Hukuku',
+          desc: 'Sınır ötesi faaliyet yürüten uluslararası şirketler için birleşme, devralma, ortak girişim ve kurumsal yönetim yapıları.',
+        },
+        {
+          title: 'AB Mevzuatı ve Uyum',
+          desc: 'Belçika ve AB pazarlarına giriş yapan yatırımcılar için Avrupa direktifleri, devlet yardımları ve sektörel düzenlemeler.',
+        },
+        {
+          title: 'Yatırım ve Finans',
+          desc: 'Doğrudan yabancı yatırım, proje finansmanı ve Türkiye ile Avrupa boyutlu sermaye piyasası işlemlerinin yapılandırılması.',
+        },
+        {
+          title: 'Tahkim ve Uyuşmazlık Çözümü',
+          desc: 'ICC, ISTAC ve ad hoc tahkim süreçlerinde temsil. Sınır ötesi dava stratejisi ve yabancı mahkeme kararlarının tenfizi.',
+        },
+        {
+          title: 'İş Hukuku ve Mobilite',
+          desc: 'Türkiye ve Belçika\'da faaliyet gösteren çok uluslu işverenler için üst düzey sözleşmeler, geçici görevlendirme ve yeniden yapılanma.',
+        },
+      ],
+    },
+    why: {
+      eyebrow: 'Neden Cabinet Juridique',
+      title: 'Kurumsal danışmanlık, hacim odaklı değil',
+      blocks: [
+        {
+          title: 'Kırk yılı aşan pratik',
+          desc: 'Ortaklarımız, büronun Ankara\'daki kuruluşundan bu yana üç kıtada işlem ve uyuşmazlık dosyalarında danışmanlık vermiştir.',
+        },
+        {
+          title: 'Çift yargı alanı yetkinliği',
+          desc: 'Türk özel hukuku ile AB düzenleyici mimarisine dair doğrudan bilgi; dış koordinasyona ihtiyaç duymayan entegre bir ekip.',
+        },
+        {
+          title: 'Mutlak gizlilik',
+          desc: 'Yılda sınırlı sayıda dosya kabul ediyoruz. Müvekkil işleri doğrudan ortaklar tarafından, kademeli devredilmeden yürütülür.',
+        },
+      ],
+    },
+    contact: {
+      eyebrow: 'İletişim',
+      title: 'Gizli bir görüşme başlatın',
+      subtitle:
+        'Aşağıdaki formu doldurun veya Brüksel ofisimizle doğrudan iletişime geçin. Tüm başvurular kesin gizlilik içinde değerlendirilir.',
+      ankara: {
+        label: 'Ankara Ofisi',
+        address: 'Kızılırmak Mah. 1443. Cad. No: 25, 06530 Çankaya, Ankara',
+        phone: '+90 312 000 00 00',
+      },
+      brussels: {
+        label: 'Brüksel Ofisi',
+        address: 'Avenue Louise 149, 1050 Brüksel, Belçika',
+        phone: '+32 2 000 00 00',
+      },
+      email: 'info@cabinet-juridique.be',
+      form: {
+        name: 'Ad soyad',
+        email: 'E-posta adresi',
+        phone: 'Telefon (isteğe bağlı)',
+        subject: 'Konu',
+        subjectOptions: {
+          corporate: 'Şirketler Hukuku',
+          regulatory: 'AB Mevzuatı',
+          investment: 'Yatırım ve Finans',
+          arbitration: 'Tahkim',
+          employment: 'İş Hukuku',
+          other: 'Diğer',
+        },
+        message: 'Mesajınız',
+        submit: 'Başvuru gönder',
+        success: 'Mesajınız alındı. İki iş günü içinde dönüş yapacağız.',
+        error: 'Bir hata oluştu. Lütfen tekrar deneyin veya telefonla ulaşın.',
+      },
+    },
+    footer: {
+      disclaimer:
+        'Cabinet Juridique International, Belçika ve Türkiye\'de kayıtlı bir hukuk bürosudur. Bu web sitesi hukuki danışmanlık niteliği taşımaz.',
+      rights: 'Tüm hakları saklıdır.',
+    },
+    whatsapp: {
+      label: 'WhatsApp üzerinden bize ulaşın',
+    },
+  },
 };
 
-export const supportedLanguages = ['en', 'fr', 'nl'];
+export const supportedLanguages = ['en', 'fr', 'nl', 'tr'];
 export const defaultLanguage = 'en';

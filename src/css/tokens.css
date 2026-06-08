@@ -4,22 +4,30 @@
   --color-bg-gradient-end: #141820;
   --color-surface: #1a1c1f;
   --color-elevated: #22252a;
-  --color-border: #33363b;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-subtle: rgba(255, 255, 255, 0.06);
   --color-gold: #c4a574;
   --color-bronze: #a68b5b;
   --color-ink: #f5f3ef;
-  --color-muted: #9b9590;
+  --color-muted: #a39e98;
 
   /* Typography */
   --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 
-  /* Spacing */
-  --container-max: 80rem;
-  --container-padding: clamp(1.5rem, 5vw, 4rem);
-  --section-gap: clamp(5rem, 12vw, 9rem);
+  /* Spacing — editorial rhythm */
+  --container-max: 76rem;
+  --container-padding: clamp(1.75rem, 6vw, 5rem);
+  --section-gap: clamp(6rem, 14vw, 11rem);
+  --content-gap: clamp(1.75rem, 3vw, 2.75rem);
 
-  /* Motion — Emil dignified curves */
+  /* Letter-spacing */
+  --tracking-eyebrow: 0.18em;
+  --tracking-nav: 0.1em;
+  --tracking-body: 0.015em;
+  --tracking-display: -0.025em;
+
+  /* Motion */
   --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out-dignified: cubic-bezier(0.77, 0, 0.175, 1);
   --duration-reveal: 800ms;
