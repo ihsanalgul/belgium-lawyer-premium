@@ -1,0 +1,33 @@
+:root {
+  /* Colors */
+  --color-bg: #121315;
+  --color-bg-gradient-end: #141820;
+  --color-surface: #1a1c1f;
+  --color-elevated: #22252a;
+  --color-border: #33363b;
+  --color-gold: #c4a574;
+  --color-bronze: #a68b5b;
+  --color-ink: #f5f3ef;
+  --color-muted: #9b9590;
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --container-max: 80rem;
+  --container-padding: clamp(1.5rem, 5vw, 4rem);
+  --section-gap: clamp(5rem, 12vw, 9rem);
+
+  /* Motion — Emil dignified curves */
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-dignified: cubic-bezier(0.77, 0, 0.175, 1);
+  --duration-reveal: 800ms;
+  --duration-hover: 200ms;
+  --duration-press: 120ms;
+
+  /* z-index scale */
+  --z-whatsapp: 40;
+  --z-nav: 50;
+  --z-mobile-menu: 60;
+}
