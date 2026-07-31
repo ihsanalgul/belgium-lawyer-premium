@@ -25,16 +25,19 @@ export const siteConfig = {
   },
   heroImages: [
     {
-      src: 'https://images.pexels.com/photos/5669602/pexels-photo-5669602.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      altKey: 'hero.imageAlt0',
+      src: '/images/hero/law-office.png',
+      altKey: 'imageAlt0',
+      quoteIndex: 0,
     },
     {
-      src: 'https://images.pexels.com/photos/5668777/pexels-photo-5668777.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      altKey: 'hero.imageAlt1',
+      src: '/images/hero/law-books.png',
+      altKey: 'imageAlt1',
+      quoteIndex: 1,
     },
     {
-      src: 'https://images.pexels.com/photos/8096984/pexels-photo-8096984.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      altKey: 'hero.imageAlt2',
+      src: '/images/hero/brussels.png',
+      altKey: 'imageAlt2',
+      quoteIndex: 2,
     },
   ],
 };

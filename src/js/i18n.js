@@ -1,9 +1,12 @@
 import { translations, supportedLanguages, defaultLanguage } from '../data/translations.js';
 import { refreshHeroSliderAlts } from './hero-slider.js';
-import { renderInsights } from './insights.js';
+import { renderBlogCards } from './blog.js';
+import { renderXFeed } from './x-feed.js';
 import { refreshCalendarLocale } from './calendar.js';
+import { detectGeoLanguage } from './geo-lang.js';
 
 const STORAGE_KEY = 'lang';
+const MANUAL_KEY = 'lang-manual';
 
 function getNestedValue(obj, path) {
   return path.split('.').reduce((acc, key) => acc?.[key], obj);
@@ -17,15 +20,16 @@ function detectBrowserLanguage() {
   for (const lang of languages) {
     if (!lang) continue;
     const normalized = lang.toLowerCase();
-    if (normalized.startsWith('tr') || normalized.includes('tr')) {
-      return 'tr';
-    }
+    if (normalized.startsWith('tr')) return 'tr';
+    if (normalized.startsWith('fr')) return 'fr';
+    if (normalized.startsWith('nl')) return 'nl';
+    if (normalized.startsWith('en')) return 'en';
   }
 
   return defaultLanguage;
 }
 
-function getInitialLanguage() {
+async function resolveInitialLanguage() {
   const params = new URLSearchParams(window.location.search);
   const urlLang = params.get('lang');
   if (urlLang && supportedLanguages.includes(urlLang)) {
@@ -33,9 +37,13 @@ function getInitialLanguage() {
   }
 
   const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored && supportedLanguages.includes(stored)) {
+  const isManual = localStorage.getItem(MANUAL_KEY) === 'true';
+  if (stored && supportedLanguages.includes(stored) && isManual) {
     return stored;
   }
+
+  const geoLang = await detectGeoLanguage();
+  if (geoLang) return geoLang;
 
   return detectBrowserLanguage();
 }
@@ -65,12 +73,15 @@ function updateExpertiseItems(lang) {
   });
 }
 
-export function setLanguage(lang) {
+export function setLanguage(lang, { manual = false } = {}) {
   if (!supportedLanguages.includes(lang)) return;
 
   const t = translations[lang];
   document.documentElement.lang = lang;
   localStorage.setItem(STORAGE_KEY, lang);
+  if (manual) {
+    localStorage.setItem(MANUAL_KEY, 'true');
+  }
 
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.dataset.i18n;
@@ -102,7 +113,8 @@ export function setLanguage(lang) {
 
   updateExpertiseItems(lang);
   refreshHeroSliderAlts(lang);
-  renderInsights(lang);
+  renderBlogCards(lang);
+  renderXFeed(lang);
   refreshCalendarLocale(lang);
   updateMeta(lang);
 
@@ -110,16 +122,18 @@ export function setLanguage(lang) {
     btn.classList.toggle('is-active', btn.dataset.lang === lang);
     btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
   });
+
+  document.documentElement.classList.add('lang-ready');
 }
 
-export function initI18n() {
-  const lang = getInitialLanguage();
+export async function initI18n() {
+  const lang = await resolveInitialLanguage();
   setLanguage(lang);
 
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('.lang-btn');
     if (btn?.dataset.lang) {
-      setLanguage(btn.dataset.lang);
+      setLanguage(btn.dataset.lang, { manual: true });
     }
   });
 }

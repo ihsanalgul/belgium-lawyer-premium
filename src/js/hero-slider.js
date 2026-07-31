@@ -3,9 +3,11 @@ import { translations } from '../data/translations.js';
 
 const INTERVAL_MS = 5000;
 
+let sliderApi = null;
+
 export function initHeroSlider() {
   const wrap = document.querySelector('.hero-image-wrap');
-  if (!wrap) return;
+  if (!wrap) return null;
 
   const slides = siteConfig.heroImages.map((img, i) => {
     const slide = document.createElement('div');
@@ -16,10 +18,10 @@ export function initHeroSlider() {
 
     const image = document.createElement('img');
     image.src = img.src;
-    image.width = 600;
-    image.height = 750;
+    image.width = 700;
+    image.height = 875;
     image.loading = i === 0 ? 'eager' : 'lazy';
-    image.dataset.i18nAlt = img.altKey;
+    image.dataset.i18nAlt = `hero.${img.altKey}`;
     slide.appendChild(image);
     return slide;
   });
@@ -27,6 +29,18 @@ export function initHeroSlider() {
   const track = document.createElement('div');
   track.className = 'hero-slider__track';
   slides.forEach((s) => track.appendChild(s));
+
+  const quoteEl = document.createElement('blockquote');
+  quoteEl.className = 'hero-slider__quote';
+  quoteEl.setAttribute('aria-live', 'polite');
+
+  const quoteText = document.createElement('p');
+  quoteText.className = 'hero-slider__quote-text';
+
+  const quoteAuthor = document.createElement('cite');
+  quoteAuthor.className = 'hero-slider__quote-author';
+
+  quoteEl.append(quoteText, quoteAuthor);
 
   const dots = document.createElement('div');
   dots.className = 'hero-slider__dots';
@@ -46,27 +60,39 @@ export function initHeroSlider() {
 
   const slider = document.createElement('div');
   slider.className = 'hero-slider';
-  slider.setAttribute('aria-live', 'polite');
   slider.appendChild(track);
+  slider.appendChild(quoteEl);
   slider.appendChild(dots);
 
   wrap.innerHTML = '';
   wrap.appendChild(slider);
 
   let current = 0;
+  let currentLang = 'tr';
   let timer = null;
   let paused = false;
 
-  function goTo(index) {
+  function updateQuote(index, lang) {
+    const quotes = translations[lang]?.hero?.quotes;
+    const quoteIndex = siteConfig.heroImages[index]?.quoteIndex ?? index;
+    const quote = quotes?.[quoteIndex];
+    if (!quote) return;
+    quoteText.textContent = `"${quote.text}"`;
+    quoteAuthor.textContent = `— ${quote.author}`;
+  }
+
+  function goTo(index, lang = currentLang) {
     slides[current].classList.remove('is-active');
     dotBtns[current].classList.remove('is-active');
     dotBtns[current].setAttribute('aria-selected', 'false');
 
     current = (index + slides.length) % slides.length;
+    currentLang = lang;
 
     slides[current].classList.add('is-active');
     dotBtns[current].classList.add('is-active');
     dotBtns[current].setAttribute('aria-selected', 'true');
+    updateQuote(current, lang);
   }
 
   function next() {
@@ -116,28 +142,26 @@ export function initHeroSlider() {
   });
 
   slider.setAttribute('tabindex', '0');
-
+  updateQuote(0, 'tr');
   startAutoplay();
 
   return {
-    updateAlts(lang) {
-      const t = translations[lang];
+    updateLang(lang) {
+      currentLang = lang;
       slides.forEach((slide, i) => {
         const img = slide.querySelector('img');
         const key = siteConfig.heroImages[i].altKey;
-        const field = key.replace('hero.', '');
-        if (t.hero[field]) {
-          img.alt = t.hero[field];
+        if (translations[lang]?.hero?.[key]) {
+          img.alt = translations[lang].hero[key];
         }
       });
+      updateQuote(current, lang);
     },
   };
 }
 
-let sliderApi = null;
-
 export function refreshHeroSliderAlts(lang) {
-  sliderApi?.updateAlts(lang);
+  sliderApi?.updateLang(lang);
 }
 
 export function initHeroSliderModule() {

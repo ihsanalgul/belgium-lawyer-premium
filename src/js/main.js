@@ -9,6 +9,7 @@ import { initCalendar } from './calendar.js';
 initSiteConfig();
 initHeroSliderModule();
 initCalendar();
-initI18n();
-initNav();
-initScrollReveal();
+initI18n().then(() => {
+  initNav();
+  initScrollReveal();
+});

@@ -13,8 +13,8 @@ function formatDate(dateStr, lang) {
   });
 }
 
-export function renderInsights(lang) {
-  const grid = document.getElementById('insights-grid');
+export function renderXFeed(lang) {
+  const grid = document.getElementById('x-grid');
   if (!grid) return;
 
   const tweets = tweetsContent[lang] || tweetsContent.tr;
@@ -47,8 +47,7 @@ export function renderInsights(lang) {
     link.href = tweet.url;
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
-    link.dataset.i18n = 'insights.readMore';
-    link.textContent = translations[lang]?.insights?.readMore || 'Read on X';
+    link.textContent = translations[lang]?.x?.readMore || 'Read on X';
 
     card.append(meta, text, link);
     grid.appendChild(card);

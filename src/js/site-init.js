@@ -17,9 +17,9 @@ export function initSiteConfig() {
     contactWa.href = siteConfig.whatsapp.url;
   }
 
-  const insightsProfile = document.getElementById('insights-profile');
-  if (insightsProfile) {
-    insightsProfile.href = siteConfig.x.profileUrl;
+  const xProfile = document.getElementById('x-profile');
+  if (xProfile) {
+    xProfile.href = siteConfig.x.profileUrl;
   }
 
   const footerCopy = document.getElementById('footer-copy');
