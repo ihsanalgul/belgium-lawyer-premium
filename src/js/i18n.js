@@ -1,4 +1,11 @@
 import { translations, supportedLanguages, defaultLanguage } from '../data/translations.js';
+import {
+  updateTrustList,
+  updateAskAreaOptions,
+  updateAskPlaceholders,
+  updateQaCards,
+} from './i18n-ask-appt.js';
+import { refreshAppointmentsLocale } from './appointments.js';
 
 const STORAGE_KEY = 'lang';
 
@@ -96,7 +103,11 @@ export function setLanguage(lang) {
     if (value === undefined) return;
 
     if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-      el.placeholder = value;
+      if (el.type !== 'checkbox') {
+        el.placeholder = value;
+      }
+    } else if (el.tagName === 'OPTION') {
+      el.textContent = value;
     } else {
       el.textContent = value;
     }
@@ -117,6 +128,11 @@ export function setLanguage(lang) {
   updateExpertiseItems(lang);
   updateWhyBlocks(lang);
   updateSelectOptions(lang);
+  updateTrustList(lang);
+  updateAskAreaOptions(lang);
+  updateAskPlaceholders(lang);
+  updateQaCards(lang);
+  refreshAppointmentsLocale();
   updateMeta(lang);
 
   document.querySelectorAll('.lang-btn').forEach((btn) => {

@@ -1,4 +1,6 @@
-export const translations = {
+import { askApptContent } from './ask-appt-content.js';
+
+const baseTranslations = {
   en: {
     meta: {
       title: 'Cabinet Juridique International | Ankara · Brussels',
@@ -475,6 +477,18 @@ export const translations = {
     },
   },
 };
+
+export const translations = Object.fromEntries(
+  Object.entries(baseTranslations).map(([lang, content]) => [
+    lang,
+    {
+      ...content,
+      nav: { ...content.nav, ...askApptContent[lang].nav },
+      askLawyer: askApptContent[lang].askLawyer,
+      appointments: askApptContent[lang].appointments,
+    },
+  ])
+);
 
 export const supportedLanguages = ['en', 'fr', 'nl', 'tr'];
 export const defaultLanguage = 'en';

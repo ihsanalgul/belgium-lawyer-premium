@@ -35,6 +35,8 @@
           <a href="#about" class="link-underline text-nav" data-i18n="nav.about">About</a>
           <a href="#expertise" class="link-underline text-nav" data-i18n="nav.expertise">Expertise</a>
           <a href="#why-us" class="link-underline text-nav" data-i18n="nav.why">Why Us</a>
+          <a href="#ask-a-lawyer" class="link-underline text-nav" data-i18n="nav.askLawyer">Ask a Lawyer</a>
+          <a href="#appointments" class="link-underline text-nav" data-i18n="nav.appointments">Appointments</a>
           <a href="#contact" class="link-underline text-nav" data-i18n="nav.contact">Contact</a>
           <div class="lang-switcher" role="group" aria-label="Language">
             <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
@@ -79,6 +81,8 @@
       <a href="#about" data-i18n="nav.about">About</a>
       <a href="#expertise" data-i18n="nav.expertise">Expertise</a>
       <a href="#why-us" data-i18n="nav.why">Why Us</a>
+      <a href="#ask-a-lawyer" data-i18n="nav.askLawyer">Ask a Lawyer</a>
+      <a href="#appointments" data-i18n="nav.appointments">Appointments</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
       <div class="lang-switcher">
         <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
@@ -262,6 +266,138 @@
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="ask-a-lawyer" class="site-section" aria-labelledby="ask-a-lawyer-title">
+        <div class="site-container">
+          <div class="ask-grid">
+            <div class="ask-intro reveal">
+              <p class="text-eyebrow" data-i18n="askLawyer.eyebrow">Legal Inquiry</p>
+              <div class="rule-gold"></div>
+              <h2 class="text-display-lg" id="ask-a-lawyer-title">
+                <span data-i18n="askLawyer.titleLine1">Send your question</span>
+                <em data-i18n="askLawyer.titleEmphasis">directly</em><br />
+                <span data-i18n="askLawyer.titleLine2">to our team</span>
+              </h2>
+              <p class="text-prose" data-i18n="askLawyer.subtitle"></p>
+
+              <ul class="trust-list" id="trust-list" aria-label="Trust indicators"></ul>
+
+              <p class="ask-disclaimer">
+                <span data-i18n="askLawyer.disclaimer"></span>
+                <a href="#appointments" data-i18n="askLawyer.disclaimerLink"></a>.
+              </p>
+            </div>
+
+            <form class="ask-form-card reveal" id="ask-form" novalidate>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="ask-name" data-i18n="askLawyer.form.name">Full name</label>
+                  <input class="form-input" type="text" id="ask-name" name="name" required autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="ask-email" data-i18n="askLawyer.form.email">Email</label>
+                  <input class="form-input" type="email" id="ask-email" name="email" required autocomplete="email" />
+                </div>
+              </div>
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label class="form-label" for="ask-phone" data-i18n="askLawyer.form.phone">Phone</label>
+                  <input class="form-input" type="tel" id="ask-phone" name="phone" autocomplete="tel" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="ask-area" data-i18n="askLawyer.form.area">Practice area</label>
+                  <select class="form-select" id="ask-area" name="area" required></select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="ask-message" data-i18n="askLawyer.form.message">Your question</label>
+                <textarea class="form-textarea" id="ask-message" name="message" required></textarea>
+              </div>
+              <label class="form-consent">
+                <input type="checkbox" id="ask-consent" name="consent" required />
+                <span data-i18n="askLawyer.form.consent"></span>
+              </label>
+              <div class="ask-form-foot">
+                <button type="submit" class="btn-primary" id="ask-submit" data-i18n="askLawyer.form.submit">
+                  Submit question
+                </button>
+                <p class="ask-form-note">
+                  <span data-i18n="askLawyer.form.note"></span>
+                  <a href="#appointments" data-i18n="askLawyer.form.noteLink"></a>
+                  <span data-i18n="askLawyer.form.noteSuffix"></span>
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <div class="qa-strip reveal">
+            <p class="text-eyebrow" data-i18n="askLawyer.qa.eyebrow">Answered Questions</p>
+            <div class="qa-cards" id="qa-cards"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="appointments" class="site-section" aria-labelledby="appointments-title">
+        <div class="site-container">
+          <div class="appt-head reveal">
+            <p class="text-eyebrow" data-i18n="appointments.eyebrow">Appointments &amp; Packages</p>
+            <div class="rule-gold" style="margin-inline: auto"></div>
+            <h2 class="text-display-lg" id="appointments-title" data-i18n="appointments.title">
+              Choose the consultation that fits your matter
+            </h2>
+            <p class="text-prose" data-i18n="appointments.subtitle"></p>
+          </div>
+
+          <div
+            class="packages-grid reveal"
+            id="packages-grid"
+            role="radiogroup"
+            aria-label="Consultation packages"
+          ></div>
+
+          <div class="booker reveal is-locked" id="booker" aria-disabled="true">
+            <div id="booking-flow">
+              <div class="booker-head">
+                <h3 data-i18n="appointments.booker.title">Select date &amp; time</h3>
+                <span class="booker-chosen" id="chosen-pkg-label" data-i18n="appointments.booker.chooseFirst"></span>
+              </div>
+              <div class="date-chips" id="date-chips" role="group" aria-label="Available dates"></div>
+              <div class="slot-grid" id="slot-grid" role="group" aria-label="Available times"></div>
+              <div class="booker-contact">
+                <div class="form-group">
+                  <label class="form-label" for="bk-name" data-i18n="appointments.booker.name">Full name</label>
+                  <input class="form-input" type="text" id="bk-name" name="bk-name" autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="bk-email" data-i18n="appointments.booker.email">Email</label>
+                  <input class="form-input" type="email" id="bk-email" name="bk-email" autocomplete="email" />
+                </div>
+                <div class="form-group form-group--full">
+                  <label class="form-label" for="bk-note" data-i18n="appointments.booker.note">Brief note</label>
+                  <input class="form-input" type="text" id="bk-note" name="bk-note" />
+                </div>
+              </div>
+              <div class="booker-summary">
+                <p class="summary-line" id="summary-line" data-i18n="appointments.booker.summaryEmpty">No selection yet.</p>
+                <button type="button" class="btn-primary" id="confirm-btn" disabled data-i18n="appointments.booker.confirm">
+                  Confirm appointment
+                </button>
+              </div>
+            </div>
+            <div class="booking-success" id="booking-success" role="status" aria-live="polite">
+              <div class="booking-success-mark" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 data-i18n="appointments.booker.successTitle">Your appointment request has been received</h3>
+              <p class="text-prose" data-i18n="appointments.booker.successBody"></p>
+            </div>
+          </div>
+
+          <p class="appt-footnote" data-i18n="appointments.footnote"></p>
         </div>
       </section>
 
