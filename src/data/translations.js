@@ -1,494 +1,417 @@
-import { askApptContent } from './ask-appt-content.js';
-
 const baseTranslations = {
   en: {
     meta: {
-      title: 'Cabinet Juridique International | Ankara · Brussels',
+      title: 'Av. Yusuf Ziya KAHYA | Criminal Defence · Ankara · Brussels',
       description:
-        'International law firm advising on cross-border transactions, EU regulation, and corporate matters from offices in Ankara and Brussels.',
+        'Criminal defence counsel Av. Yusuf Ziya Kahya — Ankara Bar Association. Heavy criminal law, investigations, and cross-border defence from Ankara and Brussels.',
     },
     skip: 'Skip to main content',
     nav: {
       about: 'About',
       expertise: 'Expertise',
-      why: 'Why Us',
+      appointments: 'Appointments',
+      insights: 'Insights',
       contact: 'Contact',
       menuOpen: 'Open menu',
       menuClose: 'Close menu',
     },
     hero: {
-      eyebrow: 'Ankara · Brussels',
-      title: 'Counsel for cross-border matters of consequence',
+      eyebrow: 'Criminal Defence · Ankara Bar',
+      title: 'Defence counsel for matters that demand discretion and resolve',
       subtitle:
-        'We advise corporations, investors, and institutions on transactions, regulatory compliance, and dispute resolution across Turkey and the European Union.',
-      cta: 'Schedule consultation',
-      imageAlt: 'European institutional architecture in Brussels',
+        'Av. Yusuf Ziya Kahya advises on criminal investigations, detention, and trial defence across Turkey and Belgium — with direct partner-level attention to every file.',
+      cta: 'Book an appointment',
+      imageAlt0: 'Scales of justice representing criminal defence',
+      imageAlt1: 'Law books and legal research',
+      imageAlt2: 'Institutional architecture in Brussels',
     },
     about: {
-      eyebrow: 'Our Firm',
-      title: 'Rooted in two capitals, practiced internationally',
-      p1: 'Founded in Ankara and established in Brussels, Cabinet Juridique International brings together Turkish commercial law expertise with deep knowledge of EU regulatory frameworks.',
-      p2: 'Our lawyers advise on matters ranging from foreign direct investment and M&A to arbitration, competition law, and cross-border employment disputes. We serve clients who require discretion, precision, and counsel that understands both jurisdictions.',
-      imageAlt: 'Ankara cityscape representing our heritage office',
+      eyebrow: 'About',
+      title: 'Criminal defence counsel across two capitals',
+      p1: 'Av. Yusuf Ziya Kahya is a criminal defence lawyer registered with the Ankara Bar Association, practising in Ankara and Brussels. His practice centres on serious criminal matters, pre-trial investigations, and defence strategy at every stage of proceedings.',
+      p2: 'With offices in Pursaklar, Ankara and Avenue Louise, Brussels, he serves clients who require confidential counsel, procedural precision, and representation that understands both Turkish criminal procedure and European human rights standards.',
+      imageAlt: 'Ankara representing the heritage of Turkish criminal practice',
     },
     expertise: {
       eyebrow: 'Practice Areas',
-      title: 'Domains of counsel',
+      title: 'Domains of criminal defence',
       items: [
         {
-          title: 'Corporate & Commercial',
-          desc: 'Mergers, acquisitions, joint ventures, and corporate governance for international enterprises operating across borders.',
+          title: 'Heavy Criminal Law',
+          desc: 'Defence in aggravated offences, organised crime allegations, and complex indictments requiring sustained trial preparation.',
         },
         {
-          title: 'EU Regulatory & Compliance',
-          desc: 'Navigation of European directives, state aid rules, and sector-specific regulation for non-EU investors entering Belgian and EU markets.',
+          title: 'Investigation & Prosecution',
+          desc: 'Representation during police and prosecutor investigations — statements, searches, wiretaps, and early procedural challenges.',
         },
         {
-          title: 'Investment & Finance',
-          desc: 'Structuring of foreign direct investment, project finance, and capital markets transactions with Turkish and European dimensions.',
+          title: 'Pre-trial Detention',
+          desc: 'Applications and appeals against arrest and detention orders, with urgent intervention at custody hearings.',
         },
         {
-          title: 'Arbitration & Dispute Resolution',
-          desc: 'Representation in ICC, ISTAC, and ad hoc arbitration. Cross-border litigation strategy and enforcement of foreign judgments.',
+          title: 'International Criminal Matters',
+          desc: 'Cross-border cases, extradition, European Arrest Warrant proceedings, and coordination between Turkish and Belgian jurisdictions.',
         },
         {
-          title: 'Employment & Mobility',
-          desc: 'Executive contracts, secondments, and workforce restructuring for multinational employers with operations in Turkey and Belgium.',
+          title: 'Defence Strategy',
+          desc: 'Case assessment, evidence review, witness preparation, and appellate representation before regional courts of appeal.',
         },
       ],
     },
-    why: {
-      eyebrow: 'Why Cabinet Juridique',
-      title: 'Institutional counsel, not volume practice',
-      blocks: [
-        {
-          title: 'Four decades of practice',
-          desc: 'Our partners have advised on transactions and disputes across three continents since the firm\'s founding in Ankara.',
-        },
-        {
-          title: 'Dual-jurisdiction fluency',
-          desc: 'Native understanding of Turkish civil law and EU regulatory architecture, without reliance on external coordination.',
-        },
-        {
-          title: 'Absolute discretion',
-          desc: 'We accept a limited number of mandates annually. Client matters are handled directly by partners, not delegated to junior associates.',
-        },
-      ],
+    appointments: {
+      eyebrow: 'Appointments',
+      title: 'Schedule a confidential consultation',
+      subtitle:
+        'Select an available time below. For urgent matters, contact via WhatsApp.',
+      placeholderTitle: 'Online booking coming soon',
+      placeholderBody:
+        'The appointment calendar is being configured. In the meantime, reach out directly via WhatsApp for urgent enquiries.',
+      openCalendar: 'Open in Google Calendar',
+      whatsappCta: 'Message on WhatsApp',
+    },
+    insights: {
+      eyebrow: 'Insights',
+      title: 'From the practice',
+      subtitle: 'Selected commentary on criminal law and procedure.',
+      viewProfile: 'View on X',
+      readMore: 'Read on X',
     },
     contact: {
       eyebrow: 'Contact',
-      title: 'Begin a confidential conversation',
+      title: 'Reach counsel directly',
       subtitle:
-        'Complete the form below or reach our Brussels office directly. All inquiries are treated in strict confidence.',
+        'Communication is available via WhatsApp only. Office addresses are listed below for correspondence.',
       ankara: {
         label: 'Ankara Office',
-        address: 'Kızılırmak Mah. 1443. Cad. No: 25, 06530 Çankaya, Ankara',
-        phone: '+90 312 000 00 00',
+        address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
         label: 'Brussels Office',
         address: 'Avenue Louise 149, 1050 Brussels, Belgium',
-        phone: '+32 2 000 00 00',
       },
-      email: 'info@cabinet-juridique.be',
-      form: {
-        name: 'Full name',
-        email: 'Email address',
-        phone: 'Telephone (optional)',
-        subject: 'Subject',
-        subjectOptions: {
-          corporate: 'Corporate & Commercial',
-          regulatory: 'EU Regulatory',
-          investment: 'Investment & Finance',
-          arbitration: 'Arbitration',
-          employment: 'Employment',
-          other: 'Other',
-        },
-        message: 'Your message',
-        submit: 'Send inquiry',
-        success: 'Your message has been received. We will respond within two business days.',
-        error: 'Something went wrong. Please try again or contact us by telephone.',
-      },
+      whatsappLabel: 'WhatsApp only',
+      whatsappCta: 'Send a WhatsApp message',
     },
     footer: {
       disclaimer:
-        'Cabinet Juridique International is a law firm registered in Belgium and Turkey. This website does not constitute legal advice.',
+        'Av. Yusuf Ziya Kahya is a lawyer registered with the Ankara Bar Association. This website does not constitute legal advice.',
       rights: 'All rights reserved.',
     },
     whatsapp: {
-      label: 'Contact us on WhatsApp',
+      label: 'Contact via WhatsApp (WhatsApp only)',
     },
   },
 
   fr: {
     meta: {
-      title: 'Cabinet Juridique International | Ankara · Bruxelles',
+      title: 'Av. Yusuf Ziya KAHYA | Défense pénale · Ankara · Bruxelles',
       description:
-        'Cabinet d\'avocats international conseillant sur les transactions transfrontalières, la réglementation européenne et le droit des sociétés depuis Ankara et Bruxelles.',
+        'Avocat pénaliste Av. Yusuf Ziya Kahya — Barreau d\'Ankara. Droit pénal, enquêtes et défense transfrontalière depuis Ankara et Bruxelles.',
     },
     skip: 'Aller au contenu principal',
     nav: {
-      about: 'Le Cabinet',
+      about: 'À propos',
       expertise: 'Expertises',
-      why: 'Pourquoi Nous',
+      appointments: 'Rendez-vous',
+      insights: 'Analyses',
       contact: 'Contact',
       menuOpen: 'Ouvrir le menu',
       menuClose: 'Fermer le menu',
     },
     hero: {
-      eyebrow: 'Ankara · Bruxelles',
-      title: 'Conseil pour les affaires transfrontalières d\'envergure',
+      eyebrow: 'Défense pénale · Barreau d\'Ankara',
+      title: 'Défense pénale pour les affaires exigeant discrétion et détermination',
       subtitle:
-        'Nous conseillons entreprises, investisseurs et institutions en matière de transactions, conformité réglementaire et résolution de litiges entre la Turquie et l\'Union européenne.',
+        'Av. Yusuf Ziya Kahya conseille en matière d\'enquêtes pénales, de détention et de défense au procès en Turquie et en Belgique — avec une attention directe à chaque dossier.',
       cta: 'Prendre rendez-vous',
-      imageAlt: 'Architecture institutionnelle européenne à Bruxelles',
+      imageAlt0: 'Balance de la justice symbolisant la défense pénale',
+      imageAlt1: 'Livres de droit et recherche juridique',
+      imageAlt2: 'Architecture institutionnelle à Bruxelles',
     },
     about: {
-      eyebrow: 'Notre Cabinet',
-      title: 'Ancré dans deux capitales, pratiqué à l\'international',
-      p1: 'Fondé à Ankara et établi à Bruxelles, Cabinet Juridique International réunit l\'expertise du droit commercial turc et une connaissance approfondie des cadres réglementaires européens.',
-      p2: 'Nos avocats conseillent sur des questions allant de l\'investissement direct étranger et les fusions-acquisitions à l\'arbitrage, le droit de la concurrence et les litiges transfrontaliers en droit du travail. Nous servons des clients qui exigent discrétion, précision et un conseil comprenant les deux juridictions.',
-      imageAlt: 'Paysage d\'Ankara représentant notre bureau historique',
+      eyebrow: 'À propos',
+      title: 'Défense pénale ancrée dans deux capitales',
+      p1: 'Av. Yusuf Ziya Kahya est avocat pénaliste inscrit au Barreau d\'Ankara, exerçant à Ankara et à Bruxelles. Sa pratique se concentre sur les affaires pénales graves, les enquêtes préliminaires et la stratégie de défense à chaque étape de la procédure.',
+      p2: 'Avec des bureaux à Pursaklar, Ankara et Avenue Louise, Bruxelles, il conseille des clients exigeant confidentialité, précision procédurale et une représentation comprenant la procédure pénale turque et les standards européens des droits de l\'homme.',
+      imageAlt: 'Ankara représentant l\'héritage de la pratique pénale turque',
     },
     expertise: {
       eyebrow: 'Domaines d\'intervention',
-      title: 'Champs de compétence',
+      title: 'Champs de la défense pénale',
       items: [
         {
-          title: 'Droit des sociétés et commercial',
-          desc: 'Fusions, acquisitions, coentreprises et gouvernance d\'entreprise pour les entreprises internationales opérant au-delà des frontières.',
+          title: 'Droit pénal grave',
+          desc: 'Défense dans les infractions aggravées, les allégations de criminalité organisée et les inculpations complexes.',
         },
         {
-          title: 'Réglementation et conformité UE',
-          desc: 'Navigation dans les directives européennes, les règles d\'aides d\'État et la réglementation sectorielle pour les investisseurs non-UE entrant sur les marchés belge et européen.',
+          title: 'Enquête et poursuite',
+          desc: 'Représentation lors des enquêtes de police et du parquet — auditions, perquisitions, écoutes et contestations procédurales.',
         },
         {
-          title: 'Investissement et finance',
-          desc: 'Structuration de l\'investissement direct étranger, du financement de projet et des opérations sur les marchés des capitaux à dimension turque et européenne.',
+          title: 'Détention provisoire',
+          desc: 'Demandes et recours contre les ordonnances d\'arrestation et de détention, avec intervention urgente aux audiences de garde à vue.',
         },
         {
-          title: 'Arbitrage et résolution des litiges',
-          desc: 'Représentation devant la CCI, l\'ISTAC et l\'arbitrage ad hoc. Stratégie de contentieux transfrontalier et exécution des jugements étrangers.',
+          title: 'Affaires pénales internationales',
+          desc: 'Dossiers transfrontaliers, extradition, mandats d\'arrêt européens et coordination entre juridictions turque et belge.',
         },
         {
-          title: 'Droit du travail et mobilité',
-          desc: 'Contrats de direction, détachements et restructurations pour les employeurs multinationaux opérant en Turquie et en Belgique.',
+          title: 'Stratégie de défense',
+          desc: 'Évaluation du dossier, examen des preuves, préparation des témoins et représentation en appel.',
         },
       ],
     },
-    why: {
-      eyebrow: 'Pourquoi Cabinet Juridique',
-      title: 'Conseil institutionnel, non une pratique de volume',
-      blocks: [
-        {
-          title: 'Quatre décennies de pratique',
-          desc: 'Nos associés conseillent sur des transactions et litiges sur trois continents depuis la fondation du cabinet à Ankara.',
-        },
-        {
-          title: 'Maîtrise double juridiction',
-          desc: 'Compréhension native du droit civil turc et de l\'architecture réglementaire européenne, sans recours à une coordination externe.',
-        },
-        {
-          title: 'Discrétion absolue',
-          desc: 'Nous acceptons un nombre limité de mandats par an. Les affaires des clients sont traitées directement par les associés.',
-        },
-      ],
+    appointments: {
+      eyebrow: 'Rendez-vous',
+      title: 'Planifier une consultation confidentielle',
+      subtitle:
+        'Choisissez un créneau ci-dessous. Pour les urgences, contactez via WhatsApp.',
+      placeholderTitle: 'Réservation en ligne bientôt disponible',
+      placeholderBody:
+        'Le calendrier de rendez-vous est en cours de configuration. En attendant, contactez directement via WhatsApp pour les demandes urgentes.',
+      openCalendar: 'Ouvrir dans Google Calendar',
+      whatsappCta: 'Écrire sur WhatsApp',
+    },
+    insights: {
+      eyebrow: 'Analyses',
+      title: 'De la pratique',
+      subtitle: 'Commentaires sélectionnés sur le droit pénal et la procédure.',
+      viewProfile: 'Voir sur X',
+      readMore: 'Lire sur X',
     },
     contact: {
       eyebrow: 'Contact',
-      title: 'Engager une conversation confidentielle',
+      title: 'Contacter le conseil directement',
       subtitle:
-        'Complétez le formulaire ci-dessous ou contactez directement notre bureau de Bruxelles. Toutes les demandes sont traitées en stricte confidentialité.',
+        'La communication se fait uniquement via WhatsApp. Les adresses des bureaux sont indiquées ci-dessous.',
       ankara: {
         label: 'Bureau d\'Ankara',
-        address: 'Kızılırmak Mah. 1443. Cad. No: 25, 06530 Çankaya, Ankara',
-        phone: '+90 312 000 00 00',
+        address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
         label: 'Bureau de Bruxelles',
         address: 'Avenue Louise 149, 1050 Bruxelles, Belgique',
-        phone: '+32 2 000 00 00',
       },
-      email: 'info@cabinet-juridique.be',
-      form: {
-        name: 'Nom complet',
-        email: 'Adresse e-mail',
-        phone: 'Téléphone (facultatif)',
-        subject: 'Objet',
-        subjectOptions: {
-          corporate: 'Droit des sociétés',
-          regulatory: 'Réglementation UE',
-          investment: 'Investissement',
-          arbitration: 'Arbitrage',
-          employment: 'Droit du travail',
-          other: 'Autre',
-        },
-        message: 'Votre message',
-        submit: 'Envoyer la demande',
-        success: 'Votre message a bien été reçu. Nous vous répondrons sous deux jours ouvrables.',
-        error: 'Une erreur s\'est produite. Veuillez réessayer ou nous contacter par téléphone.',
-      },
+      whatsappLabel: 'WhatsApp uniquement',
+      whatsappCta: 'Envoyer un message WhatsApp',
     },
     footer: {
       disclaimer:
-        'Cabinet Juridique International est un cabinet d\'avocats enregistré en Belgique et en Turquie. Ce site ne constitue pas un avis juridique.',
+        'Av. Yusuf Ziya Kahya est avocat inscrit au Barreau d\'Ankara. Ce site ne constitue pas un avis juridique.',
       rights: 'Tous droits réservés.',
     },
     whatsapp: {
-      label: 'Nous contacter sur WhatsApp',
+      label: 'Contacter via WhatsApp (WhatsApp uniquement)',
     },
   },
 
   nl: {
     meta: {
-      title: 'Cabinet Juridique International | Ankara · Brussel',
+      title: 'Av. Yusuf Ziya KAHYA | Strafrecht · Ankara · Brussel',
       description:
-        'Internationaal advocatenkantoor voor grensoverschrijdende transacties, EU-regelgeving en ondernemingsrecht vanuit kantoren in Ankara en Brussel.',
+        'Strafrechtadvocaat Av. Yusuf Ziya Kahya — Ankara Balie. Zwaar strafrecht, onderzoeken en grensoverschrijdende verdediging vanuit Ankara en Brussel.',
     },
     skip: 'Ga naar hoofdinhoud',
     nav: {
-      about: 'Over Ons',
+      about: 'Over',
       expertise: 'Expertise',
-      why: 'Waarom Wij',
+      appointments: 'Afspraken',
+      insights: 'Inzichten',
       contact: 'Contact',
       menuOpen: 'Menu openen',
       menuClose: 'Menu sluiten',
     },
     hero: {
-      eyebrow: 'Ankara · Brussel',
-      title: 'Advies bij grensoverschrijdende zaken van gewicht',
+      eyebrow: 'Strafrecht · Ankara Balie',
+      title: 'Strafrechtelijke verdediging voor zaken die discretie en vastberadenheid vereisen',
       subtitle:
-        'Wij adviseren ondernemingen, investeerders en instellingen over transacties, regelgevingsnaleving en geschillenbeslechting tussen Turkije en de Europese Unie.',
+        'Av. Yusuf Ziya Kahya adviseert over strafrechtelijke onderzoeken, voorlopige hechtenis en procesverdediging in Turkije en België — met directe aandacht voor elk dossier.',
       cta: 'Afspraak maken',
-      imageAlt: 'Europese institutionele architectuur in Brussel',
+      imageAlt0: 'Weegschaal van Justitie symboliserend strafrechtelijke verdediging',
+      imageAlt1: 'Juridische boeken en rechtsonderzoek',
+      imageAlt2: 'Institutionele architectuur in Brussel',
     },
     about: {
-      eyebrow: 'Ons Kantoor',
-      title: 'Geworteld in twee hoofdsteden, internationaal actief',
-      p1: 'Opgericht in Ankara en gevestigd in Brussel, Cabinet Juridique International combineert Turkse handelsrechtexpertise met diepgaande kennis van EU-regelgevingskaders.',
-      p2: 'Onze advocaten adviseren over buitenlandse directe investeringen en M&A tot arbitrage, mededingingsrecht en grensoverschrijdende arbeidsrechtelijke geschillen. Wij bedienen cliënten die discretie, precisie en advies vereisen dat beide jurisdicties begrijpt.',
-      imageAlt: 'Ankara-stadsgezicht dat ons historisch kantoor vertegenwoordigt',
+      eyebrow: 'Over',
+      title: 'Strafrechtelijke verdediging met twee centra',
+      p1: 'Av. Yusuf Ziya Kahya is strafrechtadvocaat ingeschreven bij de Ankara Balie, werkzaam in Ankara en Brussel. Zijn praktijk richt zich op ernstige strafzaken, vooronderzoek en verdedigingsstrategie in elke fase van de procedure.',
+      p2: 'Met kantoren in Pursaklar, Ankara en Avenue Louise, Brussel, bedient hij cliënten die vertrouwelijk advies, procedurele precisie en vertegenwoordiging vereisen die zowel de Turkse strafprocedure als Europese mensenrechtennormen begrijpt.',
+      imageAlt: 'Ankara vertegenwoordigt de Turkse strafrechtelijke traditie',
     },
     expertise: {
       eyebrow: 'Praktijkgebieden',
-      title: 'Adviesdomeinen',
+      title: 'Domeinen van strafrechtelijke verdediging',
       items: [
         {
-          title: 'Ondernemings- en handelsrecht',
-          desc: 'Fusies, overnames, joint ventures en corporate governance voor internationale ondernemingen die grensoverschrijdend opereren.',
+          title: 'Zwaar strafrecht',
+          desc: 'Verdediging bij ernstige delicten, georganiseerde misdaad en complexe tenlasteleggingen.',
         },
         {
-          title: 'EU-regelgeving en naleving',
-          desc: 'Navigatie door Europese richtlijnen, staatssteunregels en sectorspecifieke regelgeving voor niet-EU-investeerders op de Belgische en Europese markten.',
+          title: 'Onderzoek en vervolging',
+          desc: 'Vertegenwoordiging tijdens politie- en parketonderzoeken — verhoren, huiszoekingen en procedurele betwistingen.',
         },
         {
-          title: 'Investering en financiering',
-          desc: 'Structurering van buitenlandse directe investeringen, projectfinanciering en kapitaalmarkttransacties met Turkse en Europese dimensies.',
+          title: 'Voorlopige hechtenis',
+          desc: 'Verzoeken en beroepen tegen aanhoudings- en detentiebevelen, met dringende tussenkomst bij voorgeleidingen.',
         },
         {
-          title: 'Arbitrage en geschillenbeslechting',
-          desc: 'Vertegenwoordiging in ICC-, ISTAC- en ad hoc-arbitrage. Grensoverschrijdende processtrategie en tenuitvoerlegging van buitenlandse vonnissen.',
+          title: 'Internationale strafzaken',
+          desc: 'Grensoverschrijdende zaken, uitlevering, Europese aanhoudingsbevelen en coördinatie tussen Turkse en Belgische jurisdicties.',
         },
         {
-          title: 'Arbeidsrecht en mobiliteit',
-          desc: 'Managementcontracten, detacheringen en personeelsherstructurering voor multinationale werkgevers met activiteiten in Turkije en België.',
+          title: 'Verdedigingsstrategie',
+          desc: 'Dossierbeoordeling, bewijsanalyse, getuigenvoorbereiding en hoger beroep.',
         },
       ],
     },
-    why: {
-      eyebrow: 'Waarom Cabinet Juridique',
-      title: 'Institutioneel advies, geen volumepraktijk',
-      blocks: [
-        {
-          title: 'Vier decennia praktijk',
-          desc: 'Onze vennoten adviseren over transacties en geschillen op drie continenten sinds de oprichting van het kantoor in Ankara.',
-        },
-        {
-          title: 'Dubbele jurisdictie',
-          desc: 'Inheemse kennis van Turks burgerlijk recht en EU-regelgevingsarchitectuur, zonder afhankelijkheid van externe coördinatie.',
-        },
-        {
-          title: 'Absolute discretie',
-          desc: 'Wij aanvaarden jaarlijks een beperkt aantal opdrachten. Cliëntenzaken worden rechtstreeks door vennoten behandeld.',
-        },
-      ],
+    appointments: {
+      eyebrow: 'Afspraken',
+      title: 'Plan een vertrouwelijk consult',
+      subtitle:
+        'Kies hieronder een beschikbaar tijdstip. Voor dringende zaken, neem contact op via WhatsApp.',
+      placeholderTitle: 'Online boeken binnenkort beschikbaar',
+      placeholderBody:
+        'De afsprakenkalender wordt geconfigureerd. Neem intussen rechtstreeks contact op via WhatsApp voor dringende vragen.',
+      openCalendar: 'Openen in Google Calendar',
+      whatsappCta: 'Bericht via WhatsApp',
+    },
+    insights: {
+      eyebrow: 'Inzichten',
+      title: 'Uit de praktijk',
+      subtitle: 'Geselecteerde commentaren over strafrecht en procedure.',
+      viewProfile: 'Bekijk op X',
+      readMore: 'Lees op X',
     },
     contact: {
       eyebrow: 'Contact',
-      title: 'Start een vertrouwelijk gesprek',
+      title: 'Neem rechtstreeks contact op',
       subtitle:
-        'Vul het onderstaande formulier in of neem rechtstreeks contact op met ons Brusselse kantoor. Alle aanvragen worden strikt vertrouwelijk behandeld.',
+        'Communicatie verloopt uitsluitend via WhatsApp. Kantooradressen staan hieronder vermeld.',
       ankara: {
         label: 'Kantoor Ankara',
-        address: 'Kızılırmak Mah. 1443. Cad. No: 25, 06530 Çankaya, Ankara',
-        phone: '+90 312 000 00 00',
+        address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
         label: 'Kantoor Brussel',
         address: 'Avenue Louise 149, 1050 Brussel, België',
-        phone: '+32 2 000 00 00',
       },
-      email: 'info@cabinet-juridique.be',
-      form: {
-        name: 'Volledige naam',
-        email: 'E-mailadres',
-        phone: 'Telefoon (optioneel)',
-        subject: 'Onderwerp',
-        subjectOptions: {
-          corporate: 'Ondernemingsrecht',
-          regulatory: 'EU-regelgeving',
-          investment: 'Investering',
-          arbitration: 'Arbitrage',
-          employment: 'Arbeidsrecht',
-          other: 'Overig',
-        },
-        message: 'Uw bericht',
-        submit: 'Aanvraag verzenden',
-        success: 'Uw bericht is ontvangen. Wij reageren binnen twee werkdagen.',
-        error: 'Er is iets misgegaan. Probeer opnieuw of neem telefonisch contact op.',
-      },
+      whatsappLabel: 'Alleen WhatsApp',
+      whatsappCta: 'Stuur een WhatsApp-bericht',
     },
     footer: {
       disclaimer:
-        'Cabinet Juridique International is een advocatenkantoor geregistreerd in België en Turkije. Deze website vormt geen juridisch advies.',
+        'Av. Yusuf Ziya Kahya is advocaat ingeschreven bij de Ankara Balie. Deze website vormt geen juridisch advies.',
       rights: 'Alle rechten voorbehouden.',
     },
     whatsapp: {
-      label: 'Contacteer ons via WhatsApp',
+      label: 'Contact via WhatsApp (alleen WhatsApp)',
     },
   },
 
   tr: {
     meta: {
-      title: 'Cabinet Juridique International | Ankara · Brüksel',
+      title: 'Av. Yusuf Ziya KAHYA | Ceza Hukuku · Ankara · Brüksel',
       description:
-        'Ankara ve Brüksel merkezli uluslararası hukuk bürosu. Sınır ötesi işlemler, AB mevzuatı ve kurumsal hukuk alanlarında danışmanlık.',
+        'Ceza hukukçusu Av. Yusuf Ziya Kahya — Ankara Barosu. Ağır ceza, soruşturma ve sınır ötesi müdafaa. Ankara ve Brüksel.',
     },
     skip: 'Ana içeriğe geç',
     nav: {
-      about: 'Hakkımızda',
+      about: 'Hakkında',
       expertise: 'Uzmanlık',
-      why: 'Neden Biz',
+      appointments: 'Randevu',
+      insights: 'Görüşler',
       contact: 'İletişim',
       menuOpen: 'Menüyü aç',
       menuClose: 'Menüyü kapat',
     },
     hero: {
-      eyebrow: 'Ankara · Brüksel',
-      title: 'Sınır ötesi kritik meselelerde kurumsal hukuk danışmanlığı',
+      eyebrow: 'Ceza Hukukçusu · Ankara Barosu',
+      title: 'Gizlilik ve kararlılık gerektiren dosyalarda müdafaa',
       subtitle:
-        'Türkiye ile Avrupa Birliği arasında yürütülen işlemler, mevzuata uyum ve uyuşmazlık çözümünde kurumlar, yatırımcılar ve holding yapılarına danışmanlık sunuyoruz.',
-      cta: 'Görüşme talep edin',
-      imageAlt: 'Brüksel Avrupa kurumsal mimarisi',
+        'Av. Yusuf Ziya Kahya; ceza soruşturmaları, tutukluluk ve yargılama süreçlerinde Türkiye ve Belçika\'da danışmanlık sunar — her dosyaya doğrudan ve özenli müdahale.',
+      cta: 'Randevu alın',
+      imageAlt0: 'Ceza müdafaasını simgeleyen adalet terazisi',
+      imageAlt1: 'Hukuk kitapları ve hukuki araştırma',
+      imageAlt2: 'Brüksel kurumsal mimarisi',
     },
     about: {
-      eyebrow: 'Büromuz',
-      title: 'İki başkente kök salmış, uluslararası bir hukuk pratiği',
-      p1: 'Ankara\'da kurulan ve Brüksel\'de temsil edilen Cabinet Juridique International; Türk ticaret hukuku uzmanlığını AB düzenleyici çerçevelerine dair derin bilgi birikimiyle bir araya getirir.',
-      p2: 'Doğrudan yabancı yatırım ve birleşme-devralma işlemlerinden tahkime, rekabet hukukuna ve sınır ötesi iş hukuku uyuşmazlıklarına kadar geniş bir yelpazede danışmanlık veriyoruz. Her iki yargı alanını da içeriden bilen, ölçülü ve gizlilik odaklı bir hukuk anlayışı arayan müvekkillerle çalışıyoruz.',
-      imageAlt: 'Ankara silüeti, köklü merkez ofisimizi simgeler',
+      eyebrow: 'Hakkında',
+      title: 'İki merkezde ceza hukuku müdafaası',
+      p1: 'Av. Yusuf Ziya Kahya, Ankara Barosu\'na kayıtlı ceza hukukçusudur; Ankara ve Brüksel\'de faaliyet göstermektedir. Uzmanlık alanı ağır ceza, soruşturma aşaması ve yargılama sürecinin her evresinde müdafaa stratejisidir.',
+      p2: 'Pursaklar, Ankara ve Avenue Louise, Brüksel ofisleriyle; gizlilik, usul hassasiyeti ve hem Türk ceza muhakemesi hem Avrupa insan hakları standartlarını bilen müdafaayı arayan müvekkillere hizmet vermektedir. Ankara Barosu, Hukuk ve Danışmanlık.',
+      imageAlt: 'Ankara, Türk ceza hukuku geleneğini simgeler',
     },
     expertise: {
       eyebrow: 'Uzmanlık Alanları',
-      title: 'Danışmanlık alanlarımız',
+      title: 'Ceza müdafaası alanları',
       items: [
         {
-          title: 'Şirketler ve Ticaret Hukuku',
-          desc: 'Sınır ötesi faaliyet yürüten uluslararası şirketler için birleşme, devralma, ortak girişim ve kurumsal yönetim yapıları.',
+          title: 'Ağır Ceza Hukuku',
+          desc: 'Nitelikli suçlar, örgütlü suç iddiaları ve kapsamlı iddianame savunması gerektiren karmaşık dosyalar.',
         },
         {
-          title: 'AB Mevzuatı ve Uyum',
-          desc: 'Belçika ve AB pazarlarına giriş yapan yatırımcılar için Avrupa direktifleri, devlet yardımları ve sektörel düzenlemeler.',
+          title: 'Soruşturma ve Kovuşturma',
+          desc: 'Polis ve savcılık soruşturmalarında temsil — ifade, arama, iletişimin denetlenmesi ve erken usul itirazları.',
         },
         {
-          title: 'Yatırım ve Finans',
-          desc: 'Doğrudan yabancı yatırım, proje finansmanı ve Türkiye ile Avrupa boyutlu sermaye piyasası işlemlerinin yapılandırılması.',
+          title: 'Tutukluluk',
+          desc: 'Yakalama ve tutukluluk kararlarına itiraz ve temyiz; gözaltı ve tutukluluk duruşmalarında acil müdahale.',
         },
         {
-          title: 'Tahkim ve Uyuşmazlık Çözümü',
-          desc: 'ICC, ISTAC ve ad hoc tahkim süreçlerinde temsil. Sınır ötesi dava stratejisi ve yabancı mahkeme kararlarının tenfizi.',
+          title: 'Uluslararası Ceza Dosyaları',
+          desc: 'Sınır ötesi davalar, iade, Avrupa Yakalama Kararı ve Türk-Belçika yargı alanları arası koordinasyon.',
         },
         {
-          title: 'İş Hukuku ve Mobilite',
-          desc: 'Türkiye ve Belçika\'da faaliyet gösteren çok uluslu işverenler için üst düzey sözleşmeler, geçici görevlendirme ve yeniden yapılanma.',
+          title: 'Müdafaa Stratejisi',
+          desc: 'Dosya değerlendirmesi, delil incelemesi, tanık hazırlığı ve istinaf temsilciliği.',
         },
       ],
     },
-    why: {
-      eyebrow: 'Neden Cabinet Juridique',
-      title: 'Kurumsal danışmanlık, hacim odaklı değil',
-      blocks: [
-        {
-          title: 'Kırk yılı aşan pratik',
-          desc: 'Ortaklarımız, büronun Ankara\'daki kuruluşundan bu yana üç kıtada işlem ve uyuşmazlık dosyalarında danışmanlık vermiştir.',
-        },
-        {
-          title: 'Çift yargı alanı yetkinliği',
-          desc: 'Türk özel hukuku ile AB düzenleyici mimarisine dair doğrudan bilgi; dış koordinasyona ihtiyaç duymayan entegre bir ekip.',
-        },
-        {
-          title: 'Mutlak gizlilik',
-          desc: 'Yılda sınırlı sayıda dosya kabul ediyoruz. Müvekkil işleri doğrudan ortaklar tarafından, kademeli devredilmeden yürütülür.',
-        },
-      ],
+    appointments: {
+      eyebrow: 'Randevu',
+      title: 'Gizli görüşme planlayın',
+      subtitle:
+        'Aşağıdan uygun bir zaman seçin. Acil konular için WhatsApp üzerinden ulaşın.',
+      placeholderTitle: 'Online randevu yakında',
+      placeholderBody:
+        'Randevu takvimi yapılandırılıyor. Bu arada acil başvurular için doğrudan WhatsApp üzerinden iletişime geçebilirsiniz.',
+      openCalendar: 'Google Calendar\'da aç',
+      whatsappCta: 'WhatsApp ile yazın',
+    },
+    insights: {
+      eyebrow: 'Görüşler',
+      title: 'Pratikten notlar',
+      subtitle: 'Ceza hukuku ve usul üzerine seçilmiş yorumlar.',
+      viewProfile: 'X\'te görüntüle',
+      readMore: 'X\'te oku',
     },
     contact: {
       eyebrow: 'İletişim',
-      title: 'Gizli bir görüşme başlatın',
+      title: 'Doğrudan ulaşın',
       subtitle:
-        'Aşağıdaki formu doldurun veya Brüksel ofisimizle doğrudan iletişime geçin. Tüm başvurular kesin gizlilik içinde değerlendirilir.',
+        'İletişim yalnızca WhatsApp üzerinden sağlanmaktadır. Ofis adresleri aşağıdadır.',
       ankara: {
         label: 'Ankara Ofisi',
-        address: 'Kızılırmak Mah. 1443. Cad. No: 25, 06530 Çankaya, Ankara',
-        phone: '+90 312 000 00 00',
+        address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
         label: 'Brüksel Ofisi',
         address: 'Avenue Louise 149, 1050 Brüksel, Belçika',
-        phone: '+32 2 000 00 00',
       },
-      email: 'info@cabinet-juridique.be',
-      form: {
-        name: 'Ad soyad',
-        email: 'E-posta adresi',
-        phone: 'Telefon (isteğe bağlı)',
-        subject: 'Konu',
-        subjectOptions: {
-          corporate: 'Şirketler Hukuku',
-          regulatory: 'AB Mevzuatı',
-          investment: 'Yatırım ve Finans',
-          arbitration: 'Tahkim',
-          employment: 'İş Hukuku',
-          other: 'Diğer',
-        },
-        message: 'Mesajınız',
-        submit: 'Başvuru gönder',
-        success: 'Mesajınız alındı. İki iş günü içinde dönüş yapacağız.',
-        error: 'Bir hata oluştu. Lütfen tekrar deneyin veya telefonla ulaşın.',
-      },
+      whatsappLabel: 'Sadece WhatsApp',
+      whatsappCta: 'WhatsApp mesajı gönder',
     },
     footer: {
       disclaimer:
-        'Cabinet Juridique International, Belçika ve Türkiye\'de kayıtlı bir hukuk bürosudur. Bu web sitesi hukuki danışmanlık niteliği taşımaz.',
+        'Av. Yusuf Ziya Kahya, Ankara Barosu\'na kayıtlı avukattır. Bu web sitesi hukuki danışmanlık niteliği taşımaz.',
       rights: 'Tüm hakları saklıdır.',
     },
     whatsapp: {
-      label: 'WhatsApp üzerinden bize ulaşın',
+      label: 'WhatsApp ile iletişim (sadece WhatsApp)',
     },
   },
 };
 
-export const translations = Object.fromEntries(
-  Object.entries(baseTranslations).map(([lang, content]) => [
-    lang,
-    {
-      ...content,
-      nav: { ...content.nav, ...askApptContent[lang].nav },
-      askLawyer: askApptContent[lang].askLawyer,
-      appointments: askApptContent[lang].appointments,
-    },
-  ])
-);
-
+export const translations = baseTranslations;
 export const supportedLanguages = ['en', 'fr', 'nl', 'tr'];
-export const defaultLanguage = 'en';
+export const defaultLanguage = 'tr';

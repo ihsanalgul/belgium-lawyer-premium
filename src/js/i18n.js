@@ -1,11 +1,7 @@
 import { translations, supportedLanguages, defaultLanguage } from '../data/translations.js';
-import {
-  updateTrustList,
-  updateAskAreaOptions,
-  updateAskPlaceholders,
-  updateQaCards,
-} from './i18n-ask-appt.js';
-import { refreshAppointmentsLocale } from './appointments.js';
+import { refreshHeroSliderAlts } from './hero-slider.js';
+import { renderInsights } from './insights.js';
+import { refreshCalendarLocale } from './calendar.js';
 
 const STORAGE_KEY = 'lang';
 
@@ -69,27 +65,6 @@ function updateExpertiseItems(lang) {
   });
 }
 
-function updateWhyBlocks(lang) {
-  const blocks = translations[lang].why.blocks;
-  document.querySelectorAll('[data-i18n-why]').forEach((el) => {
-    const index = parseInt(el.dataset.i18nWhy, 10);
-    const field = el.dataset.i18nField;
-    if (blocks[index] && field) {
-      el.textContent = blocks[index][field];
-    }
-  });
-}
-
-function updateSelectOptions(lang) {
-  const options = translations[lang].contact.form.subjectOptions;
-  document.querySelectorAll('[data-i18n-option]').forEach((option) => {
-    const key = option.dataset.i18nOption;
-    if (options[key]) {
-      option.textContent = options[key];
-    }
-  });
-}
-
 export function setLanguage(lang) {
   if (!supportedLanguages.includes(lang)) return;
 
@@ -126,13 +101,9 @@ export function setLanguage(lang) {
   });
 
   updateExpertiseItems(lang);
-  updateWhyBlocks(lang);
-  updateSelectOptions(lang);
-  updateTrustList(lang);
-  updateAskAreaOptions(lang);
-  updateAskPlaceholders(lang);
-  updateQaCards(lang);
-  refreshAppointmentsLocale();
+  refreshHeroSliderAlts(lang);
+  renderInsights(lang);
+  refreshCalendarLocale(lang);
   updateMeta(lang);
 
   document.querySelectorAll('.lang-btn').forEach((btn) => {

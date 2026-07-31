@@ -528,12 +528,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border-subtle);
+  width: 4.75rem;
+  height: 4.75rem;
+  background: #25d366;
+  border: none;
   border-radius: 50%;
-  color: var(--color-gold);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
 }
 
 /* Footer */

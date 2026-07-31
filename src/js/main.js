@@ -1,14 +1,14 @@
 import '../css/main.css';
+import { initSiteConfig } from './site-init.js';
 import { initI18n } from './i18n.js';
 import { initNav } from './nav.js';
 import { initScrollReveal } from './scroll-reveal.js';
-import { initForm } from './form.js';
-import { initAskLawyer } from './ask-lawyer.js';
-import { initAppointments } from './appointments.js';
+import { initHeroSliderModule } from './hero-slider.js';
+import { initCalendar } from './calendar.js';
 
-initAppointments();
+initSiteConfig();
+initHeroSliderModule();
+initCalendar();
 initI18n();
 initNav();
 initScrollReveal();
-initForm();
-initAskLawyer();

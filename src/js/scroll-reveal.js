@@ -1,19 +1,12 @@
-export function initScrollReveal() {
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let observer = null;
 
-  const elements = document.querySelectorAll('.reveal');
-
-  if (prefersReducedMotion) {
-    elements.forEach((el) => el.classList.add('is-revealed'));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
+function createObserver() {
+  return new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-revealed');
-          observer.unobserve(entry.target);
+          observer?.unobserve(entry.target);
         }
       });
     },
@@ -22,6 +15,28 @@ export function initScrollReveal() {
       rootMargin: '0px 0px -40px 0px',
     }
   );
+}
+
+export function observeRevealElements(root = document) {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const elements = root.querySelectorAll
+    ? root.querySelectorAll('.reveal:not(.is-revealed)')
+    : [];
+
+  if (!elements.length) return;
+
+  if (prefersReducedMotion) {
+    elements.forEach((el) => el.classList.add('is-revealed'));
+    return;
+  }
+
+  if (!observer) {
+    observer = createObserver();
+  }
 
   elements.forEach((el) => observer.observe(el));
+}
+
+export function initScrollReveal() {
+  observeRevealElements(document);
 }

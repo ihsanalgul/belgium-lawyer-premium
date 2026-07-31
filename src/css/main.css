@@ -2,7 +2,8 @@
 @import './typography.css';
 @import './motion.css';
 @import './layout.css';
-@import './sections-ask-appt.css';
+@import './hero-slider.css';
+@import './sections-extras.css';
 
 @tailwind base;
 @tailwind components;
