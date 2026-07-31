@@ -27,20 +27,43 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center center;
   filter: brightness(0.65) saturate(0.75) contrast(1.05);
 }
 
 .hero-slider__quote {
   position: absolute;
-  bottom: 3.5rem;
+  bottom: 2.5rem;
   left: 1.5rem;
-  right: 1.5rem;
+  right: auto;
   z-index: 2;
+  max-width: 28rem;
   margin: 0;
-  padding: 0;
+  padding: 1rem 1.25rem 1rem 0;
   border: none;
   pointer-events: none;
+}
+
+.hero-slider__quote::before {
+  content: '';
+  position: absolute;
+  inset: -0.75rem -1rem -0.75rem -0.75rem;
+  background: linear-gradient(
+    135deg,
+    rgba(18, 19, 21, 0.82) 0%,
+    rgba(18, 19, 21, 0.45) 55%,
+    transparent 100%
+  );
+  z-index: -1;
+  border-radius: 2px;
+}
+
+@media (min-width: 1024px) {
+  .hero-slider__quote {
+    bottom: 2.75rem;
+    left: 2rem;
+    padding-right: 1.5rem;
+  }
 }
 
 .hero-slider__quote-text {

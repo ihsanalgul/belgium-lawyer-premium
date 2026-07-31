@@ -18,7 +18,7 @@
 
   /* Spacing — editorial rhythm */
   --container-max: 76rem;
-  --container-padding: clamp(1.75rem, 6vw, 5rem);
+  --container-padding: clamp(1.75rem, 5vw, 3.5rem);
   --section-gap: clamp(6rem, 14vw, 11rem);
   --content-gap: clamp(1.75rem, 3vw, 2.75rem);
 
@@ -39,4 +39,17 @@
   --z-whatsapp: 40;
   --z-nav: 50;
   --z-mobile-menu: 60;
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --container-max: 84rem;
+    --container-padding: clamp(1.75rem, 4vw, 4rem);
+  }
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --container-max: 92rem;
+  }
 }

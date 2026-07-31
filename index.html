@@ -37,8 +37,12 @@
           <a href="#expertise" class="link-underline text-nav" data-i18n="nav.expertise">Uzmanlık</a>
           <a href="#appointments" class="link-underline text-nav" data-i18n="nav.appointments">Randevu</a>
           <a href="#blog" class="link-underline text-nav" data-i18n="nav.blog">Görüşler</a>
+          <a href="/blog/" class="link-underline text-nav" data-i18n="nav.blogArchive">Blog</a>
           <a href="#x" class="link-underline text-nav" data-i18n="nav.x">X</a>
           <a href="#contact" class="link-underline text-nav" data-i18n="nav.contact">İletişim</a>
+        </nav>
+
+        <div class="header-utils">
           <div class="lang-switcher" role="group" aria-label="Language">
             <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
             <span class="lang-sep" aria-hidden="true">·</span>
@@ -48,22 +52,21 @@
             <span class="lang-sep" aria-hidden="true">·</span>
             <button type="button" class="lang-btn is-active" data-lang="tr" aria-pressed="true">TR</button>
           </div>
-        </nav>
-
-        <button
-          type="button"
-          class="nav-mobile-toggle"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-          data-i18n-aria="nav.menuOpen"
-          aria-label="Menüyü aç"
-        >
-          <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true">
-            <line x1="0" y1="1" x2="20" y2="1" stroke="currentColor" stroke-width="1.5" />
-            <line x1="0" y1="7" x2="20" y2="7" stroke="currentColor" stroke-width="1.5" />
-            <line x1="0" y1="13" x2="20" y2="13" stroke="currentColor" stroke-width="1.5" />
-          </svg>
-        </button>
+          <button
+            type="button"
+            class="nav-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-i18n-aria="nav.menuOpen"
+            aria-label="Menüyü aç"
+          >
+            <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true">
+              <line x1="0" y1="1" x2="20" y2="1" stroke="currentColor" stroke-width="1.5" />
+              <line x1="0" y1="7" x2="20" y2="7" stroke="currentColor" stroke-width="1.5" />
+              <line x1="0" y1="13" x2="20" y2="13" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -83,6 +86,7 @@
       <a href="#expertise" data-i18n="nav.expertise">Uzmanlık</a>
       <a href="#appointments" data-i18n="nav.appointments">Randevu</a>
       <a href="#blog" data-i18n="nav.blog">Görüşler</a>
+      <a href="/blog/" data-i18n="nav.blogArchive">Blog</a>
       <a href="#x" data-i18n="nav.x">X</a>
       <a href="#contact" data-i18n="nav.contact">İletişim</a>
       <div class="lang-switcher">
@@ -97,20 +101,24 @@
     </div>
 
     <main id="main">
-      <section id="hero" class="site-container">
-        <div class="hero-grid">
-          <div class="hero-content reveal">
-            <p class="text-eyebrow" data-i18n="hero.eyebrow">Ceza Hukukçusu · Ankara Barosu</p>
-            <div class="rule-gold"></div>
-            <h1 class="text-display-xl" data-i18n="hero.title">
-              Gizlilik ve kararlılık gerektiren dosyalarda müdafaa
-            </h1>
-            <p class="text-prose" data-i18n="hero.subtitle">
-              Av. Yusuf Ziya Kahya; ceza soruşturmaları, tutukluluk ve yargılama süreçlerinde Türkiye ve Belçika'da danışmanlık sunar.
-            </p>
-            <a href="#appointments" class="btn-primary" data-i18n="hero.cta">Randevu alın</a>
+      <section id="hero" class="hero-section">
+        <div class="hero-layout">
+          <div class="hero-content-wrap">
+            <div class="hero-content reveal">
+              <p class="text-eyebrow" data-i18n="hero.eyebrow">Ceza Hukukçusu · Ankara Barosu</p>
+              <div class="rule-gold"></div>
+              <h1 class="text-display-xl" data-i18n="hero.title">
+                Gizlilik ve kararlılık gerektiren dosyalarda müdafaa
+              </h1>
+              <p class="text-prose" data-i18n="hero.subtitle">
+                Av. Yusuf Ziya Kahya; ceza soruşturmaları, tutukluluk ve yargılama süreçlerinde Türkiye ve Belçika'da danışmanlık sunar.
+              </p>
+              <a href="#appointments" class="btn-primary" data-i18n="hero.cta">Randevu alın</a>
+            </div>
           </div>
-          <div class="hero-image-wrap reveal" aria-label="Hero image gallery"></div>
+          <div class="hero-visual-wrap">
+            <div class="hero-image-wrap reveal" aria-label="Hero image gallery"></div>
+          </div>
         </div>
       </section>
 

@@ -15,18 +15,88 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/assets/i18n-Dst0szmt.js"></script>
-    <script type="module" crossorigin src="/assets/blog-page-CBjn_Nh5.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/i18n-BeLd4C1o.css">
+    <script type="module" crossorigin src="/assets/nav-D_962olQ.js"></script>
+    <script type="module" crossorigin src="/assets/blog-page-CIg5rlr7.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/nav-Fs0yeFg8.css">
   </head>
   <body class="site-bg">
+    <a href="#main" class="skip-link" data-i18n="skip">Ana içeriğe geç</a>
+
     <header class="site-header">
       <div class="site-container header-inner">
-        <a href="/" class="logo-wordmark" aria-label="Av. Yusuf Ziya KAHYA">Yusuf Ziya <span>Kahya</span></a>
-        <a href="/" class="link-underline text-nav article-back">← Ana sayfa</a>
+        <a href="/" class="logo-wordmark" aria-label="Av. Yusuf Ziya KAHYA">
+          Yusuf Ziya <span>Kahya</span>
+        </a>
+
+        <nav class="nav-desktop" aria-label="Main navigation">
+          <a href="/#about" class="link-underline text-nav" data-i18n="nav.about">Hakkında</a>
+          <a href="/#expertise" class="link-underline text-nav" data-i18n="nav.expertise">Uzmanlık</a>
+          <a href="/#appointments" class="link-underline text-nav" data-i18n="nav.appointments">Randevu</a>
+          <a href="/#blog" class="link-underline text-nav" data-i18n="nav.blog">Görüşler</a>
+          <a href="/blog/" class="link-underline text-nav" data-i18n="nav.blogArchive" aria-current="page">Blog</a>
+          <a href="/#x" class="link-underline text-nav" data-i18n="nav.x">X</a>
+          <a href="/#contact" class="link-underline text-nav" data-i18n="nav.contact">İletişim</a>
+        </nav>
+
+        <div class="header-utils">
+          <div class="lang-switcher" role="group" aria-label="Language">
+            <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+            <span class="lang-sep" aria-hidden="true">·</span>
+            <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+            <span class="lang-sep" aria-hidden="true">·</span>
+            <button type="button" class="lang-btn" data-lang="nl" aria-pressed="false">NL</button>
+            <span class="lang-sep" aria-hidden="true">·</span>
+            <button type="button" class="lang-btn is-active" data-lang="tr" aria-pressed="true">TR</button>
+          </div>
+          <button
+            type="button"
+            class="nav-mobile-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-i18n-aria="nav.menuOpen"
+            aria-label="Menüyü aç"
+          >
+            <svg width="20" height="14" viewBox="0 0 20 14" fill="none" aria-hidden="true">
+              <line x1="0" y1="1" x2="20" y2="1" stroke="currentColor" stroke-width="1.5" />
+              <line x1="0" y1="7" x2="20" y2="7" stroke="currentColor" stroke-width="1.5" />
+              <line x1="0" y1="13" x2="20" y2="13" stroke="currentColor" stroke-width="1.5" />
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
-    <main class="site-container article-page">
+
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+      <button
+        type="button"
+        class="nav-mobile-toggle mobile-menu-close"
+        data-i18n-aria="nav.menuClose"
+        aria-label="Menüyü kapat"
+      >
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="1.5" />
+          <line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="1.5" />
+        </svg>
+      </button>
+      <a href="/#about" data-i18n="nav.about">Hakkında</a>
+      <a href="/#expertise" data-i18n="nav.expertise">Uzmanlık</a>
+      <a href="/#appointments" data-i18n="nav.appointments">Randevu</a>
+      <a href="/#blog" data-i18n="nav.blog">Görüşler</a>
+      <a href="/blog/" data-i18n="nav.blogArchive">Blog</a>
+      <a href="/#x" data-i18n="nav.x">X</a>
+      <a href="/#contact" data-i18n="nav.contact">İletişim</a>
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang-sep" aria-hidden="true">·</span>
+        <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+        <span class="lang-sep" aria-hidden="true">·</span>
+        <button type="button" class="lang-btn" data-lang="nl" aria-pressed="false">NL</button>
+        <span class="lang-sep" aria-hidden="true">·</span>
+        <button type="button" class="lang-btn is-active" data-lang="tr" aria-pressed="true">TR</button>
+      </div>
+    </div>
+
+    <main id="main" class="site-container article-page">
       <header class="article-header">
         <p class="text-eyebrow">Görüşler</p>
         <div class="rule-gold"></div>
