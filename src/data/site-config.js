@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'Av. Yusuf Ziya KAHYA',
   nameShort: { first: 'Yusuf Ziya', last: 'Kahya' },
-  title: 'Ceza Hukukçusu',
+  title: 'Avukat',
   bar: 'Ankara Barosu, Hukuk ve Danışmanlık',
   whatsapp: {
     number: '905067151119',
@@ -14,7 +14,7 @@ export const siteConfig = {
       line: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
     },
     be: {
-      label: 'Brüksel',
+      label: 'Yurtdışı Ofis',
       line: 'Avenue Louise 149, 1050 Brüksel, Belçika',
     },
   },
@@ -25,19 +25,16 @@ export const siteConfig = {
   },
   heroImages: [
     {
-      src: '/images/hero/law-office.png',
+      src: '/images/lawyer/yusuf-ziya-kahya.png',
       altKey: 'imageAlt0',
       quoteIndex: 0,
+      variant: 'portrait',
     },
     {
-      src: '/images/hero/law-books.png',
+      src: '/images/hero/ankara-adliyesi.jpg',
       altKey: 'imageAlt1',
       quoteIndex: 1,
-    },
-    {
-      src: '/images/hero/brussels.png',
-      altKey: 'imageAlt2',
-      quoteIndex: 2,
+      variant: 'photo',
     },
   ],
 };

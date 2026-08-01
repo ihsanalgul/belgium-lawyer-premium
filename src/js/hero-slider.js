@@ -11,7 +11,7 @@ export function initHeroSlider() {
 
   const slides = siteConfig.heroImages.map((img, i) => {
     const slide = document.createElement('div');
-    slide.className = `hero-slider__slide${i === 0 ? ' is-active' : ''}`;
+    slide.className = `hero-slider__slide${i === 0 ? ' is-active' : ''}${img.variant === 'portrait' ? ' hero-slider__slide--portrait' : ''}`;
     slide.setAttribute('role', 'group');
     slide.setAttribute('aria-roledescription', 'slide');
     slide.setAttribute('aria-label', `${i + 1} of ${siteConfig.heroImages.length}`);

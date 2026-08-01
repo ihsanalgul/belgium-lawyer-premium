@@ -22,13 +22,18 @@ function getNestedValue(obj, path) {
 }
 
 export function getTheme() {
-  const current = document.documentElement.dataset.theme;
-  return current === 'light' ? 'light' : 'dark';
+  return document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
 }
 
 export function setTheme(theme, { persist = true } = {}) {
-  const resolved = THEMES.includes(theme) ? theme : 'dark';
-  document.documentElement.dataset.theme = resolved === 'light' ? 'light' : '';
+  const resolved = THEMES.includes(theme) ? theme : 'light';
+
+  if (resolved === 'dark') {
+    document.documentElement.dataset.theme = 'dark';
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+  }
+
   document.documentElement.style.colorScheme = resolved;
 
   if (persist) {
@@ -65,7 +70,7 @@ export function refreshThemeToggleLabels(lang = document.documentElement.lang) {
 
 export function initTheme() {
   const stored = localStorage.getItem(STORAGE_KEY);
-  const initial = stored === 'light' ? 'light' : 'dark';
+  const initial = stored === 'dark' ? 'dark' : 'light';
   setTheme(initial, { persist: false });
 
   document.addEventListener('click', (event) => {

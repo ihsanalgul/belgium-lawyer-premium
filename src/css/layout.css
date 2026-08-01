@@ -79,7 +79,29 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--content-gap);
-  padding: calc(4.75rem + 2.5rem) var(--container-padding) 3rem;
+  padding: calc(4.75rem + 1.5rem) var(--container-padding) 3rem;
+}
+
+@media (max-width: 1023px) {
+  .hero-visual-wrap {
+    order: -1;
+  }
+
+  .hero-image-wrap {
+    aspect-ratio: 1 / 1;
+    min-height: 17.5rem;
+    max-height: 22rem;
+    max-width: 20rem;
+    margin-inline: auto;
+  }
+
+  .hero-image-wrap::after {
+    background: linear-gradient(
+      180deg,
+      transparent 55%,
+      var(--color-overlay-subtle) 100%
+    );
+  }
 }
 
 .hero-content-wrap {
@@ -102,6 +124,19 @@
 
 .hero-content .btn-primary {
   margin-top: 2.25rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.4375rem 0.75rem;
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  border: 1px solid rgba(166, 139, 91, 0.35);
+  background: var(--color-gold-wash);
 }
 
 .hero-visual-wrap {
@@ -387,6 +422,15 @@
   margin-top: 2.25rem;
 }
 
+.office-block--secondary {
+  opacity: 0.72;
+  padding-top: 0.25rem;
+}
+
+.office-block--secondary .text-eyebrow {
+  font-size: 0.625rem;
+}
+
 .office-block:last-of-type {
   border-bottom: none;
 }
@@ -448,13 +492,6 @@
   line-height: 1.7;
 }
 
-/* Language switcher */
-.lang-switcher {
-  display: flex;
-  align-items: center;
-  gap: 0.125rem;
-}
-
 .header-utils {
   display: flex;
   align-items: center;
@@ -462,52 +499,60 @@
   flex-shrink: 0;
 }
 
-.header-utils .lang-switcher {
+/* Language select */
+.lang-select-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.header-utils .lang-select-wrap {
   display: none;
 }
 
 @media (min-width: 1024px) {
-  .header-utils .lang-switcher {
+  .header-utils .lang-select-wrap {
     display: flex;
   }
 }
 
-.lang-btn {
-  padding: 0.5rem 0.4375rem;
+.lang-select {
+  min-width: 7.5rem;
+  padding: 0.5rem 2rem 0.5rem 0.625rem;
+  font-family: var(--font-body);
   font-size: 0.6875rem;
   font-weight: 500;
-  letter-spacing: 0.14em;
-  color: var(--color-muted);
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  transition: color var(--duration-hover) var(--ease-out-strong);
-}
-
-.lang-btn.is-active {
-  color: var(--color-gold);
-}
-
-.lang-btn.is-active::after {
-  content: '';
-  position: absolute;
-  bottom: 0.125rem;
-  left: 0.2rem;
-  right: 0.2rem;
-  height: 1px;
-  background: var(--color-gold);
-}
-
-.lang-btn:hover {
+  letter-spacing: 0.08em;
   color: var(--color-ink);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 0;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236b6560' stroke-width='1.25' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.625rem center;
+  transition:
+    border-color var(--duration-hover) var(--ease-out-strong),
+    color var(--duration-hover) var(--ease-out-strong);
 }
 
-.lang-sep {
-  color: var(--color-separator);
-  font-size: 0.625rem;
-  user-select: none;
-  margin-inline: 0.0625rem;
+.lang-select:hover,
+.lang-select:focus {
+  border-color: var(--color-border);
+  outline: none;
+}
+
+.lang-select:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.mobile-menu .lang-select-wrap {
+  margin-top: 0.5rem;
+}
+
+.mobile-menu .lang-select {
+  min-width: 11rem;
 }
 
 /* Theme toggle */
@@ -537,16 +582,16 @@
   height: 1.125rem;
 }
 
-.theme-toggle__icon--moon {
+.theme-toggle__icon--sun {
   display: none;
 }
 
-[data-theme='light'] .theme-toggle__icon--sun {
-  display: none;
-}
-
-[data-theme='light'] .theme-toggle__icon--moon {
+[data-theme='dark'] .theme-toggle__icon--sun {
   display: block;
+}
+
+[data-theme='dark'] .theme-toggle__icon--moon {
+  display: none;
 }
 
 .mobile-menu .theme-toggle {
@@ -632,11 +677,10 @@
   text-decoration: none;
 }
 
-.mobile-menu .lang-switcher {
+.mobile-menu .lang-select-wrap {
   border-left: none;
   padding-left: 0;
   margin-left: 0;
-  margin-top: 1rem;
 }
 
 .mobile-menu-close {

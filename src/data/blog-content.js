@@ -79,28 +79,28 @@ export const blogPosts = [
         excerpt:
           'Sınır ötesi ceza dosyalarında yargı yetkisi, iade ve Avrupa Yakalama Kararı süreçleri karmaşık hukuki sorular doğurur. Erken stratejik planlama şarttır.',
         metaDescription:
-          'Uluslararası ceza dosyaları, iade, AYK ve Türk-Belçika yargı koordinasyonu hakkında rehber.',
+          'Uluslararası ceza dosyaları, iade, AYK ve uluslararası insan hakları başvuruları hakkında rehber.',
       },
       en: {
         title: 'Jurisdiction in Cross-border Criminal Cases',
         excerpt:
           'Cross-border criminal matters raise complex questions of jurisdiction, extradition, and European Arrest Warrant proceedings. Early strategic planning is essential.',
         metaDescription:
-          'Cross-border criminal cases, extradition, EAW and Turkey-Belgium coordination guide.',
+          'Cross-border criminal cases, extradition, EAW and international human rights applications guide.',
       },
       fr: {
         title: 'La compétence dans les affaires pénales transfrontalières',
         excerpt:
           'Les dossiers transfrontaliers soulèvent des questions complexes de compétence, d\'extradition et de mandats d\'arrêt européens. Une planification précoce est indispensable.',
         metaDescription:
-          'Affaires transfrontalières, extradition, MAE et coordination Turquie-Belgique.',
+          'Affaires transfrontalières, extradition, MAE et recours internationaux en droits de l\'homme.',
       },
       nl: {
         title: 'Jurisdictie bij grensoverschrijdende strafzaken',
         excerpt:
           'Grensoverschrijdende strafzaken roepen complexe vragen op over jurisdictie, uitlevering en Europese aanhoudingsbevelen. Vroege strategische planning is essentieel.',
         metaDescription:
-          'Grensoverschrijdende zaken, uitlevering, EAB en Turkije-België coördinatie.',
+          'Grensoverschrijdende zaken, uitlevering, EAB en internationale mensenrechtenberoepen.',
       },
     },
   },

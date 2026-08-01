@@ -4,6 +4,7 @@ import { renderXFeed } from './x-feed.js';
 import { refreshAppointmentsLocale } from './appointments.js';
 import { detectGeoLanguage } from './geo-lang.js';
 import { refreshThemeToggleLabels } from './theme.js';
+import { renderExpertiseItems } from './expertise.js';
 
 const STORAGE_KEY = 'lang';
 const MANUAL_KEY = 'lang-manual';
@@ -62,14 +63,9 @@ function updateMeta(lang) {
   if (ogDesc) ogDesc.setAttribute('content', t.meta.description);
 }
 
-function updateExpertiseItems(lang) {
-  const items = translations[lang].expertise.items;
-  document.querySelectorAll('[data-i18n-expertise]').forEach((el) => {
-    const index = parseInt(el.dataset.i18nExpertise, 10);
-    const field = el.dataset.i18nField;
-    if (items[index] && field) {
-      el.textContent = items[index][field];
-    }
+function syncLanguageSelects(lang) {
+  document.querySelectorAll('.lang-select').forEach((select) => {
+    select.value = lang;
   });
 }
 
@@ -111,17 +107,13 @@ export function setLanguage(lang, { manual = false } = {}) {
     if (value) el.setAttribute('alt', value);
   });
 
-  updateExpertiseItems(lang);
+  renderExpertiseItems(lang);
   refreshHeroSliderAlts(lang);
   renderXFeed(lang);
   refreshAppointmentsLocale(lang);
   updateMeta(lang);
   refreshThemeToggleLabels(lang);
-
-  document.querySelectorAll('.lang-btn').forEach((btn) => {
-    btn.classList.toggle('is-active', btn.dataset.lang === lang);
-    btn.setAttribute('aria-pressed', btn.dataset.lang === lang ? 'true' : 'false');
-  });
+  syncLanguageSelects(lang);
 
   document.documentElement.classList.add('lang-ready');
 }
@@ -130,10 +122,9 @@ export async function initI18n() {
   const lang = await resolveInitialLanguage();
   setLanguage(lang);
 
-  document.addEventListener('click', (e) => {
-    const btn = e.target.closest('.lang-btn');
-    if (btn?.dataset.lang) {
-      setLanguage(btn.dataset.lang, { manual: true });
-    }
+  document.querySelectorAll('.lang-select').forEach((select) => {
+    select.addEventListener('change', () => {
+      setLanguage(select.value, { manual: true });
+    });
   });
 }

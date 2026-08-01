@@ -5,13 +5,13 @@
     <script>
       (function () {
         var t = localStorage.getItem('theme');
-        if (t === 'light') document.documentElement.dataset.theme = 'light';
+        if (t === 'dark') document.documentElement.dataset.theme = 'dark';
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#121315" />
+    <meta name="theme-color" content="#f5f3ef" />
     <title>Uluslararası Ceza Dosyalarında Yargı Yetkisi | Av. Yusuf Ziya KAHYA</title>
-    <meta name="description" content="Uluslararası ceza dosyaları, iade, Avrupa Yakalama Kararı ve Türk-Belçika yargı koordinasyonu — Av. Yusuf Ziya Kahya." />
+    <meta name="description" content="Uluslararası ceza dosyaları, iade, Avrupa Yakalama Kararı ve uluslararası insan hakları başvuruları — Av. Yusuf Ziya Kahya." />
     <link rel="canonical" href="https://yusufziyakahya.com/blog/uluslararasi-ceza-dosyalari.html" />
     <link rel="alternate" hreflang="tr" href="https://yusufziyakahya.com/blog/uluslararasi-ceza-dosyalari.html" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -34,7 +34,7 @@
     <header class="site-header">
       <div class="site-container header-inner">
         <a href="/" class="logo-wordmark" aria-label="Av. Yusuf Ziya KAHYA">
-          Yusuf Ziya <span>Kahya</span>
+          Av. Yusuf Ziya <span>Kahya</span>
         </a>
 
         <nav class="nav-desktop" aria-label="Main navigation">
@@ -51,9 +51,9 @@
             type="button"
             class="theme-toggle"
             data-theme-toggle
-            aria-pressed="false"
-            data-i18n-aria="theme.toLight"
-            aria-label="Açık temaya geç"
+            aria-pressed="true"
+            data-i18n-aria="theme.toDark"
+            aria-label="Koyu temaya geç"
           >
             <svg class="theme-toggle__icon theme-toggle__icon--sun" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
               <circle cx="9" cy="9" r="3.25" stroke="currentColor" stroke-width="1.25" />
@@ -63,15 +63,15 @@
               <path d="M14.2 10.8a5.8 5.8 0 0 1-7-7 5.8 5.8 0 1 0 7 7Z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" />
             </svg>
           </button>
-          <div class="lang-switcher" role="group" aria-label="Language">
-            <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-            <span class="lang-sep" aria-hidden="true">·</span>
-            <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
-            <span class="lang-sep" aria-hidden="true">·</span>
-            <button type="button" class="lang-btn" data-lang="nl" aria-pressed="false">NL</button>
-            <span class="lang-sep" aria-hidden="true">·</span>
-            <button type="button" class="lang-btn is-active" data-lang="tr" aria-pressed="true">TR</button>
-          </div>
+          <label class="lang-select-wrap">
+            <span class="sr-only" data-i18n="nav.language">Dil</span>
+            <select class="lang-select" aria-label="Dil seçin" data-i18n-aria="nav.language">
+              <option value="tr" selected>Türkçe</option>
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+              <option value="nl">Nederlands</option>
+            </select>
+          </label>
           <button
             type="button"
             class="nav-mobile-toggle"
@@ -112,9 +112,9 @@
         type="button"
         class="theme-toggle"
         data-theme-toggle
-        aria-pressed="false"
-        data-i18n-aria="theme.toLight"
-        aria-label="Açık temaya geç"
+        aria-pressed="true"
+            data-i18n-aria="theme.toDark"
+            aria-label="Koyu temaya geç"
       >
         <svg class="theme-toggle__icon theme-toggle__icon--sun" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
           <circle cx="9" cy="9" r="3.25" stroke="currentColor" stroke-width="1.25" />
@@ -124,15 +124,15 @@
           <path d="M14.2 10.8a5.8 5.8 0 0 1-7-7 5.8 5.8 0 1 0 7 7Z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" />
         </svg>
       </button>
-      <div class="lang-switcher">
-        <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-        <span class="lang-sep" aria-hidden="true">·</span>
-        <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
-        <span class="lang-sep" aria-hidden="true">·</span>
-        <button type="button" class="lang-btn" data-lang="nl" aria-pressed="false">NL</button>
-        <span class="lang-sep" aria-hidden="true">·</span>
-        <button type="button" class="lang-btn is-active" data-lang="tr" aria-pressed="true">TR</button>
-      </div>
+      <label class="lang-select-wrap">
+        <span class="sr-only" data-i18n="nav.language">Dil</span>
+        <select class="lang-select" aria-label="Dil seçin" data-i18n-aria="nav.language">
+          <option value="tr" selected>Türkçe</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+          <option value="nl">Nederlands</option>
+        </select>
+      </label>
     </div>
 
     <main id="main" class="site-container article-page">
@@ -144,11 +144,11 @@
           <p class="article-meta"><time datetime="2025-07-18">18 Temmuz 2025</time> · Uluslararası Ceza · İade</p>
         </header>
         <div class="article-body text-prose">
-          <p>Sınır ötesi ceza dosyaları; yargı yetkisi, iade, Avrupa Yakalama Kararı ve delillerin uluslararası aktarımı gibi karmaşık hukuki soruları bir arada getirir. Türkiye ve Belçika arasında yürütülen dosyalarda, her iki ülkenin usul kuralları ve Avrupa İnsan Hakları standartları birlikte değerlendirilmelidir.</p>
+          <p>Sınır ötesi ceza dosyaları; yargı yetkisi, iade, Avrupa Yakalama Kararı ve delillerin uluslararası aktarımı gibi karmaşık hukuki soruları bir arada getirir. Türkiye'de yürütülen dosyalarda Türk usul kuralları ile Avrupa İnsan Hakları standartları birlikte değerlendirilmelidir.</p>
           <h2>Yargı Yetkisi ve Paralel Soruşturmalar</h2>
           <p>Aynı fiilin birden fazla devletin yargı alanında soruşturulması, yetki çatışmalarına yol açabilir. Müdafi, hangi ülkede yargılamanın öncelikli olduğunu, ne bis in idem ilkesinin nasıl uygulanacağını ve müvekkilin hangi usul güvencelerinden yararlanabileceğini erken aşamada analiz etmelidir.</p>
           <h2>İade ve Avrupa Yakalama Kararı</h2>
-          <p>İade ve AYK süreçleri, sıkı usul şartlarına ve çift cezalandırılmama ilkesine tabidir. Savunma, kararın dayandığı bilgi ve belgelerin yeterliliğini, çekinme hükümlerini ve insan hakları ihlali riskini sistematik biçimde sorgulamalıdır. Brüksel ve Ankara merkezli dosyalarda koordineli savunma stratejisi büyük önem taşır.</p>
+          <p>İade ve AYK süreçleri, sıkı usul şartlarına ve çift cezalandırılmama ilkesine tabidir. Savunma, kararın dayandığı bilgi ve belgelerin yeterliliğini, çekinme hükümlerini ve insan hakları ihlali riskini sistematik biçimde sorgulamalıdır. Uluslararası başvuru ve koordineli savunma stratejisi büyük önem taşır.</p>
           <h2>Delillerin Aktarımı ve Tenkis</h2>
           <p>Uluslararası adli yardım yoluyla aktarılan delillerin hukuka uygunluğu, yargılamanın sonucunu doğrudan etkileyebilir. Müdafi, delil zincirinin bütünlüğünü ve usul ihlali iddialarını hem talep eden hem de talep edilen devlet hukuku çerçevesinde değerlendirmelidir.</p>
           <p><em>Bu yazı genel bilgilendirme amaçlıdır; hukuki danışmanlık niteliği taşımaz.</em></p>

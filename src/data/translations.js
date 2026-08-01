@@ -1,11 +1,12 @@
 import { appointmentsContent } from './appointments-content.js';
+import { expertiseItems } from './expertise-items.js';
 
 const baseTranslations = {
   en: {
     meta: {
-      title: 'Av. Yusuf Ziya KAHYA | Criminal Defence · Ankara · Brussels',
+      title: 'Av. Yusuf Ziya KAHYA | Lawyer · Ankara',
       description:
-        'Criminal defence counsel Av. Yusuf Ziya Kahya — Ankara Bar Association. Heavy criminal law, investigations, and cross-border defence from Ankara and Brussels.',
+        'Av. Yusuf Ziya Kahya — Ankara Bar Association. Criminal, administrative, labour and immigration law; constitutional and international human rights applications.',
     },
     skip: 'Skip to main content',
     nav: {
@@ -15,56 +16,34 @@ const baseTranslations = {
       blogArchive: 'Blog',
       x: 'X',
       contact: 'Contact',
+      language: 'Language',
       menuOpen: 'Open menu',
       menuClose: 'Close menu',
     },
     hero: {
-      eyebrow: 'Criminal Defence · Ankara Bar',
-      title: 'Defence counsel for matters that demand discretion and resolve',
+      eyebrow: 'Ankara Bar · Lawyer',
+      title: 'Av. Yusuf Ziya Kahya',
       subtitle:
-        'Av. Yusuf Ziya Kahya advises on criminal investigations, detention, and trial defence across Turkey and Belgium — with direct partner-level attention to every file.',
+        'Legal counsel in Turkey on criminal, administrative, labour and immigration law — constitutional court, ECtHR and UN applications, and petition drafting.',
       cta: 'Book an appointment',
-      imageAlt0: 'Scales of justice representing criminal defence',
-      imageAlt1: 'Law books and legal research',
-      imageAlt2: 'Institutional architecture in Brussels',
+      imageAlt0: 'Av. Yusuf Ziya Kahya — Ankara Bar Association',
+      imageAlt1: 'Ankara Courthouse',
       quotes: [
         { text: 'The good of the people is the supreme law.', author: 'Cicero' },
         { text: 'There is no liberty without laws.', author: 'Montesquieu' },
-        { text: 'Justice is the victory not of might, but of right.', author: 'Justinian tradition' },
       ],
     },
     about: {
       eyebrow: 'About',
-      title: 'Criminal defence counsel across two capitals',
-      p1: 'Av. Yusuf Ziya Kahya is a criminal defence lawyer registered with the Ankara Bar Association, practising in Ankara and Brussels. His practice centres on serious criminal matters, pre-trial investigations, and defence strategy at every stage of proceedings.',
-      p2: 'With offices in Pursaklar, Ankara and Avenue Louise, Brussels, he serves clients who require confidential counsel, procedural precision, and representation that understands both Turkish criminal procedure and European human rights standards.',
-      imageAlt: 'Ankara representing the heritage of Turkish criminal practice',
+      title: 'Ankara-based legal counsel',
+      p1: 'Av. Yusuf Ziya Kahya is a lawyer registered with the Ankara Bar Association, practising primarily in Turkey across criminal, administrative, labour and immigration law.',
+      p2: 'From the Pursaklar, Ankara office he provides confidential counsel with procedural precision; an abroad office is available for correspondence when required.',
+      imageAlt: 'Av. Yusuf Ziya Kahya — Ankara Bar Association',
     },
     expertise: {
       eyebrow: 'Practice Areas',
-      title: 'Domains of criminal defence',
-      items: [
-        {
-          title: 'Heavy Criminal Law',
-          desc: 'Defence in aggravated offences, organised crime allegations, and complex indictments requiring sustained trial preparation.',
-        },
-        {
-          title: 'Investigation & Prosecution',
-          desc: 'Representation during police and prosecutor investigations — statements, searches, wiretaps, and early procedural challenges.',
-        },
-        {
-          title: 'Pre-trial Detention',
-          desc: 'Applications and appeals against arrest and detention orders, with urgent intervention at custody hearings.',
-        },
-        {
-          title: 'International Criminal Matters',
-          desc: 'Cross-border cases, extradition, European Arrest Warrant proceedings, and coordination between Turkish and Belgian jurisdictions.',
-        },
-        {
-          title: 'Defence Strategy',
-          desc: 'Case assessment, evidence review, witness preparation, and appellate representation before regional courts of appeal.',
-        },
-      ],
+      title: 'Areas of practice',
+      items: [],
     },
     blog: {
       eyebrow: 'Articles',
@@ -90,7 +69,7 @@ const baseTranslations = {
         address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
-        label: 'Brussels Office',
+        label: 'Abroad Office',
         address: 'Avenue Louise 149, 1050 Brussels, Belgium',
       },
       whatsappLabel: 'WhatsApp only',
@@ -112,9 +91,9 @@ const baseTranslations = {
 
   fr: {
     meta: {
-      title: 'Av. Yusuf Ziya KAHYA | Défense pénale · Ankara · Bruxelles',
+      title: 'Av. Yusuf Ziya KAHYA | Avocat · Ankara',
       description:
-        'Avocat pénaliste Av. Yusuf Ziya Kahya — Barreau d\'Ankara. Droit pénal, enquêtes et défense transfrontalière depuis Ankara et Bruxelles.',
+        'Av. Yusuf Ziya Kahya — Barreau d\'Ankara. Droit pénal, administratif, du travail et des migrations ; recours constitutionnels et internationaux.',
     },
     skip: 'Aller au contenu principal',
     nav: {
@@ -124,56 +103,34 @@ const baseTranslations = {
       blogArchive: 'Blog',
       x: 'X',
       contact: 'Contact',
+      language: 'Langue',
       menuOpen: 'Ouvrir le menu',
       menuClose: 'Fermer le menu',
     },
     hero: {
-      eyebrow: 'Défense pénale · Barreau d\'Ankara',
-      title: 'Défense pénale pour les affaires exigeant discrétion et détermination',
+      eyebrow: 'Barreau d\'Ankara · Avocat',
+      title: 'Av. Yusuf Ziya Kahya',
       subtitle:
-        'Av. Yusuf Ziya Kahya conseille en matière d\'enquêtes pénales, de détention et de défense au procès en Turquie et en Belgique — avec une attention directe à chaque dossier.',
+        'Conseil juridique en Turquie en droit pénal, administratif, du travail et des migrations — recours AYM, CEDH, ONU et rédaction de requêtes.',
       cta: 'Prendre rendez-vous',
-      imageAlt0: 'Balance de la justice symbolisant la défense pénale',
-      imageAlt1: 'Livres de droit et recherche juridique',
-      imageAlt2: 'Architecture institutionnelle à Bruxelles',
+      imageAlt0: 'Av. Yusuf Ziya Kahya — Barreau d\'Ankara',
+      imageAlt1: 'Palais de justice d\'Ankara',
       quotes: [
         { text: 'Le bien du peuple est la loi suprême.', author: 'Cicéron' },
         { text: 'Il n\'y a point de liberté sans lois.', author: 'Montesquieu' },
-        { text: 'La justice est la victoire non de la force, mais du droit.', author: 'Tradition justinienne' },
       ],
     },
     about: {
       eyebrow: 'À propos',
-      title: 'Défense pénale ancrée dans deux capitales',
-      p1: 'Av. Yusuf Ziya Kahya est avocat pénaliste inscrit au Barreau d\'Ankara, exerçant à Ankara et à Bruxelles. Sa pratique se concentre sur les affaires pénales graves, les enquêtes préliminaires et la stratégie de défense à chaque étape de la procédure.',
-      p2: 'Avec des bureaux à Pursaklar, Ankara et Avenue Louise, Bruxelles, il conseille des clients exigeant confidentialité, précision procédurale et une représentation comprenant la procédure pénale turque et les standards européens des droits de l\'homme.',
-      imageAlt: 'Ankara représentant l\'héritage de la pratique pénale turque',
+      title: 'Cabinet juridique basé à Ankara',
+      p1: 'Av. Yusuf Ziya Kahya est avocat inscrit au Barreau d\'Ankara, exerçant principalement en Turquie en droit pénal, administratif, du travail et des migrations.',
+      p2: 'Depuis le bureau de Pursaklar, Ankara, il conseille avec discrétion et rigueur procédurale ; un bureau à l\'étranger est disponible pour la correspondance si nécessaire.',
+      imageAlt: 'Av. Yusuf Ziya Kahya — Barreau d\'Ankara',
     },
     expertise: {
       eyebrow: 'Domaines d\'intervention',
-      title: 'Champs de la défense pénale',
-      items: [
-        {
-          title: 'Droit pénal grave',
-          desc: 'Défense dans les infractions aggravées, les allégations de criminalité organisée et les inculpations complexes.',
-        },
-        {
-          title: 'Enquête et poursuite',
-          desc: 'Représentation lors des enquêtes de police et du parquet — auditions, perquisitions, écoutes et contestations procédurales.',
-        },
-        {
-          title: 'Détention provisoire',
-          desc: 'Demandes et recours contre les ordonnances d\'arrestation et de détention, avec intervention urgente aux audiences de garde à vue.',
-        },
-        {
-          title: 'Affaires pénales internationales',
-          desc: 'Dossiers transfrontaliers, extradition, mandats d\'arrêt européens et coordination entre juridictions turque et belge.',
-        },
-        {
-          title: 'Stratégie de défense',
-          desc: 'Évaluation du dossier, examen des preuves, préparation des témoins et représentation en appel.',
-        },
-      ],
+      title: 'Domaines de pratique',
+      items: [],
     },
     blog: {
       eyebrow: 'Blog',
@@ -199,7 +156,7 @@ const baseTranslations = {
         address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
-        label: 'Bureau de Bruxelles',
+        label: 'Bureau à l\'étranger',
         address: 'Avenue Louise 149, 1050 Bruxelles, Belgique',
       },
       whatsappLabel: 'WhatsApp uniquement',
@@ -221,9 +178,9 @@ const baseTranslations = {
 
   nl: {
     meta: {
-      title: 'Av. Yusuf Ziya KAHYA | Strafrecht · Ankara · Brussel',
+      title: 'Av. Yusuf Ziya KAHYA | Advocaat · Ankara',
       description:
-        'Strafrechtadvocaat Av. Yusuf Ziya Kahya — Ankara Balie. Zwaar strafrecht, onderzoeken en grensoverschrijdende verdediging vanuit Ankara en Brussel.',
+        'Av. Yusuf Ziya Kahya — Ankara Balie. Straf-, bestuurs-, arbeids- en migratierecht; constitutionele en internationale mensenrechtenberoepen.',
     },
     skip: 'Ga naar hoofdinhoud',
     nav: {
@@ -233,56 +190,34 @@ const baseTranslations = {
       blogArchive: 'Blog',
       x: 'X',
       contact: 'Contact',
+      language: 'Taal',
       menuOpen: 'Menu openen',
       menuClose: 'Menu sluiten',
     },
     hero: {
-      eyebrow: 'Strafrecht · Ankara Balie',
-      title: 'Strafrechtelijke verdediging voor zaken die discretie en vastberadenheid vereisen',
+      eyebrow: 'Ankara Balie · Advocaat',
+      title: 'Av. Yusuf Ziya Kahya',
       subtitle:
-        'Av. Yusuf Ziya Kahya adviseert over strafrechtelijke onderzoeken, voorlopige hechtenis en procesverdediging in Turkije en België — met directe aandacht voor elk dossier.',
+        'Juridisch advies in Turkije op straf-, bestuurs-, arbeids- en migratierecht — AYM-, EVRM- en VN-beroepen en verzoekschriftvoorbereiding.',
       cta: 'Afspraak maken',
-      imageAlt0: 'Weegschaal van Justitie symboliserend strafrechtelijke verdediging',
-      imageAlt1: 'Juridische boeken en rechtsonderzoek',
-      imageAlt2: 'Institutionele architectuur in Brussel',
+      imageAlt0: 'Av. Yusuf Ziya Kahya — Ankara Balie',
+      imageAlt1: 'Gerechtsgebouw Ankara',
       quotes: [
         { text: 'Het welzijn van het volk is de hoogste wet.', author: 'Cicero' },
         { text: 'Zonder wetten is er geen vrijheid.', author: 'Montesquieu' },
-        { text: 'Rechtvaardigheid is de overwinning niet van macht, maar van recht.', author: 'Justiniaanse traditie' },
       ],
     },
     about: {
       eyebrow: 'Over',
-      title: 'Strafrechtelijke verdediging met twee centra',
-      p1: 'Av. Yusuf Ziya Kahya is strafrechtadvocaat ingeschreven bij de Ankara Balie, werkzaam in Ankara en Brussel. Zijn praktijk richt zich op ernstige strafzaken, vooronderzoek en verdedigingsstrategie in elke fase van de procedure.',
-      p2: 'Met kantoren in Pursaklar, Ankara en Avenue Louise, Brussel, bedient hij cliënten die vertrouwelijk advies, procedurele precisie en vertegenwoordiging vereisen die zowel de Turkse strafprocedure als Europese mensenrechtennormen begrijpt.',
-      imageAlt: 'Ankara vertegenwoordigt de Turkse strafrechtelijke traditie',
+      title: 'Juridisch kantoor gevestigd in Ankara',
+      p1: 'Av. Yusuf Ziya Kahya is advocaat ingeschreven bij de Ankara Balie en werkt voornamelijk in Turkije op het gebied van straf-, bestuurs-, arbeids- en migratierecht.',
+      p2: 'Vanuit het kantoor in Pursaklar, Ankara biedt hij vertrouwelijk advies met procedurele precisie; een buitenlands kantoor is beschikbaar voor correspondentie indien nodig.',
+      imageAlt: 'Av. Yusuf Ziya Kahya — Ankara Balie',
     },
     expertise: {
       eyebrow: 'Praktijkgebieden',
-      title: 'Domeinen van strafrechtelijke verdediging',
-      items: [
-        {
-          title: 'Zwaar strafrecht',
-          desc: 'Verdediging bij ernstige delicten, georganiseerde misdaad en complexe tenlasteleggingen.',
-        },
-        {
-          title: 'Onderzoek en vervolging',
-          desc: 'Vertegenwoordiging tijdens politie- en parketonderzoeken — verhoren, huiszoekingen en procedurele betwistingen.',
-        },
-        {
-          title: 'Voorlopige hechtenis',
-          desc: 'Verzoeken en beroepen tegen aanhoudings- en detentiebevelen, met dringende tussenkomst bij voorgeleidingen.',
-        },
-        {
-          title: 'Internationale strafzaken',
-          desc: 'Grensoverschrijdende zaken, uitlevering, Europese aanhoudingsbevelen en coördinatie tussen Turkse en Belgische jurisdicties.',
-        },
-        {
-          title: 'Verdedigingsstrategie',
-          desc: 'Dossierbeoordeling, bewijsanalyse, getuigenvoorbereiding en hoger beroep.',
-        },
-      ],
+      title: 'Werkgebieden',
+      items: [],
     },
     blog: {
       eyebrow: 'Blog',
@@ -308,7 +243,7 @@ const baseTranslations = {
         address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
-        label: 'Kantoor Brussel',
+        label: 'Buitenlands kantoor',
         address: 'Avenue Louise 149, 1050 Brussel, België',
       },
       whatsappLabel: 'Alleen WhatsApp',
@@ -330,9 +265,9 @@ const baseTranslations = {
 
   tr: {
     meta: {
-      title: 'Av. Yusuf Ziya KAHYA | Ceza Hukuku · Ankara · Brüksel',
+      title: 'Av. Yusuf Ziya KAHYA | Avukat · Ankara',
       description:
-        'Ceza hukukçusu Av. Yusuf Ziya Kahya — Ankara Barosu. Ağır ceza, soruşturma ve sınır ötesi müdafaa. Ankara ve Brüksel.',
+        'Av. Yusuf Ziya Kahya — Ankara Barosu. Ceza, idari, iş ve göçmen hukuku; AYM, AİHM ve BM başvuruları; dilekçe hazırlığı.',
     },
     skip: 'Ana içeriğe geç',
     nav: {
@@ -342,56 +277,34 @@ const baseTranslations = {
       blogArchive: 'Blog',
       x: 'X',
       contact: 'İletişim',
+      language: 'Dil',
       menuOpen: 'Menüyü aç',
       menuClose: 'Menüyü kapat',
     },
     hero: {
-      eyebrow: 'Ceza Hukukçusu · Ankara Barosu',
-      title: 'Gizlilik ve kararlılık gerektiren dosyalarda müdafaa',
+      eyebrow: 'Ankara Barosu · Avukat',
+      title: 'Av. Yusuf Ziya Kahya',
       subtitle:
-        'Av. Yusuf Ziya Kahya; ceza soruşturmaları, tutukluluk ve yargılama süreçlerinde Türkiye ve Belçika\'da danışmanlık sunar — her dosyaya doğrudan ve özenli müdahale.',
+        'Türkiye\'de ceza, idari, iş ve göçmen hukuku alanlarında danışmanlık — AYM, AİHM ve BM başvuruları ile dilekçe hazırlığı.',
       cta: 'Randevu alın',
-      imageAlt0: 'Ceza müdafaasını simgeleyen adalet terazisi',
-      imageAlt1: 'Hukuk kitapları ve hukuki araştırma',
-      imageAlt2: 'Brüksel kurumsal mimarisi',
+      imageAlt0: 'Av. Yusuf Ziya Kahya — Ankara Barosu',
+      imageAlt1: 'Ankara Adliyesi',
       quotes: [
         { text: 'Halkın yararı en yüce kanundur.', author: 'Cicero' },
         { text: 'Kanunlar olmadan özgürlük olamaz.', author: 'Montesquieu' },
-        { text: 'Adalet, gücün değil hakkın zaferidir.', author: 'Justinianus geleneği' },
       ],
     },
     about: {
       eyebrow: 'Hakkında',
-      title: 'İki merkezde ceza hukuku müdafaası',
-      p1: 'Av. Yusuf Ziya Kahya, Ankara Barosu\'na kayıtlı ceza hukukçusudur; Ankara ve Brüksel\'de faaliyet göstermektedir. Uzmanlık alanı ağır ceza, soruşturma aşaması ve yargılama sürecinin her evresinde müdafaa stratejisidir.',
-      p2: 'Pursaklar, Ankara ve Avenue Louise, Brüksel ofisleriyle; gizlilik, usul hassasiyeti ve hem Türk ceza muhakemesi hem Avrupa insan hakları standartlarını bilen müdafaayı arayan müvekkillere hizmet vermektedir. Ankara Barosu, Hukuk ve Danışmanlık.',
-      imageAlt: 'Ankara, Türk ceza hukuku geleneğini simgeler',
+      title: 'Ankara merkezli hukuk ve danışmanlık',
+      p1: 'Av. Yusuf Ziya Kahya, Ankara Barosu\'na kayıtlı avukattır; ceza, idari, iş ve göçmen hukuku başta olmak üzere Türkiye odaklı hukuki danışmanlık ve temsil sunmaktadır.',
+      p2: 'Pursaklar, Ankara ofisinden gizlilik ve usul hassasiyetiyle hizmet vermektedir; yurtdışı ofis yalnızca yazışma adresi olarak kullanılmaktadır.',
+      imageAlt: 'Av. Yusuf Ziya Kahya — Ankara Barosu',
     },
     expertise: {
-      eyebrow: 'Uzmanlık Alanları',
-      title: 'Ceza müdafaası alanları',
-      items: [
-        {
-          title: 'Ağır Ceza Hukuku',
-          desc: 'Nitelikli suçlar, örgütlü suç iddiaları ve kapsamlı iddianame savunması gerektiren karmaşık dosyalar.',
-        },
-        {
-          title: 'Soruşturma ve Kovuşturma',
-          desc: 'Polis ve savcılık soruşturmalarında temsil — ifade, arama, iletişimin denetlenmesi ve erken usul itirazları.',
-        },
-        {
-          title: 'Tutukluluk',
-          desc: 'Yakalama ve tutukluluk kararlarına itiraz ve temyiz; gözaltı ve tutukluluk duruşmalarında acil müdahale.',
-        },
-        {
-          title: 'Uluslararası Ceza Dosyaları',
-          desc: 'Sınır ötesi davalar, iade, Avrupa Yakalama Kararı ve Türk-Belçika yargı alanları arası koordinasyon.',
-        },
-        {
-          title: 'Müdafaa Stratejisi',
-          desc: 'Dosya değerlendirmesi, delil incelemesi, tanık hazırlığı ve istinaf temsilciliği.',
-        },
-      ],
+      eyebrow: 'Çalışma Alanları',
+      title: 'Uzmanlık alanları',
+      items: [],
     },
     blog: {
       eyebrow: 'Görüşler',
@@ -417,7 +330,7 @@ const baseTranslations = {
         address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
-        label: 'Brüksel Ofisi',
+        label: 'Yurtdışı Ofis',
         address: 'Avenue Louise 149, 1050 Brüksel, Belçika',
       },
       whatsappLabel: 'Sadece WhatsApp',
@@ -441,7 +354,14 @@ const baseTranslations = {
 export const translations = Object.fromEntries(
   Object.entries(baseTranslations).map(([lang, t]) => [
     lang,
-    { ...t, appointments: appointmentsContent[lang] },
+    {
+      ...t,
+      appointments: appointmentsContent[lang],
+      expertise: {
+        ...t.expertise,
+        items: expertiseItems[lang],
+      },
+    },
   ])
 );
 export const supportedLanguages = ['en', 'fr', 'nl', 'tr'];

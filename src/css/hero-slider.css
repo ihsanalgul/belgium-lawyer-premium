@@ -31,6 +31,11 @@
   filter: brightness(0.65) saturate(0.75) contrast(1.05);
 }
 
+.hero-slider__slide--portrait img {
+  filter: brightness(0.98) saturate(1.02) contrast(1.02);
+  object-position: center top;
+}
+
 .hero-slider__quote {
   position: absolute;
   bottom: 2.5rem;
