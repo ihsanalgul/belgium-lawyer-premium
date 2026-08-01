@@ -1,8 +1,7 @@
 import { translations, supportedLanguages, defaultLanguage } from '../data/translations.js';
 import { refreshHeroSliderAlts } from './hero-slider.js';
-import { renderBlogCards } from './blog.js';
 import { renderXFeed } from './x-feed.js';
-import { refreshCalendarLocale } from './calendar.js';
+import { refreshAppointmentsLocale } from './appointments.js';
 import { detectGeoLanguage } from './geo-lang.js';
 
 const STORAGE_KEY = 'lang';
@@ -113,9 +112,8 @@ export function setLanguage(lang, { manual = false } = {}) {
 
   updateExpertiseItems(lang);
   refreshHeroSliderAlts(lang);
-  renderBlogCards(lang);
   renderXFeed(lang);
-  refreshCalendarLocale(lang);
+  refreshAppointmentsLocale(lang);
   updateMeta(lang);
 
   document.querySelectorAll('.lang-btn').forEach((btn) => {

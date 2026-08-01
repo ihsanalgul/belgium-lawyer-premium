@@ -4,11 +4,11 @@ import { initI18n } from './i18n.js';
 import { initNav } from './nav.js';
 import { initScrollReveal } from './scroll-reveal.js';
 import { initHeroSliderModule } from './hero-slider.js';
-import { initCalendar } from './calendar.js';
+import { initAppointments } from './appointments.js';
 
 initSiteConfig();
 initHeroSliderModule();
-initCalendar();
+initAppointments();
 initI18n().then(() => {
   initNav();
   initScrollReveal();

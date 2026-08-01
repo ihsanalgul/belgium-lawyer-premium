@@ -19,8 +19,8 @@
   /* Spacing — editorial rhythm */
   --container-max: 76rem;
   --container-padding: clamp(1.75rem, 5vw, 3.5rem);
-  --section-gap: clamp(6rem, 14vw, 11rem);
-  --content-gap: clamp(1.75rem, 3vw, 2.75rem);
+  --section-gap: clamp(3.5rem, 7vw, 5.5rem);
+  --content-gap: clamp(1.25rem, 2.5vw, 2rem);
 
   /* Letter-spacing */
   --tracking-eyebrow: 0.18em;

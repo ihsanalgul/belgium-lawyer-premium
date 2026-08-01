@@ -1,3 +1,5 @@
+import { appointmentsContent } from './appointments-content.js';
+
 const baseTranslations = {
   en: {
     meta: {
@@ -10,7 +12,6 @@ const baseTranslations = {
       about: 'About',
       expertise: 'Expertise',
       appointments: 'Appointments',
-      blog: 'Insights',
       blogArchive: 'Blog',
       x: 'X',
       contact: 'Contact',
@@ -65,17 +66,6 @@ const baseTranslations = {
         },
       ],
     },
-    appointments: {
-      eyebrow: 'Appointments',
-      title: 'Schedule a confidential consultation',
-      subtitle:
-        'Select an available time below. For urgent matters, contact via WhatsApp.',
-      placeholderTitle: 'Online booking coming soon',
-      placeholderBody:
-        'The appointment calendar is being configured. In the meantime, reach out directly via WhatsApp for urgent enquiries.',
-      openCalendar: 'Open in Google Calendar',
-      whatsappCta: 'Message on WhatsApp',
-    },
     blog: {
       eyebrow: 'Articles',
       title: 'Criminal Law Writings',
@@ -127,7 +117,6 @@ const baseTranslations = {
       about: 'À propos',
       expertise: 'Expertises',
       appointments: 'Rendez-vous',
-      blog: 'Analyses',
       blogArchive: 'Blog',
       x: 'X',
       contact: 'Contact',
@@ -182,17 +171,6 @@ const baseTranslations = {
         },
       ],
     },
-    appointments: {
-      eyebrow: 'Rendez-vous',
-      title: 'Planifier une consultation confidentielle',
-      subtitle:
-        'Choisissez un créneau ci-dessous. Pour les urgences, contactez via WhatsApp.',
-      placeholderTitle: 'Réservation en ligne bientôt disponible',
-      placeholderBody:
-        'Le calendrier de rendez-vous est en cours de configuration. En attendant, contactez directement via WhatsApp pour les demandes urgentes.',
-      openCalendar: 'Ouvrir dans Google Calendar',
-      whatsappCta: 'Écrire sur WhatsApp',
-    },
     blog: {
       eyebrow: 'Blog',
       title: 'Écrits en droit pénal',
@@ -244,7 +222,6 @@ const baseTranslations = {
       about: 'Over',
       expertise: 'Expertise',
       appointments: 'Afspraken',
-      blog: 'Inzichten',
       blogArchive: 'Blog',
       x: 'X',
       contact: 'Contact',
@@ -299,17 +276,6 @@ const baseTranslations = {
         },
       ],
     },
-    appointments: {
-      eyebrow: 'Afspraken',
-      title: 'Plan een vertrouwelijk consult',
-      subtitle:
-        'Kies hieronder een beschikbaar tijdstip. Voor dringende zaken, neem contact op via WhatsApp.',
-      placeholderTitle: 'Online boeken binnenkort beschikbaar',
-      placeholderBody:
-        'De afsprakenkalender wordt geconfigureerd. Neem intussen rechtstreeks contact op via WhatsApp voor dringende vragen.',
-      openCalendar: 'Openen in Google Calendar',
-      whatsappCta: 'Bericht via WhatsApp',
-    },
     blog: {
       eyebrow: 'Blog',
       title: 'Strafrechtpublicaties',
@@ -361,7 +327,6 @@ const baseTranslations = {
       about: 'Hakkında',
       expertise: 'Uzmanlık',
       appointments: 'Randevu',
-      blog: 'Görüşler',
       blogArchive: 'Blog',
       x: 'X',
       contact: 'İletişim',
@@ -416,17 +381,6 @@ const baseTranslations = {
         },
       ],
     },
-    appointments: {
-      eyebrow: 'Randevu',
-      title: 'Gizli görüşme planlayın',
-      subtitle:
-        'Aşağıdan uygun bir zaman seçin. Acil konular için WhatsApp üzerinden ulaşın.',
-      placeholderTitle: 'Online randevu yakında',
-      placeholderBody:
-        'Randevu takvimi yapılandırılıyor. Bu arada acil başvurular için doğrudan WhatsApp üzerinden iletişime geçebilirsiniz.',
-      openCalendar: 'Google Calendar\'da aç',
-      whatsappCta: 'WhatsApp ile yazın',
-    },
     blog: {
       eyebrow: 'Görüşler',
       title: 'Ceza Hukuku Yazıları',
@@ -468,6 +422,11 @@ const baseTranslations = {
   },
 };
 
-export const translations = baseTranslations;
+export const translations = Object.fromEntries(
+  Object.entries(baseTranslations).map(([lang, t]) => [
+    lang,
+    { ...t, appointments: appointmentsContent[lang] },
+  ])
+);
 export const supportedLanguages = ['en', 'fr', 'nl', 'tr'];
 export const defaultLanguage = 'tr';

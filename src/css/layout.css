@@ -150,7 +150,6 @@
     grid-template-columns: minmax(0, 42%) minmax(0, 58%);
     gap: clamp(2rem, 4vw, 4rem);
     align-items: center;
-    min-height: calc(100dvh - 4.75rem);
     padding-top: calc(4.75rem + 2.5rem);
     padding-bottom: 0;
     padding-left: max(var(--container-padding), calc((100vw - var(--container-max)) / 2));
