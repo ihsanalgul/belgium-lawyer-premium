@@ -12,6 +12,20 @@
   --color-ink: #f5f3ef;
   --color-muted: #a39e98;
 
+  /* Overlays & UI chrome */
+  --color-overlay-strong: rgba(18, 19, 21, 0.82);
+  --color-overlay-medium: rgba(18, 19, 21, 0.45);
+  --color-overlay-subtle: rgba(18, 19, 21, 0.4);
+  --color-overlay-fade: rgba(18, 19, 21, 0.55);
+  --color-header-scrolled: rgba(18, 19, 21, 0.94);
+  --color-mobile-menu-bg: rgba(18, 19, 21, 0.97);
+  --color-gradient-mid: #13161c;
+  --color-separator: rgba(255, 255, 255, 0.15);
+  --color-hero-quote-text: #f5f3ef;
+  --color-hero-quote-shadow: rgba(0, 0, 0, 0.6);
+  --color-slider-dot: rgba(245, 243, 239, 0.35);
+  --color-theme-meta: #121315;
+
   /* Typography */
   --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
@@ -39,6 +53,26 @@
   --z-whatsapp: 40;
   --z-nav: 50;
   --z-mobile-menu: 60;
+}
+
+[data-theme='light'] {
+  --color-bg: #f5f3ef;
+  --color-bg-gradient-end: #ebe8e3;
+  --color-surface: #faf8f5;
+  --color-elevated: #f0ece6;
+  --color-border: rgba(18, 19, 21, 0.1);
+  --color-border-subtle: rgba(18, 19, 21, 0.06);
+  --color-gold: #a68b5b;
+  --color-gold-wash: rgba(166, 139, 91, 0.12);
+  --color-bronze: #8a7048;
+  --color-ink: #121315;
+  --color-muted: #6b6560;
+
+  --color-header-scrolled: rgba(245, 243, 239, 0.92);
+  --color-mobile-menu-bg: rgba(245, 243, 239, 0.97);
+  --color-gradient-mid: #ebe8e3;
+  --color-separator: rgba(18, 19, 21, 0.15);
+  --color-theme-meta: #f5f3ef;
 }
 
 @media (min-width: 1280px) {

@@ -3,6 +3,7 @@ import { refreshHeroSliderAlts } from './hero-slider.js';
 import { renderXFeed } from './x-feed.js';
 import { refreshAppointmentsLocale } from './appointments.js';
 import { detectGeoLanguage } from './geo-lang.js';
+import { refreshThemeToggleLabels } from './theme.js';
 
 const STORAGE_KEY = 'lang';
 const MANUAL_KEY = 'lang-manual';
@@ -115,6 +116,7 @@ export function setLanguage(lang, { manual = false } = {}) {
   renderXFeed(lang);
   refreshAppointmentsLocale(lang);
   updateMeta(lang);
+  refreshThemeToggleLabels(lang);
 
   document.querySelectorAll('.lang-btn').forEach((btn) => {
     btn.classList.toggle('is-active', btn.dataset.lang === lang);

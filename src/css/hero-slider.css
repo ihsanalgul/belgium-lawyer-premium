@@ -50,8 +50,8 @@
   inset: -0.75rem -1rem -0.75rem -0.75rem;
   background: linear-gradient(
     135deg,
-    rgba(18, 19, 21, 0.82) 0%,
-    rgba(18, 19, 21, 0.45) 55%,
+    var(--color-overlay-strong) 0%,
+    var(--color-overlay-medium) 55%,
     transparent 100%
   );
   z-index: -1;
@@ -72,9 +72,9 @@
   font-style: italic;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--color-ink);
+  color: var(--color-hero-quote-text);
   margin: 0 0 0.5rem;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 2px 12px var(--color-hero-quote-shadow);
 }
 
 .hero-slider__quote-author {
@@ -103,7 +103,7 @@
   padding: 0;
   border: none;
   border-radius: 50%;
-  background: rgba(245, 243, 239, 0.35);
+  background: var(--color-slider-dot);
   cursor: pointer;
   transition: background var(--duration-hover) ease, transform var(--duration-hover) ease;
 }

@@ -14,7 +14,7 @@
   background-image: linear-gradient(
     168deg,
     var(--color-bg) 0%,
-    #13161c 55%,
+    var(--color-gradient-mid) 55%,
     var(--color-bg-gradient-end) 100%
   );
   min-height: 100dvh;
@@ -34,7 +34,7 @@
 }
 
 .site-header.is-scrolled {
-  background-color: rgba(18, 19, 21, 0.94);
+  background-color: var(--color-header-scrolled);
   border-bottom: 1px solid var(--color-border-subtle);
   backdrop-filter: blur(16px);
 }
@@ -139,7 +139,7 @@
   background: linear-gradient(
     200deg,
     transparent 35%,
-    rgba(18, 19, 21, 0.55) 75%,
+    var(--color-overlay-fade) 75%,
     var(--color-bg) 100%
   );
   pointer-events: none;
@@ -179,7 +179,7 @@
       var(--color-bg) 0%,
       transparent 18%,
       transparent 55%,
-      rgba(18, 19, 21, 0.45) 100%
+      var(--color-overlay-medium) 100%
     );
   }
 }
@@ -233,7 +233,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(18, 19, 21, 0.4) 0%, transparent 50%);
+  background: linear-gradient(to top, var(--color-overlay-subtle) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -504,10 +504,53 @@
 }
 
 .lang-sep {
-  color: rgba(255, 255, 255, 0.15);
+  color: var(--color-separator);
   font-size: 0.625rem;
   user-select: none;
   margin-inline: 0.0625rem;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-muted);
+  cursor: pointer;
+  transition:
+    color var(--duration-hover) var(--ease-out-strong),
+    border-color var(--duration-hover) var(--ease-out-strong);
+}
+
+.theme-toggle:hover {
+  color: var(--color-ink);
+  border-color: var(--color-border);
+}
+
+.theme-toggle__icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.theme-toggle__icon--moon {
+  display: none;
+}
+
+[data-theme='light'] .theme-toggle__icon--sun {
+  display: none;
+}
+
+[data-theme='light'] .theme-toggle__icon--moon {
+  display: block;
+}
+
+.mobile-menu .theme-toggle {
+  margin-top: 0.5rem;
 }
 
 /* Mobile nav */
@@ -560,7 +603,7 @@
   position: fixed;
   inset: 0;
   z-index: var(--z-mobile-menu);
-  background: rgba(18, 19, 21, 0.97);
+  background: var(--color-mobile-menu-bg);
   display: flex;
   flex-direction: column;
   align-items: center;

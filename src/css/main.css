@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark light;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -54,4 +55,31 @@ img {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body,
+  .site-bg,
+  .site-header,
+  .site-footer,
+  .card,
+  .btn-primary,
+  .btn-secondary,
+  .form-input,
+  .form-select,
+  .form-textarea,
+  .mobile-menu,
+  .lang-btn,
+  .theme-toggle,
+  .nav-mobile-toggle,
+  .expertise-item,
+  .why-block,
+  .office-block,
+  .blog-card,
+  .appointment-card {
+    transition:
+      background-color var(--duration-hover) var(--ease-out-strong),
+      color var(--duration-hover) var(--ease-out-strong),
+      border-color var(--duration-hover) var(--ease-out-strong);
+  }
 }

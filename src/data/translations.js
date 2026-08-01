@@ -101,6 +101,10 @@ const baseTranslations = {
         'Av. Yusuf Ziya Kahya is a lawyer registered with the Ankara Bar Association. This website does not constitute legal advice.',
       rights: 'All rights reserved.',
     },
+    theme: {
+      toLight: 'Switch to light theme',
+      toDark: 'Switch to dark theme',
+    },
     whatsapp: {
       label: 'Contact via WhatsApp (WhatsApp only)',
     },
@@ -205,6 +209,10 @@ const baseTranslations = {
       disclaimer:
         'Av. Yusuf Ziya Kahya est avocat inscrit au Barreau d\'Ankara. Ce site ne constitue pas un avis juridique.',
       rights: 'Tous droits réservés.',
+    },
+    theme: {
+      toLight: 'Passer au thème clair',
+      toDark: 'Passer au thème sombre',
     },
     whatsapp: {
       label: 'Contacter via WhatsApp (WhatsApp uniquement)',
@@ -311,6 +319,10 @@ const baseTranslations = {
         'Av. Yusuf Ziya Kahya is advocaat ingeschreven bij de Ankara Balie. Deze website vormt geen juridisch advies.',
       rights: 'Alle rechten voorbehouden.',
     },
+    theme: {
+      toLight: 'Schakel over naar licht thema',
+      toDark: 'Schakel over naar donker thema',
+    },
     whatsapp: {
       label: 'Contact via WhatsApp (alleen WhatsApp)',
     },
@@ -415,6 +427,10 @@ const baseTranslations = {
       disclaimer:
         'Av. Yusuf Ziya Kahya, Ankara Barosu\'na kayıtlı avukattır. Bu web sitesi hukuki danışmanlık niteliği taşımaz.',
       rights: 'Tüm hakları saklıdır.',
+    },
+    theme: {
+      toLight: 'Açık temaya geç',
+      toDark: 'Koyu temaya geç',
     },
     whatsapp: {
       label: 'WhatsApp ile iletişim (sadece WhatsApp)',
