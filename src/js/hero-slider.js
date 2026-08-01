@@ -22,6 +22,7 @@ export function initHeroSlider() {
     image.height = 1080;
     image.loading = i === 0 ? 'eager' : 'lazy';
     image.alt = translations.tr?.hero?.[img.altKey] ?? '';
+    image.style.objectPosition = img.objectPosition ?? 'center center';
     image.dataset.i18nAlt = `hero.${img.altKey}`;
     slide.appendChild(image);
     return slide;

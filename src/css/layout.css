@@ -84,7 +84,9 @@
 .hero-image-wrap {
   position: relative;
   width: 100%;
-  min-height: clamp(22rem, 55vh, 36rem);
+  height: clamp(16rem, 38vh, 28rem);
+  max-height: 28rem;
+  background: var(--color-elevated);
   overflow: hidden;
 }
 
@@ -100,9 +102,8 @@
   background: linear-gradient(
     180deg,
     var(--color-hero-scrim-top) 0%,
-    transparent 35%,
-    transparent 70%,
-    var(--color-hero-scrim-bottom) 100%
+    transparent 30%,
+    transparent 100%
   );
   pointer-events: none;
   z-index: 1;

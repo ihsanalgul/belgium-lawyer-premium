@@ -27,8 +27,8 @@ const baseTranslations = {
         'Legal counsel in Turkey on criminal, administrative, labour and immigration law — constitutional court, ECtHR and UN applications, and petition drafting.',
       cta: 'Book an appointment',
       imageAlt0: 'Ankara Courthouse',
-      imageAlt1: 'Law office interior',
-      imageAlt2: 'Law books',
+      imageAlt1: 'Constitutional Court building, Ankara',
+      imageAlt2: 'Classical palace of justice architecture',
     },
     about: {
       eyebrow: 'About',
@@ -111,8 +111,8 @@ const baseTranslations = {
         'Conseil juridique en Turquie en droit pénal, administratif, du travail et des migrations — recours AYM, CEDH, ONU et rédaction de requêtes.',
       cta: 'Prendre rendez-vous',
       imageAlt0: 'Palais de justice d\'Ankara',
-      imageAlt1: 'Intérieur de cabinet d\'avocat',
-      imageAlt2: 'Ouvrages juridiques',
+      imageAlt1: 'Bâtiment de la Cour constitutionnelle, Ankara',
+      imageAlt2: 'Architecture classique d\'un palais de justice',
     },
     about: {
       eyebrow: 'À propos',
@@ -195,8 +195,8 @@ const baseTranslations = {
         'Juridisch advies in Turkije op straf-, bestuurs-, arbeids- en migratierecht — AYM-, EVRM- en VN-beroepen en verzoekschriftvoorbereiding.',
       cta: 'Afspraak maken',
       imageAlt0: 'Gerechtsgebouw Ankara',
-      imageAlt1: 'Advocatenkantoor interieur',
-      imageAlt2: 'Juridische boeken',
+      imageAlt1: 'Gebouw van het Constitutioneel Hof, Ankara',
+      imageAlt2: 'Klassieke paleis van justitie architectuur',
     },
     about: {
       eyebrow: 'Over',
@@ -279,8 +279,8 @@ const baseTranslations = {
         'Türkiye\'de ceza, idari, iş ve göçmen hukuku alanlarında danışmanlık — AYM, AİHM ve BM başvuruları ile dilekçe hazırlığı.',
       cta: 'Randevu alın',
       imageAlt0: 'Ankara Adliyesi',
-      imageAlt1: 'Hukuk bürosu iç mekan',
-      imageAlt2: 'Hukuk kitapları',
+      imageAlt1: 'Anayasa Mahkemesi binası, Ankara',
+      imageAlt2: 'Klasik adalet sarayı mimarisi',
     },
     about: {
       eyebrow: 'Hakkında',

@@ -23,9 +23,9 @@
   --color-separator: rgba(18, 19, 21, 0.15);
   --color-hero-quote-text: #f5f3ef;
   --color-hero-quote-shadow: rgba(0, 0, 0, 0.6);
-  --color-slider-dot: rgba(245, 243, 239, 0.45);
-  --color-hero-scrim-top: rgba(18, 19, 21, 0.25);
-  --color-hero-scrim-bottom: rgba(18, 19, 21, 0.35);
+  --color-slider-dot: rgba(18, 19, 21, 0.25);
+  --color-hero-scrim-top: rgba(18, 19, 21, 0.08);
+  --color-hero-scrim-bottom: rgba(18, 19, 21, 0.12);
   --color-theme-meta: #f5f3ef;
 
   /* Typography */
@@ -75,9 +75,9 @@
   --color-gradient-mid: #13161c;
   --color-separator: rgba(255, 255, 255, 0.15);
   --color-theme-meta: #121315;
-  --color-hero-scrim-top: rgba(18, 19, 21, 0.45);
-  --color-hero-scrim-bottom: rgba(18, 19, 21, 0.55);
-  --color-slider-dot: rgba(245, 243, 239, 0.4);
+  --color-hero-scrim-top: rgba(18, 19, 21, 0.2);
+  --color-hero-scrim-bottom: rgba(18, 19, 21, 0.25);
+  --color-slider-dot: rgba(245, 243, 239, 0.45);
 }
 
 @media (min-width: 1280px) {

@@ -27,14 +27,17 @@ export const siteConfig = {
     {
       src: '/images/hero/ankara-adliyesi.jpg',
       altKey: 'imageAlt0',
+      objectPosition: 'center center',
     },
     {
-      src: '/images/hero/law-office.png',
+      src: '/images/hero/anayasa-mahkemesi-ankara.jpg',
       altKey: 'imageAlt1',
+      objectPosition: 'center center',
     },
     {
-      src: '/images/hero/law-books.png',
+      src: '/images/hero/adalet-sarayi.jpg',
       altKey: 'imageAlt2',
+      objectPosition: 'center center',
     },
   ],
 };
