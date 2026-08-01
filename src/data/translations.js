@@ -14,7 +14,7 @@ const baseTranslations = {
       expertise: 'Expertise',
       appointments: 'Appointments',
       blogArchive: 'Blog',
-      x: 'X',
+      social: 'Social',
       contact: 'Contact',
       language: 'Language',
       menuOpen: 'Open menu',
@@ -26,9 +26,7 @@ const baseTranslations = {
       subtitle:
         'Legal counsel in Turkey on criminal, administrative, labour and immigration law — constitutional court, ECtHR and UN applications, and petition drafting.',
       cta: 'Book an appointment',
-      imageAlt0: 'Ankara Courthouse',
-      imageAlt1: 'Constitutional Court building, Ankara',
-      imageAlt2: 'Classical palace of justice architecture',
+      imageAlt: 'Ankara Courthouse',
     },
     about: {
       eyebrow: 'About',
@@ -49,12 +47,12 @@ const baseTranslations = {
       readMore: 'Read article',
       viewAll: 'View all articles',
     },
-    x: {
-      eyebrow: 'X',
-      title: '@y_ziya_kahya',
-      subtitle: 'Selected commentary on criminal law and current affairs.',
-      viewProfile: 'View on X',
-      readMore: 'Read on X',
+    social: {
+      eyebrow: 'Social',
+      title: 'Follow counsel online',
+      subtitle: 'Updates on criminal law and current affairs. Reach out via WhatsApp for confidential matters.',
+      whatsapp: 'WhatsApp',
+      x: 'X (Twitter)',
     },
     contact: {
       eyebrow: 'Contact',
@@ -76,6 +74,9 @@ const baseTranslations = {
       disclaimer:
         'Av. Yusuf Ziya Kahya is a lawyer registered with the Ankara Bar Association. This website does not constitute legal advice.',
       rights: 'All rights reserved.',
+      kvkk: 'Privacy Notice (KVKK)',
+      privacy: 'Privacy Policy',
+      barSicilPrefix: 'Ankara Bar Registry No:',
     },
     theme: {
       toLight: 'Switch to light theme',
@@ -98,7 +99,7 @@ const baseTranslations = {
       expertise: 'Expertises',
       appointments: 'Rendez-vous',
       blogArchive: 'Blog',
-      x: 'X',
+      social: 'Réseaux',
       contact: 'Contact',
       language: 'Langue',
       menuOpen: 'Ouvrir le menu',
@@ -110,9 +111,7 @@ const baseTranslations = {
       subtitle:
         'Conseil juridique en Turquie en droit pénal, administratif, du travail et des migrations — recours AYM, CEDH, ONU et rédaction de requêtes.',
       cta: 'Prendre rendez-vous',
-      imageAlt0: 'Palais de justice d\'Ankara',
-      imageAlt1: 'Bâtiment de la Cour constitutionnelle, Ankara',
-      imageAlt2: 'Architecture classique d\'un palais de justice',
+      imageAlt: 'Palais de justice d\'Ankara',
     },
     about: {
       eyebrow: 'À propos',
@@ -133,12 +132,12 @@ const baseTranslations = {
       readMore: 'Lire l\'article',
       viewAll: 'Voir tous les articles',
     },
-    x: {
-      eyebrow: 'X',
-      title: '@y_ziya_kahya',
-      subtitle: 'Commentaires sélectionnés sur le droit pénal et l\'actualité.',
-      viewProfile: 'Voir sur X',
-      readMore: 'Lire sur X',
+    social: {
+      eyebrow: 'Réseaux',
+      title: 'Suivre le cabinet en ligne',
+      subtitle: 'Actualités en droit pénal. Pour les affaires confidentielles, contactez via WhatsApp.',
+      whatsapp: 'WhatsApp',
+      x: 'X (Twitter)',
     },
     contact: {
       eyebrow: 'Contact',
@@ -160,6 +159,9 @@ const baseTranslations = {
       disclaimer:
         'Av. Yusuf Ziya Kahya est avocat inscrit au Barreau d\'Ankara. Ce site ne constitue pas un avis juridique.',
       rights: 'Tous droits réservés.',
+      kvkk: 'Avis KVKK',
+      privacy: 'Politique de confidentialité',
+      barSicilPrefix: 'N° au Barreau d\'Ankara :',
     },
     theme: {
       toLight: 'Passer au thème clair',
@@ -182,7 +184,7 @@ const baseTranslations = {
       expertise: 'Expertise',
       appointments: 'Afspraken',
       blogArchive: 'Blog',
-      x: 'X',
+      social: 'Sociaal',
       contact: 'Contact',
       language: 'Taal',
       menuOpen: 'Menu openen',
@@ -194,9 +196,7 @@ const baseTranslations = {
       subtitle:
         'Juridisch advies in Turkije op straf-, bestuurs-, arbeids- en migratierecht — AYM-, EVRM- en VN-beroepen en verzoekschriftvoorbereiding.',
       cta: 'Afspraak maken',
-      imageAlt0: 'Gerechtsgebouw Ankara',
-      imageAlt1: 'Gebouw van het Constitutioneel Hof, Ankara',
-      imageAlt2: 'Klassieke paleis van justitie architectuur',
+      imageAlt: 'Gerechtsgebouw Ankara',
     },
     about: {
       eyebrow: 'Over',
@@ -217,12 +217,12 @@ const baseTranslations = {
       readMore: 'Lees artikel',
       viewAll: 'Alle artikelen',
     },
-    x: {
-      eyebrow: 'X',
-      title: '@y_ziya_kahya',
-      subtitle: 'Geselecteerde commentaren over strafrecht en actualiteit.',
-      viewProfile: 'Bekijk op X',
-      readMore: 'Lees op X',
+    social: {
+      eyebrow: 'Sociaal',
+      title: 'Volg het kantoor online',
+      subtitle: 'Updates over strafrecht. Neem voor vertrouwelijke zaken contact op via WhatsApp.',
+      whatsapp: 'WhatsApp',
+      x: 'X (Twitter)',
     },
     contact: {
       eyebrow: 'Contact',
@@ -244,6 +244,9 @@ const baseTranslations = {
       disclaimer:
         'Av. Yusuf Ziya Kahya is advocaat ingeschreven bij de Ankara Balie. Deze website vormt geen juridisch advies.',
       rights: 'Alle rechten voorbehouden.',
+      kvkk: 'KVKK-verklaring',
+      privacy: 'Privacybeleid',
+      barSicilPrefix: 'Ankara Balie nr.:',
     },
     theme: {
       toLight: 'Schakel over naar licht thema',
@@ -266,7 +269,7 @@ const baseTranslations = {
       expertise: 'Uzmanlık',
       appointments: 'Randevu',
       blogArchive: 'Blog',
-      x: 'X',
+      social: 'Sosyal',
       contact: 'İletişim',
       language: 'Dil',
       menuOpen: 'Menüyü aç',
@@ -278,9 +281,7 @@ const baseTranslations = {
       subtitle:
         'Türkiye\'de ceza, idari, iş ve göçmen hukuku alanlarında danışmanlık — AYM, AİHM ve BM başvuruları ile dilekçe hazırlığı.',
       cta: 'Randevu alın',
-      imageAlt0: 'Ankara Adliyesi',
-      imageAlt1: 'Anayasa Mahkemesi binası, Ankara',
-      imageAlt2: 'Klasik adalet sarayı mimarisi',
+      imageAlt: 'Ankara Adliyesi',
     },
     about: {
       eyebrow: 'Hakkında',
@@ -301,12 +302,12 @@ const baseTranslations = {
       readMore: 'Yazıyı oku',
       viewAll: 'Tüm yazılar',
     },
-    x: {
-      eyebrow: 'X',
-      title: '@y_ziya_kahya',
-      subtitle: 'Ceza hukuku ve güncel meseleler üzerine seçilmiş paylaşımlar.',
-      viewProfile: 'X\'te görüntüle',
-      readMore: 'X\'te oku',
+    social: {
+      eyebrow: 'Sosyal',
+      title: 'Çevrimiçi takip edin',
+      subtitle: 'Ceza hukuku ve güncel meseleler. Gizli konular için WhatsApp üzerinden ulaşın.',
+      whatsapp: 'WhatsApp',
+      x: 'X (Twitter)',
     },
     contact: {
       eyebrow: 'İletişim',
@@ -328,6 +329,9 @@ const baseTranslations = {
       disclaimer:
         'Av. Yusuf Ziya Kahya, Ankara Barosu\'na kayıtlı avukattır. Bu web sitesi hukuki danışmanlık niteliği taşımaz.',
       rights: 'Tüm hakları saklıdır.',
+      kvkk: 'KVKK Aydınlatma Metni',
+      privacy: 'Gizlilik Politikası',
+      barSicilPrefix: 'Ankara Barosu Sicil No:',
     },
     theme: {
       toLight: 'Açık temaya geç',

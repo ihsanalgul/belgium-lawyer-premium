@@ -1,5 +1,19 @@
 import { translations } from '../data/translations.js';
+import { expertiseIcons } from './expertise-icons.js';
 import { observeRevealElements } from './scroll-reveal.js';
+
+const ICON_KEYS = [
+  'reinstatement',
+  'sentence',
+  'immigration',
+  'criminal',
+  'labour',
+  'administrative',
+  'constitutional',
+  'echr',
+  'un',
+  'petition',
+];
 
 export function renderExpertiseItems(lang = document.documentElement.lang) {
   const container = document.getElementById('expertise-list');
@@ -9,14 +23,13 @@ export function renderExpertiseItems(lang = document.documentElement.lang) {
 
   container.innerHTML = items
     .map((item, index) => {
-      const number = String(index + 1).padStart(2, '0');
+      const iconKey = ICON_KEYS[index] ?? 'petition';
+      const icon = expertiseIcons[iconKey] ?? '';
       return `
-    <article class="expertise-item reveal">
-      <div class="expertise-number" aria-hidden="true">${number}</div>
-      <div class="expertise-content">
-        <h3 class="text-display-md">${item.title}</h3>
-        <p class="text-prose">${item.desc}</p>
-      </div>
+    <article class="expertise-card reveal">
+      <div class="expertise-card__icon" aria-hidden="true">${icon}</div>
+      <h3 class="expertise-card__title">${item.title}</h3>
+      <p class="expertise-card__desc">${item.desc}</p>
     </article>`;
     })
     .join('');

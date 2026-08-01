@@ -9,7 +9,7 @@
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f5f3ef" />
+    <meta name="theme-color" content="#f8f9fb" />
     <meta
       name="description"
       content="Av. Yusuf Ziya Kahya — Ankara Barosu. Ceza, idari, iş ve göçmen hukuku; AYM, AİHM ve BM başvuruları; dilekçe hazırlığı."
@@ -25,7 +25,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500&display=swap"
       rel="stylesheet"
     />
     <title>Av. Yusuf Ziya KAHYA | Avukat · Ankara</title>
@@ -44,7 +44,7 @@
           <a href="#expertise" class="link-underline text-nav" data-i18n="nav.expertise">Uzmanlık</a>
           <a href="#appointments" class="link-underline text-nav" data-i18n="nav.appointments">Randevu</a>
           <a href="/blog/" class="link-underline text-nav" data-i18n="nav.blogArchive">Blog</a>
-          <a href="#x" class="link-underline text-nav" data-i18n="nav.x">X</a>
+          <a href="#social" class="link-underline text-nav" data-i18n="nav.social">Sosyal</a>
           <a href="#contact" class="link-underline text-nav" data-i18n="nav.contact">İletişim</a>
         </nav>
 
@@ -108,7 +108,7 @@
       <a href="#expertise" data-i18n="nav.expertise">Uzmanlık</a>
       <a href="#appointments" data-i18n="nav.appointments">Randevu</a>
       <a href="/blog/" data-i18n="nav.blogArchive">Blog</a>
-      <a href="#x" data-i18n="nav.x">X</a>
+      <a href="#social" data-i18n="nav.social">Sosyal</a>
       <a href="#contact" data-i18n="nav.contact">İletişim</a>
       <button
         type="button"
@@ -139,8 +139,16 @@
 
     <main id="main">
       <section id="hero" class="hero-section">
-        <div class="hero-slider-wrap">
-          <div class="hero-image-wrap" aria-label="Hero image gallery"></div>
+        <div class="hero-static">
+          <img
+            src="/images/hero/ankara-adliyesi.jpg"
+            class="hero-static__img"
+            data-i18n-alt="hero.imageAlt"
+            alt="Ankara Adliyesi"
+            width="1920"
+            height="800"
+            fetchpriority="high"
+          />
         </div>
         <div class="site-container hero-content-block">
           <div class="hero-content reveal">
@@ -192,7 +200,7 @@
             <h2 class="text-display-lg" data-i18n="expertise.title">Uzmanlık alanları</h2>
           </div>
 
-          <div class="expertise-list" id="expertise-list"></div>
+          <div class="expertise-grid" id="expertise-list"></div>
         </div>
       </section>
 
@@ -206,43 +214,77 @@
             </h2>
             <p class="text-prose" data-i18n="appointments.subtitle"></p>
           </div>
-          <div
-            class="packages-grid reveal"
-            id="packages-grid"
-            role="radiogroup"
-            aria-label="Consultation packages"
-          ></div>
+          <div class="appt-wizard">
+            <ol class="appt-step-indicator" aria-label="Appointment steps">
+              <li class="appt-step-indicator__item is-active" data-step="1">
+                <span class="appt-step-indicator__num">1</span>
+                <span class="appt-step-indicator__label" data-i18n="appointments.step1Title">Danışmanlık türü</span>
+              </li>
+              <li class="appt-step-indicator__item" data-step="2">
+                <span class="appt-step-indicator__num">2</span>
+                <span class="appt-step-indicator__label" data-i18n="appointments.step2Title">Tarih ve saat</span>
+              </li>
+              <li class="appt-step-indicator__item" data-step="3">
+                <span class="appt-step-indicator__num">3</span>
+                <span class="appt-step-indicator__label" data-i18n="appointments.step3Title">İletişim bilgileri</span>
+              </li>
+            </ol>
 
-          <div class="booker reveal is-locked" id="booker" aria-disabled="true">
-            <div id="booking-flow">
-              <div class="booker-head">
-                <h3 data-i18n="appointments.booker.title">Tarih ve saat seçin</h3>
-                <span class="booker-chosen" id="chosen-pkg-label" data-i18n="appointments.booker.chooseFirst">Önce yukarıdan bir paket seçin</span>
-              </div>
-              <div class="date-chips" id="date-chips" role="group" aria-label="Available dates"></div>
-              <div class="slot-grid" id="slot-grid" role="group" aria-label="Available times"></div>
-              <div class="booker-contact">
-                <div class="form-group">
-                  <label class="form-label" for="bk-name" data-i18n="appointments.booker.name">Ad soyad</label>
-                  <input class="form-input" type="text" id="bk-name" name="bk-name" autocomplete="name" />
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="bk-email" data-i18n="appointments.booker.email">E-posta</label>
-                  <input class="form-input" type="email" id="bk-email" name="bk-email" autocomplete="email" />
-                </div>
-                <div class="form-group form-group--full">
-                  <label class="form-label" for="bk-note" data-i18n="appointments.booker.note">Kısa not (isteğe bağlı)</label>
-                  <input class="form-input" type="text" id="bk-note" name="bk-note" data-i18n="appointments.booker.notePlaceholder" placeholder="Görüşmek istediğiniz konu" />
-                </div>
-              </div>
-              <div class="booker-summary">
-                <p class="summary-line" id="summary-line" data-i18n="appointments.booker.summaryEmpty">Henüz seçim yapılmadı.</p>
-                <button type="button" class="btn-primary" id="confirm-btn" disabled data-i18n="appointments.booker.confirm">
-                  Randevuyu onayla
+            <div class="appt-step is-active" data-step="1">
+              <div
+                class="packages-grid"
+                id="packages-grid"
+                role="radiogroup"
+                aria-label="Consultation types"
+              ></div>
+              <div class="appt-step-actions">
+                <button type="button" class="btn-primary" id="appt-step1-next" disabled data-i18n="appointments.stepNext">
+                  Devam
                 </button>
               </div>
             </div>
-            <div class="booking-success" id="booking-success" role="status" aria-live="polite">
+
+            <div class="appt-step" data-step="2" hidden>
+              <div class="booker-panel">
+                <h3 class="booker-panel__title" data-i18n="appointments.booker.title">Tarih ve saat seçin</h3>
+                <div class="date-chips" id="date-chips" role="group" aria-label="Available dates"></div>
+                <div class="slot-grid" id="slot-grid" role="group" aria-label="Available times"></div>
+              </div>
+              <div class="appt-step-actions">
+                <button type="button" class="btn-outline" id="appt-step2-back" data-i18n="appointments.stepBack">Geri</button>
+                <button type="button" class="btn-primary" id="appt-step2-next" disabled data-i18n="appointments.stepNext">Devam</button>
+              </div>
+            </div>
+
+            <div class="appt-step" data-step="3" hidden>
+              <div class="booker-panel">
+                <div class="booker-contact">
+                  <div class="form-group">
+                    <label class="form-label" for="bk-name" data-i18n="appointments.booker.name">Ad soyad</label>
+                    <input class="form-input" type="text" id="bk-name" name="bk-name" autocomplete="name" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="bk-email" data-i18n="appointments.booker.email">E-posta</label>
+                    <input class="form-input" type="email" id="bk-email" name="bk-email" autocomplete="email" />
+                  </div>
+                  <div class="form-group form-group--full">
+                    <label class="form-label" for="bk-note" data-i18n="appointments.booker.note">Kısa not (isteğe bağlı)</label>
+                    <input class="form-input" type="text" id="bk-note" name="bk-note" data-i18n="appointments.booker.notePlaceholder" placeholder="Görüşmek istediğiniz konu" />
+                  </div>
+                </div>
+                <div class="booker-summary">
+                  <p class="summary-line" id="summary-line" data-i18n="appointments.booker.summaryEmpty">Henüz seçim yapılmadı.</p>
+                  <button type="button" class="btn-primary" id="confirm-btn" disabled data-i18n="appointments.booker.confirm">
+                    Randevuyu onayla
+                  </button>
+                </div>
+              </div>
+              <div class="appt-step-actions">
+                <button type="button" class="btn-outline" id="appt-step3-back" data-i18n="appointments.stepBack">Geri</button>
+              </div>
+            </div>
+
+            <div class="booking-success" id="booking-success" role="status" aria-live="polite" hidden>
               <div class="booking-success-mark" aria-hidden="true">
                 <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
@@ -257,68 +299,93 @@
         </div>
       </section>
 
-      <section id="x" class="site-section" aria-labelledby="x-title">
+      <section id="social" class="site-section" aria-labelledby="social-title">
         <div class="site-container">
-          <div class="x-head reveal">
-            <p class="text-eyebrow" data-i18n="x.eyebrow">X</p>
+          <div class="social-strip reveal">
+            <p class="text-eyebrow" data-i18n="social.eyebrow">Sosyal</p>
             <div class="rule-gold" style="margin-inline: auto"></div>
-            <h2 class="text-display-lg" id="x-title" data-i18n="x.title">@y_ziya_kahya</h2>
-            <p class="text-prose" data-i18n="x.subtitle"></p>
-          </div>
-          <div class="x-grid" id="x-grid"></div>
-          <div class="x-footer reveal">
-            <a
-              href="https://x.com/y_ziya_kahya"
-              id="x-profile"
-              class="link-underline"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n="x.viewProfile"
-            >
-              X'te görüntüle
-            </a>
+            <h2 class="text-display-lg" id="social-title" data-i18n="social.title">Çevrimiçi takip edin</h2>
+            <p class="text-prose" data-i18n="social.subtitle"></p>
+            <div class="social-links">
+              <a
+                href="https://wa.me/905067151119"
+                id="social-whatsapp"
+                class="social-link social-link--whatsapp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.89-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                <span data-i18n="social.whatsapp">WhatsApp</span>
+              </a>
+              <a
+                href="https://x.com/y_ziya_kahya"
+                id="social-x"
+                class="social-link social-link--x"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                <span data-i18n="social.x">X (Twitter)</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="contact" class="site-section">
-        <div class="site-container contact-solo reveal">
-          <p class="text-eyebrow" data-i18n="contact.eyebrow">İletişim</p>
-          <div class="rule-gold"></div>
-          <h2 class="text-display-lg" data-i18n="contact.title">Doğrudan ulaşın</h2>
-          <p class="text-prose" data-i18n="contact.subtitle"></p>
+        <div class="site-container contact-layout reveal">
+          <div class="contact-main">
+            <p class="text-eyebrow" data-i18n="contact.eyebrow">İletişim</p>
+            <div class="rule-gold"></div>
+            <h2 class="text-display-lg" data-i18n="contact.title">Doğrudan ulaşın</h2>
+            <p class="text-prose" data-i18n="contact.subtitle"></p>
 
-          <div class="contact-whatsapp-block">
-            <p class="contact-whatsapp-label" data-i18n="contact.whatsappLabel">Sadece WhatsApp</p>
-            <a
-              href="https://wa.me/905067151119"
-              id="contact-whatsapp"
-              class="btn-whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path
-                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.89-11.893a11.821 11.821 0 00-3.48-8.413z"
-                />
-              </svg>
-              <span data-i18n="contact.whatsappCta">WhatsApp mesajı gönder</span>
-            </a>
+            <div class="contact-whatsapp-block">
+              <p class="contact-whatsapp-label" data-i18n="contact.whatsappLabel">Sadece WhatsApp</p>
+              <a
+                href="https://wa.me/905067151119"
+                id="contact-whatsapp"
+                class="btn-whatsapp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.89-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+                <span data-i18n="contact.whatsappCta">WhatsApp mesajı gönder</span>
+              </a>
+            </div>
+
+            <div class="offices-wrap">
+              <div class="office-block">
+                <p class="text-eyebrow" style="color: var(--color-muted)" data-i18n="contact.ankara.label">
+                  Ankara Ofisi
+                </p>
+                <p class="text-prose text-prose-light" data-i18n="contact.ankara.address"></p>
+              </div>
+              <div class="office-block office-block--secondary">
+                <p class="text-eyebrow" style="color: var(--color-muted)" data-i18n="contact.brussels.label">
+                  Yurtdışı Ofis
+                </p>
+                <p class="text-prose text-prose-light" data-i18n="contact.brussels.address"></p>
+              </div>
+            </div>
           </div>
 
-          <div class="offices-wrap">
-            <div class="office-block">
-              <p class="text-eyebrow" style="color: var(--color-muted)" data-i18n="contact.ankara.label">
-                Ankara Ofisi
-              </p>
-              <p class="text-prose text-prose-light" data-i18n="contact.ankara.address"></p>
-            </div>
-            <div class="office-block office-block--secondary">
-              <p class="text-eyebrow" style="color: var(--color-muted)" data-i18n="contact.brussels.label">
-                Yurtdışı Ofis
-              </p>
-              <p class="text-prose text-prose-light" data-i18n="contact.brussels.address"></p>
-            </div>
+          <div class="contact-map-wrap">
+            <iframe
+              id="contact-map"
+              title="Ankara ofis konumu"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
       </section>
@@ -330,6 +397,12 @@
         <p class="text-small footer-copy" style="color: var(--color-muted)">
           <span id="footer-copy"></span>
           <span data-i18n="footer.rights">Tüm hakları saklıdır.</span>
+        </p>
+        <p class="footer-meta text-small">
+          <span id="footer-bar-sicil" hidden></span>
+          <a id="footer-kvkk" href="/kvkk.html" data-i18n="footer.kvkk">KVKK Aydınlatma Metni</a>
+          <span class="footer-meta-sep" aria-hidden="true">·</span>
+          <a id="footer-privacy" href="/gizlilik.html" data-i18n="footer.privacy">Gizlilik Politikası</a>
         </p>
       </div>
     </footer>

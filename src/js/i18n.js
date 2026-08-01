@@ -1,10 +1,10 @@
 import { translations, supportedLanguages, defaultLanguage } from '../data/translations.js';
-import { refreshHeroSliderAlts } from './hero-slider.js';
-import { renderXFeed } from './x-feed.js';
 import { refreshAppointmentsLocale } from './appointments.js';
 import { detectGeoLanguage } from './geo-lang.js';
 import { refreshThemeToggleLabels } from './theme.js';
 import { renderExpertiseItems } from './expertise.js';
+import { initScrollReveal } from './scroll-reveal.js';
+import { updateFooterBarSicil } from './site-init.js';
 
 const STORAGE_KEY = 'lang';
 const MANUAL_KEY = 'lang-manual';
@@ -108,12 +108,12 @@ export function setLanguage(lang, { manual = false } = {}) {
   });
 
   renderExpertiseItems(lang);
-  refreshHeroSliderAlts(lang);
-  renderXFeed(lang);
-  refreshAppointmentsLocale(lang);
+  refreshAppointmentsLocale();
+  updateFooterBarSicil(t.footer?.barSicilPrefix ?? '');
   updateMeta(lang);
   refreshThemeToggleLabels(lang);
   syncLanguageSelects(lang);
+  initScrollReveal();
 
   document.documentElement.classList.add('lang-ready');
 }

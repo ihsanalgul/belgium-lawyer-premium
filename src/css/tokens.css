@@ -1,48 +1,48 @@
 :root {
-  /* Colors — light default */
-  --color-bg: #f5f3ef;
-  --color-bg-gradient-end: #ebe8e3;
-  --color-surface: #faf8f5;
-  --color-elevated: #f0ece6;
-  --color-border: rgba(18, 19, 21, 0.1);
-  --color-border-subtle: rgba(18, 19, 21, 0.06);
-  --color-gold: #a68b5b;
-  --color-gold-wash: rgba(166, 139, 91, 0.12);
-  --color-bronze: #8a7048;
-  --color-ink: #121315;
-  --color-muted: #6b6560;
+  /* Colors — navy + off-white + mat gold */
+  --color-bg: #f8f9fb;
+  --color-bg-gradient-end: #eef1f5;
+  --color-surface: #ffffff;
+  --color-elevated: #f0f2f5;
+  --color-border: rgba(15, 23, 41, 0.1);
+  --color-border-subtle: rgba(15, 23, 41, 0.06);
+  --color-gold: #b8956a;
+  --color-gold-wash: rgba(184, 149, 106, 0.12);
+  --color-bronze: #9a7d58;
+  --color-burgundy: #6b2d3c;
+  --color-ink: #0f1729;
+  --color-muted: #5c6478;
 
   /* Overlays & UI chrome */
-  --color-overlay-strong: rgba(18, 19, 21, 0.82);
-  --color-overlay-medium: rgba(18, 19, 21, 0.45);
-  --color-overlay-subtle: rgba(18, 19, 21, 0.4);
-  --color-overlay-fade: rgba(18, 19, 21, 0.55);
-  --color-header-scrolled: rgba(245, 243, 239, 0.92);
-  --color-mobile-menu-bg: rgba(245, 243, 239, 0.97);
-  --color-gradient-mid: #ebe8e3;
-  --color-separator: rgba(18, 19, 21, 0.15);
-  --color-hero-quote-text: #f5f3ef;
-  --color-hero-quote-shadow: rgba(0, 0, 0, 0.6);
-  --color-slider-dot: rgba(18, 19, 21, 0.25);
-  --color-hero-scrim-top: rgba(18, 19, 21, 0.08);
-  --color-hero-scrim-bottom: rgba(18, 19, 21, 0.12);
-  --color-theme-meta: #f5f3ef;
+  --color-overlay-strong: rgba(15, 23, 41, 0.82);
+  --color-overlay-medium: rgba(15, 23, 41, 0.45);
+  --color-overlay-subtle: rgba(15, 23, 41, 0.4);
+  --color-overlay-fade: rgba(15, 23, 41, 0.55);
+  --color-header-scrolled: rgba(248, 249, 251, 0.92);
+  --color-mobile-menu-bg: rgba(248, 249, 251, 0.97);
+  --color-gradient-mid: #eef1f5;
+  --color-separator: rgba(15, 23, 41, 0.12);
+  --color-hero-quote-text: #f8f9fb;
+  --color-hero-quote-shadow: rgba(0, 0, 0, 0.5);
+  --color-theme-meta: #f8f9fb;
+  --color-hero-scrim-top: rgba(15, 23, 41, 0.15);
+  --color-hero-scrim-bottom: rgba(15, 23, 41, 0.35);
 
   /* Typography */
-  --font-display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-display: 'Merriweather', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
 
   /* Spacing — editorial rhythm */
   --container-max: 76rem;
   --container-padding: clamp(1.75rem, 5vw, 3.5rem);
-  --section-gap: clamp(3.5rem, 7vw, 5.5rem);
-  --content-gap: clamp(1.25rem, 2.5vw, 2rem);
+  --section-gap: clamp(4rem, 8vw, 6.5rem);
+  --content-gap: clamp(1.5rem, 3vw, 2.25rem);
 
   /* Letter-spacing */
   --tracking-eyebrow: 0.18em;
   --tracking-nav: 0.1em;
   --tracking-body: 0.015em;
-  --tracking-display: -0.025em;
+  --tracking-display: -0.02em;
 
   /* Motion */
   --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
@@ -58,26 +58,25 @@
 }
 
 [data-theme='dark'] {
-  --color-bg: #121315;
-  --color-bg-gradient-end: #141820;
-  --color-surface: #1a1c1f;
-  --color-elevated: #22252a;
-  --color-border: rgba(255, 255, 255, 0.1);
-  --color-border-subtle: rgba(255, 255, 255, 0.06);
+  --color-bg: #0f1419;
+  --color-bg-gradient-end: #121820;
+  --color-surface: #151b24;
+  --color-elevated: #1c2430;
+  --color-border: rgba(240, 242, 245, 0.1);
+  --color-border-subtle: rgba(240, 242, 245, 0.06);
   --color-gold: #c4a574;
   --color-gold-wash: rgba(196, 165, 116, 0.13);
-  --color-bronze: #a68b5b;
-  --color-ink: #f5f3ef;
-  --color-muted: #a39e98;
+  --color-bronze: #b8956a;
+  --color-ink: #f0f2f5;
+  --color-muted: #9aa3b2;
 
-  --color-header-scrolled: rgba(18, 19, 21, 0.94);
-  --color-mobile-menu-bg: rgba(18, 19, 21, 0.97);
-  --color-gradient-mid: #13161c;
-  --color-separator: rgba(255, 255, 255, 0.15);
-  --color-theme-meta: #121315;
-  --color-hero-scrim-top: rgba(18, 19, 21, 0.2);
-  --color-hero-scrim-bottom: rgba(18, 19, 21, 0.25);
-  --color-slider-dot: rgba(245, 243, 239, 0.45);
+  --color-header-scrolled: rgba(15, 20, 25, 0.94);
+  --color-mobile-menu-bg: rgba(15, 20, 25, 0.97);
+  --color-gradient-mid: #121820;
+  --color-separator: rgba(240, 242, 245, 0.12);
+  --color-theme-meta: #0f1419;
+  --color-hero-scrim-top: rgba(15, 20, 25, 0.25);
+  --color-hero-scrim-bottom: rgba(15, 20, 25, 0.45);
 }
 
 @media (min-width: 1280px) {

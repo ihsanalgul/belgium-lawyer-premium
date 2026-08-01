@@ -3,6 +3,9 @@ export const siteConfig = {
   nameShort: { first: 'Yusuf Ziya', last: 'Kahya' },
   title: 'Avukat',
   bar: 'Ankara Barosu, Hukuk ve Danışmanlık',
+  barSicilNo: '',
+  kvkkUrl: '/kvkk.html',
+  privacyUrl: '/gizlilik.html',
   whatsapp: {
     number: '905067151119',
     display: '0506 715 11 19',
@@ -18,26 +21,14 @@ export const siteConfig = {
       line: 'Avenue Louise 149, 1050 Brüksel, Belçika',
     },
   },
+  maps: {
+    ankaraEmbedUrl:
+      'https://www.google.com/maps?q=Merkez+Mah.+Sun+Sok.+No:33/20+Pursaklar+Ankara+06140&output=embed',
+  },
   googleCalendarUrl: '',
   x: {
     handle: '@y_ziya_kahya',
     profileUrl: 'https://x.com/y_ziya_kahya',
   },
-  heroImages: [
-    {
-      src: '/images/hero/ankara-adliyesi.jpg',
-      altKey: 'imageAlt0',
-      objectPosition: 'center center',
-    },
-    {
-      src: '/images/hero/anayasa-mahkemesi-ankara.jpg',
-      altKey: 'imageAlt1',
-      objectPosition: 'center center',
-    },
-    {
-      src: '/images/hero/adalet-sarayi.jpg',
-      altKey: 'imageAlt2',
-      objectPosition: 'center center',
-    },
-  ],
+  heroImage: '/images/hero/ankara-adliyesi.jpg',
 };

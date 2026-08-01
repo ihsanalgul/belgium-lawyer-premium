@@ -6,6 +6,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        kvkk: resolve(__dirname, 'kvkk.html'),
+        gizlilik: resolve(__dirname, 'gizlilik.html'),
         blogIndex: resolve(__dirname, 'blog/index.html'),
         blogTutukluluk: resolve(__dirname, 'blog/tutukluluk-haklari.html'),
         blogSorusturma: resolve(__dirname, 'blog/sorusturma-asamasinda-mudafaa.html'),

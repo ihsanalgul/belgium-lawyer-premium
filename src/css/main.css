@@ -2,7 +2,6 @@
 @import './typography.css';
 @import './motion.css';
 @import './layout.css';
-@import './hero-slider.css';
 @import './sections-extras.css';
 
 @tailwind base;
@@ -72,7 +71,7 @@ img {
   .lang-select,
   .theme-toggle,
   .nav-mobile-toggle,
-  .expertise-item,
+  .expertise-card,
   .why-block,
   .office-block,
   .blog-card,

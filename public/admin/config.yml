@@ -1,0 +1,76 @@
+# Decap CMS configuration
+# DecapBridge: set backend to github + base_url per https://decapbridge.com/docs
+backend:
+  name: git-gateway
+  branch: main
+
+# DecapBridge OAuth (uncomment and set repo after connecting at decapbridge.com):
+# backend:
+#   name: github
+#   repo: YOUR_GITHUB_USER/belgium-lawyer-premium
+#   branch: main
+#   base_url: https://api.decapbridge.com
+#   auth_endpoint: auth
+
+local_backend: true
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+locale: tr
+
+collections:
+  - name: blog
+    label: Blog Yazıları
+    label_singular: Blog Yazısı
+    folder: content/blog
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Slug, name: slug, widget: string, hint: 'URL parçası, örn. tutukluluk-haklari' }
+      - { label: Tarih, name: date, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false }
+      - { label: Etiketler, name: tags, widget: list, default: [] }
+      - label: Türkçe
+        name: tr
+        widget: object
+        fields:
+          - { label: Başlık, name: title, widget: string }
+          - { label: Özet, name: excerpt, widget: text }
+          - { label: Meta Açıklama, name: metaDescription, widget: text }
+          - { label: İçerik, name: body, widget: markdown }
+      - label: English
+        name: en
+        widget: object
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Excerpt, name: excerpt, widget: text }
+          - { label: Meta Description, name: metaDescription, widget: text }
+          - { label: Body, name: body, widget: markdown }
+      - label: Français
+        name: fr
+        widget: object
+        fields:
+          - { label: Titre, name: title, widget: string }
+          - { label: Résumé, name: excerpt, widget: text }
+          - { label: Meta, name: metaDescription, widget: text }
+          - { label: Contenu, name: body, widget: markdown }
+      - label: Nederlands
+        name: nl
+        widget: object
+        fields:
+          - { label: Titel, name: title, widget: string }
+          - { label: Samenvatting, name: excerpt, widget: text }
+          - { label: Meta, name: metaDescription, widget: text }
+          - { label: Inhoud, name: body, widget: markdown }
+
+  - name: pages
+    label: Sayfalar
+    files:
+      - label: KVKK Aydınlatma Metni
+        name: kvkk
+        file: content/pages/kvkk.md
+        fields:
+          - { label: Başlık, name: title, widget: string }
+          - { label: İçerik, name: body, widget: markdown }

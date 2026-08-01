@@ -4,6 +4,7 @@ const ALL_SLOTS = ['09:00', '10:30', '11:30', '13:00', '14:30', '16:00', '17:00'
 const TAKEN_PATTERN = [1, 4];
 
 const state = {
+  step: 1,
   pkgId: null,
   pkgLabel: null,
   dateIdx: null,
@@ -30,18 +31,18 @@ function buildDays() {
   }
 }
 
-function unlockBooker() {
-  const booker = document.getElementById('booker');
-  if (!booker) return;
-  booker.classList.remove('is-locked');
-  booker.setAttribute('aria-disabled', 'false');
-}
-
-function lockBooker() {
-  const booker = document.getElementById('booker');
-  if (!booker) return;
-  booker.classList.add('is-locked');
-  booker.setAttribute('aria-disabled', 'true');
+function setStep(step) {
+  state.step = step;
+  document.querySelectorAll('.appt-step').forEach((el) => {
+    const n = Number(el.dataset.step);
+    el.hidden = n !== step;
+    el.classList.toggle('is-active', n === step);
+  });
+  document.querySelectorAll('.appt-step-indicator__item').forEach((el) => {
+    const n = Number(el.dataset.step);
+    el.classList.toggle('is-complete', n < step);
+    el.classList.toggle('is-active', n === step);
+  });
 }
 
 function renderPackages() {
@@ -88,6 +89,9 @@ function renderPackages() {
 
   grid.addEventListener('click', packageClickHandler);
   grid.addEventListener('keydown', packageKeyHandler);
+
+  const step1Next = document.getElementById('appt-step1-next');
+  if (step1Next) step1Next.disabled = !state.pkgId;
 }
 
 function packageKeyHandler(e) {
@@ -108,10 +112,6 @@ function selectPackage(pkgId) {
   state.dateIdx = null;
   state.slot = null;
 
-  const label = document.getElementById('chosen-pkg-label');
-  if (label) label.textContent = state.pkgLabel;
-
-  unlockBooker();
   renderPackages();
   renderDateChips();
   renderSlots();
@@ -139,6 +139,7 @@ function renderDateChips() {
       renderDateChips();
       renderSlots();
       updateSummary();
+      updateStep2Next();
     });
     container.appendChild(chip);
   });
@@ -167,11 +168,17 @@ function renderSlots() {
         state.slot = slot;
         renderSlots();
         updateSummary();
+        updateStep2Next();
       });
     }
 
     grid.appendChild(btn);
   });
+}
+
+function updateStep2Next() {
+  const btn = document.getElementById('appt-step2-next');
+  if (btn) btn.disabled = state.dateIdx === null || !state.slot;
 }
 
 function updateSummary() {
@@ -204,41 +211,45 @@ function handleConfirm() {
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
 
-  const flow = document.getElementById('booking-flow');
+  document.querySelectorAll('.appt-step').forEach((el) => {
+    el.hidden = true;
+  });
+  document.querySelector('.appt-step-indicator')?.setAttribute('hidden', '');
   const success = document.getElementById('booking-success');
-  if (flow) flow.hidden = true;
-  if (success) success.classList.add('is-visible');
+  if (success) {
+    success.hidden = false;
+    success.classList.add('is-visible');
+  }
 }
 
 export function refreshAppointmentsLocale() {
   if (state.days.length === 0) buildDays();
-
-  const t = getT();
-  const label = document.getElementById('chosen-pkg-label');
-
-  if (state.pkgId) {
-    const pkg = t.packages.find((p) => p.id === state.pkgId);
-    if (pkg) {
-      state.pkgLabel = `${pkg.title} · ${pkg.duration}`;
-      if (label) label.textContent = state.pkgLabel;
-    }
-  } else if (label) {
-    label.textContent = t.booker.chooseFirst;
-  }
-
   renderPackages();
   renderDateChips();
   renderSlots();
   updateSummary();
+  updateStep2Next();
 }
 
 export function initAppointments() {
   buildDays();
-  lockBooker();
   renderPackages();
   renderDateChips();
   renderSlots();
   updateSummary();
+  setStep(1);
 
+  document.getElementById('appt-step1-next')?.addEventListener('click', () => {
+    if (!state.pkgId) return;
+    setStep(2);
+  });
+
+  document.getElementById('appt-step2-back')?.addEventListener('click', () => setStep(1));
+  document.getElementById('appt-step2-next')?.addEventListener('click', () => {
+    if (state.dateIdx === null || !state.slot) return;
+    setStep(3);
+  });
+
+  document.getElementById('appt-step3-back')?.addEventListener('click', () => setStep(2));
   document.getElementById('confirm-btn')?.addEventListener('click', handleConfirm);
 }
