@@ -34,6 +34,7 @@
   --font-signature: 'Great Vibes', cursive;
 
   /* Spacing — editorial rhythm */
+  --header-height: 4.75rem;
   --container-max: 76rem;
   --container-padding: clamp(1.75rem, 5vw, 3.5rem);
   --section-gap: clamp(4rem, 8vw, 6.5rem);
