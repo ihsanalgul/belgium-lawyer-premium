@@ -88,6 +88,11 @@
   overflow: hidden;
 }
 
+.hero-image-wrap .hero-slider {
+  position: absolute;
+  inset: 0;
+}
+
 .hero-image-wrap::after {
   content: '';
   position: absolute;
