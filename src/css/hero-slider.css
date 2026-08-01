@@ -273,7 +273,7 @@
 
 .hero-slider__slide--portrait-split {
   background-color: #e8e4df;
-  background-image: url('/images/hero/golden-wave-bg.png');
+  background-image: url('/images/hero/');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
