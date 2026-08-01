@@ -25,16 +25,16 @@ export const siteConfig = {
   },
   heroImages: [
     {
-      src: '/images/lawyer/yusuf-ziya-kahya.png',
+      src: '/images/hero/ankara-adliyesi.jpg',
       altKey: 'imageAlt0',
-      quoteIndex: 0,
-      variant: 'portrait',
     },
     {
-      src: '/images/hero/ankara-adliyesi.jpg',
+      src: '/images/hero/law-office.png',
       altKey: 'imageAlt1',
-      quoteIndex: 1,
-      variant: 'photo',
+    },
+    {
+      src: '/images/hero/law-books.png',
+      altKey: 'imageAlt2',
     },
   ],
 };

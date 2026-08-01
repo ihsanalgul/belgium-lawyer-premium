@@ -26,12 +26,9 @@ const baseTranslations = {
       subtitle:
         'Legal counsel in Turkey on criminal, administrative, labour and immigration law — constitutional court, ECtHR and UN applications, and petition drafting.',
       cta: 'Book an appointment',
-      imageAlt0: 'Av. Yusuf Ziya Kahya — Ankara Bar Association',
-      imageAlt1: 'Ankara Courthouse',
-      quotes: [
-        { text: 'The good of the people is the supreme law.', author: 'Cicero' },
-        { text: 'There is no liberty without laws.', author: 'Montesquieu' },
-      ],
+      imageAlt0: 'Ankara Courthouse',
+      imageAlt1: 'Law office interior',
+      imageAlt2: 'Law books',
     },
     about: {
       eyebrow: 'About',
@@ -113,12 +110,9 @@ const baseTranslations = {
       subtitle:
         'Conseil juridique en Turquie en droit pénal, administratif, du travail et des migrations — recours AYM, CEDH, ONU et rédaction de requêtes.',
       cta: 'Prendre rendez-vous',
-      imageAlt0: 'Av. Yusuf Ziya Kahya — Barreau d\'Ankara',
-      imageAlt1: 'Palais de justice d\'Ankara',
-      quotes: [
-        { text: 'Le bien du peuple est la loi suprême.', author: 'Cicéron' },
-        { text: 'Il n\'y a point de liberté sans lois.', author: 'Montesquieu' },
-      ],
+      imageAlt0: 'Palais de justice d\'Ankara',
+      imageAlt1: 'Intérieur de cabinet d\'avocat',
+      imageAlt2: 'Ouvrages juridiques',
     },
     about: {
       eyebrow: 'À propos',
@@ -200,12 +194,9 @@ const baseTranslations = {
       subtitle:
         'Juridisch advies in Turkije op straf-, bestuurs-, arbeids- en migratierecht — AYM-, EVRM- en VN-beroepen en verzoekschriftvoorbereiding.',
       cta: 'Afspraak maken',
-      imageAlt0: 'Av. Yusuf Ziya Kahya — Ankara Balie',
-      imageAlt1: 'Gerechtsgebouw Ankara',
-      quotes: [
-        { text: 'Het welzijn van het volk is de hoogste wet.', author: 'Cicero' },
-        { text: 'Zonder wetten is er geen vrijheid.', author: 'Montesquieu' },
-      ],
+      imageAlt0: 'Gerechtsgebouw Ankara',
+      imageAlt1: 'Advocatenkantoor interieur',
+      imageAlt2: 'Juridische boeken',
     },
     about: {
       eyebrow: 'Over',
@@ -287,12 +278,9 @@ const baseTranslations = {
       subtitle:
         'Türkiye\'de ceza, idari, iş ve göçmen hukuku alanlarında danışmanlık — AYM, AİHM ve BM başvuruları ile dilekçe hazırlığı.',
       cta: 'Randevu alın',
-      imageAlt0: 'Av. Yusuf Ziya Kahya — Ankara Barosu',
-      imageAlt1: 'Ankara Adliyesi',
-      quotes: [
-        { text: 'Halkın yararı en yüce kanundur.', author: 'Cicero' },
-        { text: 'Kanunlar olmadan özgürlük olamaz.', author: 'Montesquieu' },
-      ],
+      imageAlt0: 'Ankara Adliyesi',
+      imageAlt1: 'Hukuk bürosu iç mekan',
+      imageAlt2: 'Hukuk kitapları',
     },
     about: {
       eyebrow: 'Hakkında',

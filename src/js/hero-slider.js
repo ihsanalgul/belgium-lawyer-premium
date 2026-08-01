@@ -11,15 +11,15 @@ export function initHeroSlider() {
 
   const slides = siteConfig.heroImages.map((img, i) => {
     const slide = document.createElement('div');
-    slide.className = `hero-slider__slide${i === 0 ? ' is-active' : ''}${img.variant === 'portrait' ? ' hero-slider__slide--portrait' : ''}`;
+    slide.className = `hero-slider__slide${i === 0 ? ' is-active' : ''}`;
     slide.setAttribute('role', 'group');
     slide.setAttribute('aria-roledescription', 'slide');
     slide.setAttribute('aria-label', `${i + 1} of ${siteConfig.heroImages.length}`);
 
     const image = document.createElement('img');
     image.src = img.src;
-    image.width = 700;
-    image.height = 875;
+    image.width = 1920;
+    image.height = 1080;
     image.loading = i === 0 ? 'eager' : 'lazy';
     image.dataset.i18nAlt = `hero.${img.altKey}`;
     slide.appendChild(image);
@@ -29,18 +29,6 @@ export function initHeroSlider() {
   const track = document.createElement('div');
   track.className = 'hero-slider__track';
   slides.forEach((s) => track.appendChild(s));
-
-  const quoteEl = document.createElement('blockquote');
-  quoteEl.className = 'hero-slider__quote';
-  quoteEl.setAttribute('aria-live', 'polite');
-
-  const quoteText = document.createElement('p');
-  quoteText.className = 'hero-slider__quote-text';
-
-  const quoteAuthor = document.createElement('cite');
-  quoteAuthor.className = 'hero-slider__quote-author';
-
-  quoteEl.append(quoteText, quoteAuthor);
 
   const dots = document.createElement('div');
   dots.className = 'hero-slider__dots';
@@ -61,7 +49,6 @@ export function initHeroSlider() {
   const slider = document.createElement('div');
   slider.className = 'hero-slider';
   slider.appendChild(track);
-  slider.appendChild(quoteEl);
   slider.appendChild(dots);
 
   wrap.innerHTML = '';
@@ -71,15 +58,6 @@ export function initHeroSlider() {
   let currentLang = 'tr';
   let timer = null;
   let paused = false;
-
-  function updateQuote(index, lang) {
-    const quotes = translations[lang]?.hero?.quotes;
-    const quoteIndex = siteConfig.heroImages[index]?.quoteIndex ?? index;
-    const quote = quotes?.[quoteIndex];
-    if (!quote) return;
-    quoteText.textContent = `"${quote.text}"`;
-    quoteAuthor.textContent = `— ${quote.author}`;
-  }
 
   function goTo(index, lang = currentLang) {
     slides[current].classList.remove('is-active');
@@ -92,7 +70,6 @@ export function initHeroSlider() {
     slides[current].classList.add('is-active');
     dotBtns[current].classList.add('is-active');
     dotBtns[current].setAttribute('aria-selected', 'true');
-    updateQuote(current, lang);
   }
 
   function next() {
@@ -142,7 +119,6 @@ export function initHeroSlider() {
   });
 
   slider.setAttribute('tabindex', '0');
-  updateQuote(0, 'tr');
   startAutoplay();
 
   return {
@@ -155,7 +131,6 @@ export function initHeroSlider() {
           img.alt = translations[lang].hero[key];
         }
       });
-      updateQuote(current, lang);
     },
   };
 }
