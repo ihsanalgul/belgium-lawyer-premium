@@ -51,7 +51,7 @@ export const siteConfig = {
       id: 'portrait',
       src: '/images/lawyer/yusuf-ziya-kahya-slider.png',
       altKey: 'slide2Alt',
-      layout: 'portrait-frame',
+      layout: 'portrait-split',
       overlay: false,
       background: 'pattern',
       objectPosition: 'center top',

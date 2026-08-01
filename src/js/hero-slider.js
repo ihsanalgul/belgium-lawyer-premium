@@ -5,41 +5,62 @@ const INTERVAL_MS = 5000;
 
 let sliderApi = null;
 
+function isPortraitLayout(slideConfig) {
+  return slideConfig?.layout === 'portrait-split' || slideConfig?.layout === 'portrait-frame';
+}
+
 function renderSlideContent(contentEl, slideData, index, slideConfig, lang) {
   if (!contentEl || !slideData) return;
 
-  const isPortrait = slideConfig?.layout === 'portrait-frame';
+  const isPortrait = isPortraitLayout(slideConfig);
+  const btnVariant = isPortrait ? 'btn-hero--on-light' : 'btn-hero--on-dark';
   const ctaHtml = slideData.cta
-    ? `<a href="${slideData.ctaHref || '#appointments'}" class="btn-primary hero-slide-content__cta">${slideData.cta}</a>`
+    ? `<a href="${slideData.ctaHref || '#appointments'}" class="btn btn-hero ${btnVariant} hero-slide-content__cta">${slideData.cta}</a>`
     : '';
 
   const quoteClass = index === 0 ? ' hero-slide-content__inner--quote' : '';
   const altText = translations[lang]?.hero?.[slideConfig?.altKey] ?? '';
 
-  const portraitHtml = isPortrait
-    ? `<div class="hero-portrait-frame">
-        <img
-          src="${slideConfig.src}"
-          class="hero-portrait-frame__img"
-          width="440"
-          height="580"
-          loading="lazy"
-          alt="${altText}"
-        />
-      </div>`
-    : '';
+  if (isPortrait) {
+    contentEl.className = 'hero-slide-content hero-slide-content--portrait-split';
+    contentEl.innerHTML = `
+      <div class="hero-portrait-split is-entering">
+        <div class="hero-portrait-split__media">
+          <img
+            src="${slideConfig.src}"
+            class="hero-portrait-split__figure"
+            width="440"
+            height="720"
+            loading="lazy"
+            alt="${altText}"
+          />
+        </div>
+        <div class="hero-portrait-split__copy">
+          <div class="hero-portrait-split__text">
+            <p class="hero-slide-content__eyebrow">${slideData.eyebrow}</p>
+            <div class="rule-gold hero-slide-content__rule hero-slide-content__rule--left"></div>
+            <h1 class="hero-slide-content__title">${slideData.title}</h1>
+            ${slideData.subtitle ? `<p class="hero-slide-content__subtitle">${slideData.subtitle}</p>` : ''}
+          </div>
+          <div class="hero-portrait-split__actions">
+            ${ctaHtml}
+          </div>
+        </div>
+      </div>`;
 
-  contentEl.className = `hero-slide-content hero-slide-content--center${
-    isPortrait ? ' hero-slide-content--portrait' : ' hero-slide-content--cover'
-  }`;
+    requestAnimationFrame(() => {
+      contentEl.querySelector('.hero-portrait-split')?.classList.add('is-visible');
+    });
+    return;
+  }
 
+  contentEl.className = 'hero-slide-content hero-slide-content--center hero-slide-content--cover';
   contentEl.innerHTML = `
     <div class="hero-slide-content__inner is-entering${quoteClass}">
       <p class="hero-slide-content__eyebrow">${slideData.eyebrow}</p>
       <div class="rule-gold hero-slide-content__rule"></div>
       <h1 class="hero-slide-content__title">${slideData.title}</h1>
       ${slideData.subtitle ? `<p class="hero-slide-content__subtitle">${slideData.subtitle}</p>` : ''}
-      ${portraitHtml}
       ${ctaHtml}
     </div>`;
 
@@ -50,22 +71,16 @@ function renderSlideContent(contentEl, slideData, index, slideConfig, lang) {
 
 function createSlide(slideConfig, index, lang) {
   const slide = document.createElement('div');
-  const layoutClass =
-    slideConfig.layout === 'portrait-frame'
-      ? ' hero-slider__slide--portrait-frame'
-      : ' hero-slider__slide--cover';
+  const layoutClass = isPortraitLayout(slideConfig)
+    ? ' hero-slider__slide--portrait-split'
+    : ' hero-slider__slide--cover';
 
   slide.className = `hero-slider__slide${index === 0 ? ' is-active' : ''}${layoutClass}`;
   slide.setAttribute('role', 'group');
   slide.setAttribute('aria-roledescription', 'slide');
   slide.setAttribute('aria-label', `${index + 1} of ${siteConfig.heroSlides.length}`);
 
-  if (slideConfig.layout === 'portrait-frame') {
-    const pattern = document.createElement('div');
-    pattern.className = 'hero-slider__slide-pattern';
-    pattern.setAttribute('aria-hidden', 'true');
-    slide.appendChild(pattern);
-  } else {
+  if (!isPortraitLayout(slideConfig)) {
     const image = document.createElement('img');
     image.src = slideConfig.src;
     image.width = 1920;
@@ -138,7 +153,7 @@ export function initHeroSlider() {
   function updateAlts(lang) {
     slides.forEach((slide, i) => {
       const config = siteConfig.heroSlides[i];
-      if (config.layout === 'portrait-frame') return;
+      if (isPortraitLayout(config)) return;
       const img = slide.querySelector('img');
       if (img && translations[lang]?.hero?.[config.altKey]) {
         img.alt = translations[lang].hero[config.altKey];

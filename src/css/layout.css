@@ -33,6 +33,24 @@
     border-color var(--duration-hover) var(--ease-out-strong);
 }
 
+.site-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold) 20%,
+    var(--color-gold) 80%,
+    transparent
+  );
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 .site-header.is-scrolled {
   background-color: var(--color-header-scrolled);
   border-bottom: 1px solid var(--color-border-subtle);
@@ -55,19 +73,19 @@
 }
 
 .logo-wordmark {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 1.6vw, 1.5rem);
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  font-family: var(--font-signature);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
   color: var(--color-ink);
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
+  line-height: 1.1;
 }
 
 .logo-wordmark span {
   color: var(--color-gold);
-  font-style: italic;
 }
 
 /* Header over full-screen hero */

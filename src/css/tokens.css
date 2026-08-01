@@ -31,6 +31,7 @@
   /* Typography */
   --font-display: 'Merriweather', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-signature: 'Great Vibes', cursive;
 
   /* Spacing — editorial rhythm */
   --container-max: 76rem;
