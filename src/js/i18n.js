@@ -5,6 +5,7 @@ import { refreshThemeToggleLabels } from './theme.js';
 import { renderExpertiseItems } from './expertise.js';
 import { initScrollReveal } from './scroll-reveal.js';
 import { updateFooterBarSicil } from './site-init.js';
+import { refreshHeroSliderContent } from './hero-slider.js';
 
 const STORAGE_KEY = 'lang';
 const MANUAL_KEY = 'lang-manual';
@@ -109,6 +110,7 @@ export function setLanguage(lang, { manual = false } = {}) {
 
   renderExpertiseItems(lang);
   refreshAppointmentsLocale();
+  refreshHeroSliderContent(lang);
   updateFooterBarSicil(t.footer?.barSicilPrefix ?? '');
   updateMeta(lang);
   refreshThemeToggleLabels(lang);

@@ -3,7 +3,7 @@ export const siteConfig = {
   nameShort: { first: 'Yusuf Ziya', last: 'Kahya' },
   title: 'Avukat',
   bar: 'Ankara Barosu, Hukuk ve Danışmanlık',
-  barSicilNo: '',
+  barSicilNo: 'Ankara 1 nolu Barosu 43223',
   kvkkUrl: '/kvkk.html',
   privacyUrl: '/gizlilik.html',
   whatsapp: {
@@ -30,5 +30,27 @@ export const siteConfig = {
     handle: '@y_ziya_kahya',
     profileUrl: 'https://x.com/y_ziya_kahya',
   },
-  heroImage: '/images/hero/ankara-adliyesi.jpg',
+  heroSlides: [
+    {
+      id: 'ankara',
+      src: '/images/hero/ankara-adliyesi.jpg',
+      altKey: 'slide0Alt',
+      layout: 'cover',
+      objectPosition: 'center center',
+    },
+    {
+      id: 'justice',
+      src: '/images/hero/pexels-pixabay-159832.jpg',
+      altKey: 'slide1Alt',
+      layout: 'cover',
+      objectPosition: 'center center',
+    },
+    {
+      id: 'portrait',
+      src: '/images/lawyer/yusuf-ziya-kahya-slider.png',
+      altKey: 'slide2Alt',
+      layout: 'portrait',
+      objectPosition: 'right center',
+    },
+  ],
 };

@@ -101,29 +101,9 @@
 }
 
 .whatsapp-fab {
-  animation: whatsapp-bounce 2.5s ease-in-out infinite;
   transition:
     transform var(--duration-hover) var(--ease-out-strong),
     box-shadow var(--duration-hover) var(--ease-out-strong);
-}
-
-@keyframes whatsapp-bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-.whatsapp-fab:hover {
-  transform: scale(1.06) translateY(-2px);
-  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.45);
-}
-
-.whatsapp-fab:active {
-  transform: scale(0.96);
 }
 
 @media (prefers-reduced-motion: reduce) {

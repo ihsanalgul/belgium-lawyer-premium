@@ -26,7 +26,34 @@ const baseTranslations = {
       subtitle:
         'Legal counsel in Turkey on criminal, administrative, labour and immigration law — constitutional court, ECtHR and UN applications, and petition drafting.',
       cta: 'Book an appointment',
-      imageAlt: 'Ankara Courthouse',
+      ctaContact: 'Contact us',
+      slide0Alt: 'Ankara Courthouse',
+      slide1Alt: 'Scales of justice and law books',
+      slide2Alt: 'Av. Yusuf Ziya Kahya — Ankara Bar Association',
+      slides: [
+        {
+          eyebrow: 'Ankara Bar · Lawyer',
+          title: '"The good of the people is the supreme law."',
+          subtitle: 'Cicero',
+          cta: '',
+          ctaHref: '',
+        },
+        {
+          eyebrow: 'Welcome',
+          title: 'Av. Yusuf Ziya Kahya',
+          subtitle:
+            'Legal counsel in Turkey on criminal, administrative, labour and immigration law — constitutional court, ECtHR and UN applications, and petition drafting.',
+          cta: 'Book an appointment',
+          ctaHref: '#appointments',
+        },
+        {
+          eyebrow: 'Lawyer & Legal Consultancy',
+          title: 'Av. Yusuf Ziya Kahya',
+          subtitle: 'Ankara Bar Association · Confidential counsel',
+          cta: 'Contact us',
+          ctaHref: '#contact',
+        },
+      ],
     },
     about: {
       eyebrow: 'About',
@@ -84,6 +111,7 @@ const baseTranslations = {
     },
     whatsapp: {
       label: 'Contact via WhatsApp (WhatsApp only)',
+      shortLabel: 'WhatsApp',
     },
   },
 
@@ -111,7 +139,34 @@ const baseTranslations = {
       subtitle:
         'Conseil juridique en Turquie en droit pénal, administratif, du travail et des migrations — recours AYM, CEDH, ONU et rédaction de requêtes.',
       cta: 'Prendre rendez-vous',
-      imageAlt: 'Palais de justice d\'Ankara',
+      ctaContact: 'Nous contacter',
+      slide0Alt: 'Palais de justice d\'Ankara',
+      slide1Alt: 'Balance de la justice et livres de droit',
+      slide2Alt: 'Av. Yusuf Ziya Kahya — Barreau d\'Ankara',
+      slides: [
+        {
+          eyebrow: 'Barreau d\'Ankara · Avocat',
+          title: '"Le bien du peuple est la loi suprême."',
+          subtitle: 'Cicéron',
+          cta: '',
+          ctaHref: '',
+        },
+        {
+          eyebrow: 'Bienvenue',
+          title: 'Av. Yusuf Ziya Kahya',
+          subtitle:
+            'Conseil juridique en Turquie en droit pénal, administratif, du travail et des migrations — recours AYM, CEDH, ONU et rédaction de requêtes.',
+          cta: 'Prendre rendez-vous',
+          ctaHref: '#appointments',
+        },
+        {
+          eyebrow: 'Avocat & Conseil Juridique',
+          title: 'Av. Yusuf Ziya Kahya',
+          subtitle: 'Barreau d\'Ankara · Conseil confidentiel',
+          cta: 'Nous contacter',
+          ctaHref: '#contact',
+        },
+      ],
     },
     about: {
       eyebrow: 'À propos',
@@ -169,6 +224,7 @@ const baseTranslations = {
     },
     whatsapp: {
       label: 'Contacter via WhatsApp (WhatsApp uniquement)',
+      shortLabel: 'WhatsApp',
     },
   },
 
@@ -196,7 +252,34 @@ const baseTranslations = {
       subtitle:
         'Juridisch advies in Turkije op straf-, bestuurs-, arbeids- en migratierecht — AYM-, EVRM- en VN-beroepen en verzoekschriftvoorbereiding.',
       cta: 'Afspraak maken',
-      imageAlt: 'Gerechtsgebouw Ankara',
+      ctaContact: 'Contact opnemen',
+      slide0Alt: 'Gerechtsgebouw Ankara',
+      slide1Alt: 'Weegschaal der rechtvaardigheid en juridische boeken',
+      slide2Alt: 'Av. Yusuf Ziya Kahya — Ankara Balie',
+      slides: [
+        {
+          eyebrow: 'Ankara Balie · Advocaat',
+          title: '"Het welzijn van het volk is de hoogste wet."',
+          subtitle: 'Cicero',
+          cta: '',
+          ctaHref: '',
+        },
+        {
+          eyebrow: 'Welkom',
+          title: 'Av. Yusuf Ziya Kahya',
+          subtitle:
+            'Juridisch advies in Turkije op straf-, bestuurs-, arbeids- en migratierecht — AYM-, EVRM- en VN-beroepen en verzoekschriftvoorbereiding.',
+          cta: 'Afspraak maken',
+          ctaHref: '#appointments',
+        },
+        {
+          eyebrow: 'Advocaat & Juridisch Advies',
+          title: 'Av. Yusuf Ziya Kahya',
+          subtitle: 'Ankara Balie · Vertrouwelijk advies',
+          cta: 'Contact opnemen',
+          ctaHref: '#contact',
+        },
+      ],
     },
     about: {
       eyebrow: 'Over',
@@ -254,6 +337,7 @@ const baseTranslations = {
     },
     whatsapp: {
       label: 'Contact via WhatsApp (alleen WhatsApp)',
+      shortLabel: 'WhatsApp',
     },
   },
 
@@ -281,7 +365,34 @@ const baseTranslations = {
       subtitle:
         'Türkiye\'de ceza, idari, iş ve göçmen hukuku alanlarında danışmanlık — AYM, AİHM ve BM başvuruları ile dilekçe hazırlığı.',
       cta: 'Randevu alın',
-      imageAlt: 'Ankara Adliyesi',
+      ctaContact: 'İletişime geçin',
+      slide0Alt: 'Ankara Adliyesi',
+      slide1Alt: 'Adalet terazisi ve hukuk kitapları',
+      slide2Alt: 'Av. Yusuf Ziya Kahya — Ankara Barosu',
+      slides: [
+        {
+          eyebrow: 'Ankara Barosu · Avukat',
+          title: '"Halkın yararı en yüce kanundur."',
+          subtitle: 'Cicero',
+          cta: '',
+          ctaHref: '',
+        },
+        {
+          eyebrow: 'Hoş Geldiniz',
+          title: 'Av. Yusuf Ziya Kahya',
+          subtitle:
+            'Türkiye\'de ceza, idari, iş ve göçmen hukuku alanlarında danışmanlık — AYM, AİHM ve BM başvuruları ile dilekçe hazırlığı.',
+          cta: 'Randevu alın',
+          ctaHref: '#appointments',
+        },
+        {
+          eyebrow: 'Avukat & Hukuk Danışmanlığı',
+          title: 'Av. Yusuf Ziya Kahya',
+          subtitle: 'Ankara Barosu · Gizli danışmanlık',
+          cta: 'İletişime geçin',
+          ctaHref: '#contact',
+        },
+      ],
     },
     about: {
       eyebrow: 'Hakkında',
@@ -339,6 +450,7 @@ const baseTranslations = {
     },
     whatsapp: {
       label: 'WhatsApp ile iletişim (sadece WhatsApp)',
+      shortLabel: 'WhatsApp',
     },
   },
 };

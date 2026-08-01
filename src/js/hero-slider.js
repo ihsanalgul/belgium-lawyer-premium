@@ -5,16 +5,42 @@ const INTERVAL_MS = 5000;
 
 let sliderApi = null;
 
+function renderSlideContent(contentEl, slideData, index) {
+  if (!contentEl || !slideData) return;
+
+  const ctaHtml = slideData.cta
+    ? `<a href="${slideData.ctaHref || '#appointments'}" class="btn-primary hero-slide-content__cta">${slideData.cta}</a>`
+    : '';
+
+  const quoteClass = index === 0 ? ' hero-slide-content__inner--quote' : '';
+
+  contentEl.innerHTML = `
+    <div class="hero-slide-content__inner is-entering${quoteClass}">
+      <p class="hero-slide-content__eyebrow">${slideData.eyebrow}</p>
+      <div class="rule-gold hero-slide-content__rule"></div>
+      <h1 class="hero-slide-content__title">${slideData.title}</h1>
+      ${slideData.subtitle ? `<p class="hero-slide-content__subtitle">${slideData.subtitle}</p>` : ''}
+      ${ctaHtml}
+    </div>`;
+
+  requestAnimationFrame(() => {
+    contentEl.querySelector('.hero-slide-content__inner')?.classList.add('is-visible');
+  });
+}
+
 export function initHeroSlider() {
   const wrap = document.querySelector('.hero-image-wrap');
-  if (!wrap) return null;
+  const contentEl = document.getElementById('hero-slide-content');
+  const prevBtn = document.querySelector('.hero-slider__arrow--prev');
+  const nextBtn = document.querySelector('.hero-slider__arrow--next');
+  if (!wrap || !contentEl) return null;
 
-  const slides = siteConfig.heroImages.map((img, i) => {
+  const slides = siteConfig.heroSlides.map((img, i) => {
     const slide = document.createElement('div');
-    slide.className = `hero-slider__slide${i === 0 ? ' is-active' : ''}`;
+    slide.className = `hero-slider__slide${i === 0 ? ' is-active' : ''}${img.layout === 'portrait' ? ' hero-slider__slide--portrait' : ''}`;
     slide.setAttribute('role', 'group');
     slide.setAttribute('aria-roledescription', 'slide');
-    slide.setAttribute('aria-label', `${i + 1} of ${siteConfig.heroImages.length}`);
+    slide.setAttribute('aria-label', `${i + 1} of ${siteConfig.heroSlides.length}`);
 
     const image = document.createElement('img');
     image.src = img.src;
@@ -23,7 +49,6 @@ export function initHeroSlider() {
     image.loading = i === 0 ? 'eager' : 'lazy';
     image.alt = translations.tr?.hero?.[img.altKey] ?? '';
     image.style.objectPosition = img.objectPosition ?? 'center center';
-    image.dataset.i18nAlt = `hero.${img.altKey}`;
     slide.appendChild(image);
     return slide;
   });
@@ -35,7 +60,7 @@ export function initHeroSlider() {
   const dots = document.createElement('div');
   dots.className = 'hero-slider__dots';
   dots.setAttribute('role', 'tablist');
-  dots.setAttribute('aria-label', 'Hero images');
+  dots.setAttribute('aria-label', 'Hero slides');
 
   const dotBtns = slides.map((_, i) => {
     const btn = document.createElement('button');
@@ -57,9 +82,24 @@ export function initHeroSlider() {
   wrap.appendChild(slider);
 
   let current = 0;
-  let currentLang = 'tr';
+  let currentLang = document.documentElement.lang || 'tr';
   let timer = null;
   let paused = false;
+
+  function updateContent(lang = currentLang) {
+    const slideData = translations[lang]?.hero?.slides?.[current];
+    if (slideData) renderSlideContent(contentEl, slideData, current);
+  }
+
+  function updateAlts(lang) {
+    slides.forEach((slide, i) => {
+      const img = slide.querySelector('img');
+      const key = siteConfig.heroSlides[i].altKey;
+      if (translations[lang]?.hero?.[key]) {
+        img.alt = translations[lang].hero[key];
+      }
+    });
+  }
 
   function goTo(index, lang = currentLang) {
     slides[current].classList.remove('is-active');
@@ -72,10 +112,16 @@ export function initHeroSlider() {
     slides[current].classList.add('is-active');
     dotBtns[current].classList.add('is-active');
     dotBtns[current].setAttribute('aria-selected', 'true');
+
+    updateContent(lang);
   }
 
   function next() {
     goTo(current + 1);
+  }
+
+  function prev() {
+    goTo(current - 1);
   }
 
   function startAutoplay() {
@@ -100,6 +146,16 @@ export function initHeroSlider() {
     });
   });
 
+  prevBtn?.addEventListener('click', () => {
+    prev();
+    startAutoplay();
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    next();
+    startAutoplay();
+  });
+
   slider.addEventListener('mouseenter', () => {
     paused = true;
   });
@@ -111,33 +167,35 @@ export function initHeroSlider() {
   slider.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') {
       e.preventDefault();
-      goTo(current - 1);
+      prev();
       startAutoplay();
     } else if (e.key === 'ArrowRight') {
       e.preventDefault();
-      goTo(current + 1);
+      next();
       startAutoplay();
     }
   });
 
   slider.setAttribute('tabindex', '0');
+  updateContent(currentLang);
+  updateAlts(currentLang);
   startAutoplay();
+
+  document.body.classList.add('has-hero-slider');
 
   return {
     updateLang(lang) {
       currentLang = lang;
-      slides.forEach((slide, i) => {
-        const img = slide.querySelector('img');
-        const key = siteConfig.heroImages[i].altKey;
-        if (translations[lang]?.hero?.[key]) {
-          img.alt = translations[lang].hero[key];
-        }
-      });
+      updateAlts(lang);
+      updateContent(lang);
+    },
+    getCurrentIndex() {
+      return current;
     },
   };
 }
 
-export function refreshHeroSliderAlts(lang) {
+export function refreshHeroSliderContent(lang) {
   sliderApi?.updateLang(lang);
 }
 

@@ -70,83 +70,28 @@
   font-style: italic;
 }
 
-/* Hero — static Ankara courthouse */
+/* Header over full-screen hero */
+body.has-hero-slider .site-header:not(.is-scrolled) {
+  background: linear-gradient(180deg, rgba(15, 23, 41, 0.65) 0%, rgba(15, 23, 41, 0) 100%);
+  border-bottom-color: transparent;
+}
+
+body.has-hero-slider .site-header:not(.is-scrolled) .logo-wordmark,
+body.has-hero-slider .site-header:not(.is-scrolled) .link-underline,
+body.has-hero-slider .site-header:not(.is-scrolled) .lang-select,
+body.has-hero-slider .site-header:not(.is-scrolled) .theme-toggle,
+body.has-hero-slider .site-header:not(.is-scrolled) .nav-mobile-toggle {
+  color: var(--color-hero-quote-text);
+}
+
+body.has-hero-slider .site-header:not(.is-scrolled) .lang-select {
+  border-color: rgba(248, 249, 251, 0.25);
+  background: rgba(15, 23, 41, 0.25);
+}
+
+/* Hero — legacy content helpers (about etc.) */
 .hero-section {
   overflow: hidden;
-}
-
-.hero-static {
-  position: relative;
-  width: 100%;
-  padding-top: 4.75rem;
-  height: clamp(18rem, 40vh, 26rem);
-  overflow: hidden;
-  background: var(--color-elevated);
-}
-
-.hero-static__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 35%;
-}
-
-.hero-static::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    transparent 40%,
-    var(--color-hero-scrim-bottom) 100%
-  );
-  pointer-events: none;
-}
-
-.hero-content-block {
-  padding-block: clamp(2rem, 5vw, 3.5rem);
-}
-
-.hero-content {
-  max-width: 42rem;
-  margin-inline: auto;
-  text-align: center;
-  padding-bottom: 0.5rem;
-}
-
-.hero-content .text-eyebrow {
-  display: block;
-}
-
-.hero-content .rule-gold {
-  margin-inline: auto;
-}
-
-.hero-content .text-prose {
-  margin-top: 1.5rem;
-  margin-inline: auto;
-}
-
-.hero-content .text-display-xl {
-  line-height: 1.08;
-  margin-bottom: 0;
-}
-
-.hero-content .btn-primary {
-  margin-top: 2.25rem;
-}
-
-.hero-badge {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.4375rem 0.75rem;
-  font-size: 0.625rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  border: 1px solid rgba(166, 139, 91, 0.35);
-  background: var(--color-gold-wash);
 }
 
 /* About — asymmetric editorial grid */
@@ -616,22 +561,53 @@
   right: var(--container-padding);
 }
 
-/* WhatsApp FAB */
+/* WhatsApp pill FAB */
 .whatsapp-fab {
   position: fixed;
-  bottom: 1.75rem;
-  right: 1.75rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
   z-index: var(--z-whatsapp);
-  display: flex;
+  display: inline-flex;
+  align-items: stretch;
+  height: 2.75rem;
+  border-radius: 999px;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  transition: transform var(--duration-hover) var(--ease-out-strong), box-shadow var(--duration-hover) ease;
+}
+
+.whatsapp-fab__label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.875rem;
+  background: #121315;
+  color: #fff;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.whatsapp-fab__icon {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 4.75rem;
-  height: 4.75rem;
+  width: 2.75rem;
   background: #25d366;
-  border: none;
-  border-radius: 50%;
   color: #fff;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+  flex-shrink: 0;
+}
+
+.whatsapp-fab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  color: #fff;
+}
+
+.whatsapp-fab:active {
+  transform: scale(0.98);
 }
 
 /* Footer */
