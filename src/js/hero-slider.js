@@ -5,14 +5,33 @@ const INTERVAL_MS = 5000;
 
 let sliderApi = null;
 
-function renderSlideContent(contentEl, slideData, index) {
+function renderSlideContent(contentEl, slideData, index, slideConfig, lang) {
   if (!contentEl || !slideData) return;
 
+  const isPortrait = slideConfig?.layout === 'portrait-frame';
   const ctaHtml = slideData.cta
     ? `<a href="${slideData.ctaHref || '#appointments'}" class="btn-primary hero-slide-content__cta">${slideData.cta}</a>`
     : '';
 
   const quoteClass = index === 0 ? ' hero-slide-content__inner--quote' : '';
+  const altText = translations[lang]?.hero?.[slideConfig?.altKey] ?? '';
+
+  const portraitHtml = isPortrait
+    ? `<div class="hero-portrait-frame">
+        <img
+          src="${slideConfig.src}"
+          class="hero-portrait-frame__img"
+          width="440"
+          height="580"
+          loading="lazy"
+          alt="${altText}"
+        />
+      </div>`
+    : '';
+
+  contentEl.className = `hero-slide-content hero-slide-content--center${
+    isPortrait ? ' hero-slide-content--portrait' : ' hero-slide-content--cover'
+  }`;
 
   contentEl.innerHTML = `
     <div class="hero-slide-content__inner is-entering${quoteClass}">
@@ -20,12 +39,50 @@ function renderSlideContent(contentEl, slideData, index) {
       <div class="rule-gold hero-slide-content__rule"></div>
       <h1 class="hero-slide-content__title">${slideData.title}</h1>
       ${slideData.subtitle ? `<p class="hero-slide-content__subtitle">${slideData.subtitle}</p>` : ''}
+      ${portraitHtml}
       ${ctaHtml}
     </div>`;
 
   requestAnimationFrame(() => {
     contentEl.querySelector('.hero-slide-content__inner')?.classList.add('is-visible');
   });
+}
+
+function createSlide(slideConfig, index, lang) {
+  const slide = document.createElement('div');
+  const layoutClass =
+    slideConfig.layout === 'portrait-frame'
+      ? ' hero-slider__slide--portrait-frame'
+      : ' hero-slider__slide--cover';
+
+  slide.className = `hero-slider__slide${index === 0 ? ' is-active' : ''}${layoutClass}`;
+  slide.setAttribute('role', 'group');
+  slide.setAttribute('aria-roledescription', 'slide');
+  slide.setAttribute('aria-label', `${index + 1} of ${siteConfig.heroSlides.length}`);
+
+  if (slideConfig.layout === 'portrait-frame') {
+    const pattern = document.createElement('div');
+    pattern.className = 'hero-slider__slide-pattern';
+    pattern.setAttribute('aria-hidden', 'true');
+    slide.appendChild(pattern);
+  } else {
+    const image = document.createElement('img');
+    image.src = slideConfig.src;
+    image.width = 1920;
+    image.height = 1080;
+    image.loading = index === 0 ? 'eager' : 'lazy';
+    image.alt = translations[lang]?.hero?.[slideConfig.altKey] ?? '';
+    image.style.objectPosition = slideConfig.objectPosition ?? 'center center';
+    slide.appendChild(image);
+  }
+
+  return slide;
+}
+
+function setOverlayVisible(visible) {
+  const overlay = document.querySelector('.hero-overlay');
+  if (!overlay) return;
+  overlay.hidden = !visible;
 }
 
 export function initHeroSlider() {
@@ -35,23 +92,9 @@ export function initHeroSlider() {
   const nextBtn = document.querySelector('.hero-slider__arrow--next');
   if (!wrap || !contentEl) return null;
 
-  const slides = siteConfig.heroSlides.map((img, i) => {
-    const slide = document.createElement('div');
-    slide.className = `hero-slider__slide${i === 0 ? ' is-active' : ''}${img.layout === 'portrait' ? ' hero-slider__slide--portrait' : ''}`;
-    slide.setAttribute('role', 'group');
-    slide.setAttribute('aria-roledescription', 'slide');
-    slide.setAttribute('aria-label', `${i + 1} of ${siteConfig.heroSlides.length}`);
+  let currentLang = document.documentElement.lang || 'tr';
 
-    const image = document.createElement('img');
-    image.src = img.src;
-    image.width = 1920;
-    image.height = 1080;
-    image.loading = i === 0 ? 'eager' : 'lazy';
-    image.alt = translations.tr?.hero?.[img.altKey] ?? '';
-    image.style.objectPosition = img.objectPosition ?? 'center center';
-    slide.appendChild(image);
-    return slide;
-  });
+  const slides = siteConfig.heroSlides.map((config, i) => createSlide(config, i, currentLang));
 
   const track = document.createElement('div');
   track.className = 'hero-slider__track';
@@ -82,21 +125,23 @@ export function initHeroSlider() {
   wrap.appendChild(slider);
 
   let current = 0;
-  let currentLang = document.documentElement.lang || 'tr';
   let timer = null;
   let paused = false;
 
   function updateContent(lang = currentLang) {
     const slideData = translations[lang]?.hero?.slides?.[current];
-    if (slideData) renderSlideContent(contentEl, slideData, current);
+    const slideConfig = siteConfig.heroSlides[current];
+    if (slideData) renderSlideContent(contentEl, slideData, current, slideConfig, lang);
+    setOverlayVisible(Boolean(slideConfig?.overlay));
   }
 
   function updateAlts(lang) {
     slides.forEach((slide, i) => {
+      const config = siteConfig.heroSlides[i];
+      if (config.layout === 'portrait-frame') return;
       const img = slide.querySelector('img');
-      const key = siteConfig.heroSlides[i].altKey;
-      if (translations[lang]?.hero?.[key]) {
-        img.alt = translations[lang].hero[key];
+      if (img && translations[lang]?.hero?.[config.altKey]) {
+        img.alt = translations[lang].hero[config.altKey];
       }
     });
   }

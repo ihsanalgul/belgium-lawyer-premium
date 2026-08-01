@@ -1,4 +1,4 @@
-/* Full-screen Avada-style hero slider */
+/* Full-screen hero slider — Şule Özdemir / suleozdemir.com layout */
 
 .hero-section--fullscreen {
   position: relative;
@@ -26,9 +26,15 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
+  opacity: 0;
   background:
     linear-gradient(105deg, rgba(15, 23, 41, 0.72) 0%, rgba(15, 23, 41, 0.45) 45%, rgba(15, 23, 41, 0.25) 100%),
     linear-gradient(180deg, rgba(15, 23, 41, 0.35) 0%, rgba(15, 23, 41, 0.15) 40%, rgba(15, 23, 41, 0.55) 100%);
+  transition: opacity 600ms var(--ease-in-out-dignified);
+}
+
+.hero-overlay:not([hidden]) {
+  opacity: 1;
 }
 
 .hero-slide-content {
@@ -36,13 +42,16 @@
   inset: 0;
   z-index: 2;
   display: flex;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   padding: calc(4.75rem + 2rem) var(--container-padding) 4rem;
   pointer-events: none;
 }
 
 .hero-slide-content__inner {
-  max-width: 38rem;
+  max-width: min(52rem, 92vw);
+  margin-inline: auto;
   pointer-events: auto;
   opacity: 0;
   transform: translateY(1.25rem);
@@ -56,8 +65,15 @@
   transform: translateY(0);
 }
 
+.hero-slide-content--cover .hero-slide-content__inner {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  background: rgba(15, 23, 41, 0.42);
+  backdrop-filter: blur(10px);
+  border-radius: 0.25rem;
+}
+
 .hero-slide-content__eyebrow {
-  font-size: 0.6875rem;
+  font-size: clamp(0.6875rem, 1.2vw, 0.8125rem);
   font-weight: 500;
   letter-spacing: var(--tracking-eyebrow);
   text-transform: uppercase;
@@ -66,38 +82,72 @@
 }
 
 .hero-slide-content__rule {
-  margin-bottom: 1.25rem;
+  margin: 0 auto 1.25rem;
 }
 
 .hero-slide-content__title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-size: clamp(2.25rem, 6vw + 0.5rem, 4.5rem);
   font-weight: 700;
-  line-height: 1.12;
+  line-height: 1.1;
   letter-spacing: var(--tracking-display);
   color: var(--color-hero-quote-text);
   margin: 0 0 1rem;
   text-wrap: balance;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
 }
 
 .hero-slide-content__subtitle {
-  font-size: clamp(0.9375rem, 1.5vw, 1.125rem);
+  font-size: clamp(1.0625rem, 2vw + 0.5rem, 1.375rem);
   line-height: 1.65;
-  color: rgba(248, 249, 251, 0.85);
-  margin: 0 0 1.75rem;
-  max-width: 36ch;
+  color: rgba(248, 249, 251, 0.9);
+  margin: 0 auto 1.75rem;
+  max-width: min(42ch, 100%);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero-slide-content__inner--quote .hero-slide-content__subtitle {
   font-style: italic;
   font-family: var(--font-display);
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  color: rgba(248, 249, 251, 0.75);
-  max-width: none;
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  color: rgba(248, 249, 251, 0.85);
+}
+
+.hero-slide-content--portrait .hero-slide-content__title {
+  color: var(--color-ink);
+  text-shadow: none;
+}
+
+.hero-slide-content--portrait .hero-slide-content__subtitle {
+  color: var(--color-muted);
+  text-shadow: none;
+}
+
+.hero-slide-content--portrait .hero-slide-content__inner {
+  background: transparent;
+  backdrop-filter: none;
+  padding: 0;
 }
 
 .hero-slide-content__cta {
   margin-top: 0.5rem;
+}
+
+.hero-portrait-frame {
+  width: clamp(14rem, 28vh, 22rem);
+  aspect-ratio: 3 / 4;
+  margin: 1.25rem auto 0;
+  border-radius: 50% / 45%;
+  border: 5px solid #fff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+}
+
+.hero-portrait-frame__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .hero-slider {
@@ -126,15 +176,42 @@
   pointer-events: auto;
 }
 
-.hero-slider__slide img {
+.hero-slider__slide--cover img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center center;
 }
 
-.hero-slider__slide--portrait img {
-  object-position: right center;
+.hero-slider__slide--portrait-frame {
+  background-color: #d4cfc8;
+  background-image:
+    radial-gradient(circle at 12% 18%, rgba(184, 149, 106, 0.18) 0%, transparent 42%),
+    radial-gradient(circle at 88% 82%, rgba(184, 149, 106, 0.14) 0%, transparent 38%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 55%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 47px,
+      rgba(184, 149, 106, 0.07) 47px,
+      rgba(184, 149, 106, 0.07) 48px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 47px,
+      rgba(184, 149, 106, 0.05) 47px,
+      rgba(184, 149, 106, 0.05) 48px
+    );
+}
+
+.hero-slider__slide-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 8% 12%, transparent 0, transparent 80px, rgba(184, 149, 106, 0.12) 81px, transparent 82px),
+    radial-gradient(circle at 92% 88%, transparent 0, transparent 100px, rgba(184, 149, 106, 0.1) 101px, transparent 102px);
 }
 
 .hero-slider__dots {
@@ -156,6 +233,14 @@
   background: rgba(248, 249, 251, 0.35);
   cursor: pointer;
   transition: background var(--duration-hover) ease, transform var(--duration-hover) ease;
+}
+
+.hero-slider:has(.hero-slider__slide--portrait-frame.is-active) .hero-slider__dot {
+  background: rgba(15, 23, 41, 0.25);
+}
+
+.hero-slider:has(.hero-slider__slide--portrait-frame.is-active) .hero-slider__dot.is-active {
+  background: var(--color-gold);
 }
 
 .hero-slider__dot.is-active {
@@ -190,10 +275,21 @@
     color var(--duration-hover) ease;
 }
 
+.hero-slider-wrap:has(.hero-slider__slide--portrait-frame.is-active) .hero-slider__arrow {
+  border-color: rgba(15, 23, 41, 0.2);
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--color-ink);
+}
+
 .hero-slider__arrow:hover {
   border-color: var(--color-gold);
   color: var(--color-gold);
   background: rgba(15, 23, 41, 0.55);
+}
+
+.hero-slider-wrap:has(.hero-slider__slide--portrait-frame.is-active) .hero-slider__arrow:hover {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--color-gold);
 }
 
 .hero-slider__arrow--prev {
@@ -206,12 +302,15 @@
 
 @media (max-width: 640px) {
   .hero-slide-content {
-    align-items: flex-end;
     padding-bottom: 5rem;
   }
 
   .hero-slide-content__title {
-    font-size: clamp(1.625rem, 7vw, 2.25rem);
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+
+  .hero-portrait-frame {
+    width: clamp(11rem, 42vw, 16rem);
   }
 
   .hero-slider__arrow {
@@ -222,7 +321,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-slider__slide,
-  .hero-slide-content__inner {
+  .hero-slide-content__inner,
+  .hero-overlay {
     transition: none;
   }
 

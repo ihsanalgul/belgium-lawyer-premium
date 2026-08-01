@@ -39,17 +39,16 @@ const baseTranslations = {
           ctaHref: '',
         },
         {
-          eyebrow: 'Welcome',
-          title: 'Av. Yusuf Ziya Kahya',
-          subtitle:
-            'Legal counsel in Turkey on criminal, administrative, labour and immigration law — constitutional court, ECtHR and UN applications, and petition drafting.',
+          eyebrow: 'Practice Areas',
+          title: 'Criminal, Administrative, Labour & Immigration Law',
+          subtitle: 'Constitutional court, ECtHR and UN applications · Petition drafting',
           cta: 'Book an appointment',
           ctaHref: '#appointments',
         },
         {
           eyebrow: 'Lawyer & Legal Consultancy',
           title: 'Av. Yusuf Ziya Kahya',
-          subtitle: 'Ankara Bar Association · Confidential counsel',
+          subtitle: 'Legal counsel in Turkey on criminal, administrative, labour and immigration law',
           cta: 'Contact us',
           ctaHref: '#contact',
         },
@@ -77,7 +76,7 @@ const baseTranslations = {
     social: {
       eyebrow: 'Social',
       title: 'Follow counsel online',
-      subtitle: 'Updates on criminal law and current affairs. Reach out via WhatsApp for confidential matters.',
+      subtitle: 'Updates on criminal law and current affairs. Reach out via WhatsApp.',
       whatsapp: 'WhatsApp',
       x: 'X (Twitter)',
     },
@@ -152,17 +151,16 @@ const baseTranslations = {
           ctaHref: '',
         },
         {
-          eyebrow: 'Bienvenue',
-          title: 'Av. Yusuf Ziya Kahya',
-          subtitle:
-            'Conseil juridique en Turquie en droit pénal, administratif, du travail et des migrations — recours AYM, CEDH, ONU et rédaction de requêtes.',
+          eyebrow: 'Domaines d\'intervention',
+          title: 'Droit pénal, administratif, du travail et des migrations',
+          subtitle: 'Recours AYM, CEDH et ONU · Rédaction de requêtes',
           cta: 'Prendre rendez-vous',
           ctaHref: '#appointments',
         },
         {
           eyebrow: 'Avocat & Conseil Juridique',
           title: 'Av. Yusuf Ziya Kahya',
-          subtitle: 'Barreau d\'Ankara · Conseil confidentiel',
+          subtitle: 'Conseil juridique en Turquie en droit pénal, administratif, du travail et des migrations',
           cta: 'Nous contacter',
           ctaHref: '#contact',
         },
@@ -190,7 +188,7 @@ const baseTranslations = {
     social: {
       eyebrow: 'Réseaux',
       title: 'Suivre le cabinet en ligne',
-      subtitle: 'Actualités en droit pénal. Pour les affaires confidentielles, contactez via WhatsApp.',
+      subtitle: 'Actualités en droit pénal. Contactez via WhatsApp.',
       whatsapp: 'WhatsApp',
       x: 'X (Twitter)',
     },
@@ -265,17 +263,16 @@ const baseTranslations = {
           ctaHref: '',
         },
         {
-          eyebrow: 'Welkom',
-          title: 'Av. Yusuf Ziya Kahya',
-          subtitle:
-            'Juridisch advies in Turkije op straf-, bestuurs-, arbeids- en migratierecht — AYM-, EVRM- en VN-beroepen en verzoekschriftvoorbereiding.',
+          eyebrow: 'Praktijkgebieden',
+          title: 'Straf-, bestuurs-, arbeids- en migratierecht',
+          subtitle: 'AYM-, EVRM- en VN-beroepen · Verzoekschriftvoorbereiding',
           cta: 'Afspraak maken',
           ctaHref: '#appointments',
         },
         {
           eyebrow: 'Advocaat & Juridisch Advies',
           title: 'Av. Yusuf Ziya Kahya',
-          subtitle: 'Ankara Balie · Vertrouwelijk advies',
+          subtitle: 'Juridisch advies in Turkije op straf-, bestuurs-, arbeids- en migratierecht',
           cta: 'Contact opnemen',
           ctaHref: '#contact',
         },
@@ -303,7 +300,7 @@ const baseTranslations = {
     social: {
       eyebrow: 'Sociaal',
       title: 'Volg het kantoor online',
-      subtitle: 'Updates over strafrecht. Neem voor vertrouwelijke zaken contact op via WhatsApp.',
+      subtitle: 'Updates over strafrecht. Neem contact op via WhatsApp.',
       whatsapp: 'WhatsApp',
       x: 'X (Twitter)',
     },
@@ -378,17 +375,16 @@ const baseTranslations = {
           ctaHref: '',
         },
         {
-          eyebrow: 'Hoş Geldiniz',
-          title: 'Av. Yusuf Ziya Kahya',
-          subtitle:
-            'Türkiye\'de ceza, idari, iş ve göçmen hukuku alanlarında danışmanlık — AYM, AİHM ve BM başvuruları ile dilekçe hazırlığı.',
+          eyebrow: 'Çalışma Alanları',
+          title: 'Ceza, İdari, İş ve Göçmen Hukuku',
+          subtitle: 'AYM, AİHM ve BM başvuruları · Dilekçe hazırlığı',
           cta: 'Randevu alın',
           ctaHref: '#appointments',
         },
         {
           eyebrow: 'Avukat & Hukuk Danışmanlığı',
           title: 'Av. Yusuf Ziya Kahya',
-          subtitle: 'Ankara Barosu · Gizli danışmanlık',
+          subtitle: 'Türkiye\'de ceza, idari, iş ve göçmen hukuku alanlarında danışmanlık',
           cta: 'İletişime geçin',
           ctaHref: '#contact',
         },
@@ -416,7 +412,7 @@ const baseTranslations = {
     social: {
       eyebrow: 'Sosyal',
       title: 'Çevrimiçi takip edin',
-      subtitle: 'Ceza hukuku ve güncel meseleler. Gizli konular için WhatsApp üzerinden ulaşın.',
+      subtitle: 'Ceza hukuku ve güncel meseleler. WhatsApp üzerinden ulaşın.',
       whatsapp: 'WhatsApp',
       x: 'X (Twitter)',
     },

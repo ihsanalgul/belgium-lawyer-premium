@@ -2,7 +2,7 @@
 export const appointmentsContent = {
   en: {
     eyebrow: 'Appointments',
-    title: 'Schedule a confidential consultation',
+    title: 'Schedule an online consultation',
     subtitle:
       'Choose a consultation type, pick an available date, and counsel will confirm by email.',
     footnote: 'Payment instructions for fee-based consultations are sent with the appointment confirmation.',
@@ -28,7 +28,7 @@ export const appointmentsContent = {
         title: 'Legal Consultation',
         price: '€250',
         priceNote: '/ session',
-        desc: 'A confidential video consultation with substantive orientation on your file.',
+        desc: 'A video consultation with substantive orientation on your file.',
         features: ['Preliminary document review', 'Written summary of key points', 'Video call, 45 minutes'],
       },
       {
@@ -60,7 +60,7 @@ export const appointmentsContent = {
 
   fr: {
     eyebrow: 'Rendez-vous',
-    title: 'Planifier une consultation confidentielle',
+    title: 'Planifier une consultation en ligne',
     subtitle:
       'Choisissez un type de consultation, une date disponible ; confirmation par e-mail.',
     footnote: 'Les instructions de paiement pour les consultations payantes sont envoyées avec la confirmation.',
@@ -86,7 +86,7 @@ export const appointmentsContent = {
         title: 'Consultation juridique',
         price: '€250',
         priceNote: '/ séance',
-        desc: 'Consultation vidéo confidentielle avec orientation juridique sur votre dossier.',
+        desc: 'Consultation vidéo avec orientation juridique sur votre dossier.',
         features: ['Examen préliminaire des documents', 'Résumé écrit des points clés', 'Visioconférence, 45 minutes'],
       },
       {
@@ -118,7 +118,7 @@ export const appointmentsContent = {
 
   nl: {
     eyebrow: 'Afspraken',
-    title: 'Plan een vertrouwelijk consult',
+    title: 'Plan een online consult',
     subtitle:
       'Kies een consultatietype, selecteer een beschikbare datum; bevestiging per e-mail.',
     footnote: 'Betalingsinstructies voor betaalde consultaties worden meegestuurd met de bevestiging.',
@@ -144,7 +144,7 @@ export const appointmentsContent = {
         title: 'Juridisch consult',
         price: '€250',
         priceNote: '/ sessie',
-        desc: 'Vertrouwelijk videoconsult met inhoudelijke oriëntatie op uw dossier.',
+        desc: 'Videoconsult met inhoudelijke oriëntatie op uw dossier.',
         features: ['Voorlopige documentreview', 'Schriftelijke samenvatting', 'Videogesprek, 45 minuten'],
       },
       {
@@ -176,7 +176,7 @@ export const appointmentsContent = {
 
   tr: {
     eyebrow: 'Randevu',
-    title: 'Gizli görüşme planlayın',
+    title: 'Online görüşme planlayın',
     subtitle:
       'Danışmanlık türünü seçin, uygun tarihi belirleyin; onay e-posta ile iletilecektir.',
     footnote: 'Ücretli danışmanlıklar için ödeme talimatları randevu onayıyla birlikte gönderilir.',
@@ -202,7 +202,7 @@ export const appointmentsContent = {
         title: 'Hukuki Danışmanlık',
         price: '₺7.500',
         priceNote: '/ seans',
-        desc: 'Dosyanıza özel, gizli video görüşme ile hukuki yönlendirme.',
+        desc: 'Dosyanıza özel video görüşme ile hukuki yönlendirme.',
         features: ['Ön belge incelemesi', 'Önemli noktaların yazılı özeti', 'Video görüşme, 45 dakika'],
       },
       {

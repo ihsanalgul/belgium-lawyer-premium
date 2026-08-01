@@ -36,6 +36,7 @@ export const siteConfig = {
       src: '/images/hero/ankara-adliyesi.jpg',
       altKey: 'slide0Alt',
       layout: 'cover',
+      overlay: false,
       objectPosition: 'center center',
     },
     {
@@ -43,14 +44,17 @@ export const siteConfig = {
       src: '/images/hero/pexels-pixabay-159832.jpg',
       altKey: 'slide1Alt',
       layout: 'cover',
+      overlay: false,
       objectPosition: 'center center',
     },
     {
       id: 'portrait',
       src: '/images/lawyer/yusuf-ziya-kahya-slider.png',
       altKey: 'slide2Alt',
-      layout: 'portrait',
-      objectPosition: 'right center',
+      layout: 'portrait-frame',
+      overlay: false,
+      background: 'pattern',
+      objectPosition: 'center top',
     },
   ],
 };
