@@ -273,11 +273,15 @@
 }
 
 .hero-slider__slide--portrait-split {
-  background-color: #e8e4df;
-  background-image: url('/images/hero/golden-wave-green.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #be9057;
+  background-image: url('/images/hero/golden_frame_with_bright.jpg');
+  
+  /* Sağda boşluk kalmaması ve 6genin rahat kayması için görseli %130 büyütüyoruz 
+  background-size: 130% auto; */
+  
+  /* 6geni sola kaydırarak sol yarısını gizler */
+  background-position: calc(65% - 50vw) center; 
+  
 }
 
 .hero-slider__dots {
@@ -425,4 +429,77 @@
     opacity: 1;
     transform: none;
   }
+}
+
+
+/* ==========================================================
+   HERO PORTRAIT PREMIUM
+   ========================================================== */
+
+.hero-portrait-split__figure{
+display:block;
+width:100%;
+border-top:4px solid #be9057;
+border-bottom:4px solid #be9057;
+box-shadow:0 12px 35px rgba(0,0,0,.25),0 0 20px rgba(190,144,87,.25);
+transition:.4s;
+}
+
+.hero-portrait-split__media{position:relative;}
+
+.hero-portrait-split__media::before,
+.hero-portrait-split__media::after{
+content:"";
+position:absolute;
+left:0;
+width:100%;
+height:4px;
+pointer-events:none;
+background:linear-gradient(90deg,transparent,#ffe7a6 20%,#be9057 50%,#ffe7a6 80%,transparent);
+box-shadow:0 0 12px rgba(255,231,166,.9);
+z-index:5;
+}
+.hero-portrait-split__media::before{top:-2px;}
+.hero-portrait-split__media::after{bottom:-2px;}
+
+.hero-slide-content--portrait-split .hero-slide-content__eyebrow{
+color:#f5d77f;font-size:.95rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+}
+
+.hero-slide-content--portrait-split .hero-slide-content__title{
+color:#fff;
+font-size:clamp(3rem,5vw,4.4rem);
+text-shadow:0 4px 20px rgba(0,0,0,.45);
+}
+
+.hero-slide-content--portrait-split .hero-slide-content__subtitle{
+color:#eef2f7;
+font-size:1.18rem;
+line-height:1.8;
+max-width:42ch;
+}
+
+.hero-slide-content--portrait-split .btn-hero{
+border:2px solid #be9057;
+background:rgba(0,0,0,.45);
+color:#fff;
+backdrop-filter:blur(8px);
+}
+
+.hero-slide-content--portrait-split .btn-hero:hover{
+background:#be9057;
+color:#111;
+box-shadow:0 0 24px rgba(190,144,87,.55);
+transform:translateY(-2px);
+}
+
+.hero-portrait-split__copy{
+padding-left:clamp(2rem,4vw,4rem);
+max-width:38rem;
+}
+
+@media(max-width:768px){
+.hero-slide-content--portrait-split .hero-slide-content__title{font-size:clamp(2.2rem,8vw,3rem);}
+.hero-slide-content--portrait-split .hero-slide-content__subtitle{font-size:1.05rem;}
+.hero-portrait-split__copy{padding-left:0;}
 }
