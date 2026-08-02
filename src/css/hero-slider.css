@@ -557,8 +557,7 @@
   }
 
   .hero-slider__arrow {
-    width: 2.25rem;
-    height: 2.25rem;
+    display: none;
   }
 }
 
