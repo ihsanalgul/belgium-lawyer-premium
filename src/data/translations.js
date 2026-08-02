@@ -31,8 +31,8 @@ const baseTranslations = {
       slides: [
         {
           eyebrow: 'Ankara Bar · Lawyer',
-          title: '"The good of the people is the supreme law."',
-          subtitle: 'Cicero',
+          title: '"A good state stands not by the power of laws, but by the power of justice."',
+          subtitle: 'Immanuel Kant',
           cta: '',
           ctaHref: '',
         },
@@ -127,8 +127,8 @@ const baseTranslations = {
       slides: [
         {
           eyebrow: 'Barreau d\'Ankara · Avocat',
-          title: '"Le bien du peuple est la loi suprême."',
-          subtitle: 'Cicéron',
+          title: '"Un bon État ne subsiste pas par la force des lois, mais par la force de la justice."',
+          subtitle: 'Immanuel Kant',
           cta: '',
           ctaHref: '',
         },
@@ -223,8 +223,8 @@ const baseTranslations = {
       slides: [
         {
           eyebrow: 'Ankara Balie · Advocaat',
-          title: '"Het welzijn van het volk is de hoogste wet."',
-          subtitle: 'Cicero',
+          title: '"Een goede staat staat niet door de macht van wetten, maar door de macht van gerechtigheid."',
+          subtitle: 'Immanuel Kant',
           cta: '',
           ctaHref: '',
         },
@@ -319,8 +319,8 @@ const baseTranslations = {
       slides: [
         {
           eyebrow: 'Ankara Barosu · Avukat',
-          title: '"Halkın yararı en yüce kanundur."',
-          subtitle: 'Cicero',
+          title: '"İyi bir devlet, yasaların gücüyle değil, adaletin gücüyle ayakta durur."',
+          subtitle: 'Immanuel Kant',
           cta: '',
           ctaHref: '',
         },
