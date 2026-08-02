@@ -55,7 +55,15 @@ function renderSlideContent(contentEl, slideData, index, slideConfig, lang) {
   }
 
   contentEl.className = 'hero-slide-content hero-slide-content--center hero-slide-content--cover';
-  contentEl.innerHTML = `
+
+  if (index === 0) {
+    contentEl.innerHTML = `
+    <div class="hero-slide-content__inner is-entering hero-slide-content__inner--quote">
+      <blockquote class="hero-slide-content__quote">${slideData.title}</blockquote>
+      ${slideData.subtitle ? `<p class="hero-slide-content__attribution">${slideData.subtitle}</p>` : ''}
+    </div>`;
+  } else {
+    contentEl.innerHTML = `
     <div class="hero-slide-content__inner is-entering${quoteClass}">
       <p class="hero-slide-content__eyebrow">${slideData.eyebrow}</p>
       <div class="rule-gold hero-slide-content__rule"></div>
@@ -63,6 +71,7 @@ function renderSlideContent(contentEl, slideData, index, slideConfig, lang) {
       ${slideData.subtitle ? `<p class="hero-slide-content__subtitle">${slideData.subtitle}</p>` : ''}
       ${ctaHtml}
     </div>`;
+  }
 
   requestAnimationFrame(() => {
     contentEl.querySelector('.hero-slide-content__inner')?.classList.add('is-visible');

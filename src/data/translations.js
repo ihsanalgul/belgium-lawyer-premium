@@ -30,8 +30,8 @@ const baseTranslations = {
       slide1Alt: 'Av. Yusuf Ziya Kahya — Ankara Bar Association',
       slides: [
         {
-          eyebrow: 'Ankara Bar · Lawyer',
-          title: '"A good state stands not by the power of laws, but by the power of justice."',
+          eyebrow: '',
+          title: 'A good state stands not by the power of laws, but by the power of justice.',
           subtitle: 'Immanuel Kant',
           cta: '',
           ctaHref: '',
@@ -126,8 +126,8 @@ const baseTranslations = {
       slide1Alt: 'Av. Yusuf Ziya Kahya — Barreau d\'Ankara',
       slides: [
         {
-          eyebrow: 'Barreau d\'Ankara · Avocat',
-          title: '"Un bon État ne subsiste pas par la force des lois, mais par la force de la justice."',
+          eyebrow: '',
+          title: 'Un bon État ne subsiste pas par la force des lois, mais par la force de la justice.',
           subtitle: 'Immanuel Kant',
           cta: '',
           ctaHref: '',
@@ -222,8 +222,8 @@ const baseTranslations = {
       slide1Alt: 'Av. Yusuf Ziya Kahya — Ankara Balie',
       slides: [
         {
-          eyebrow: 'Ankara Balie · Advocaat',
-          title: '"Een goede staat staat niet door de macht van wetten, maar door de macht van gerechtigheid."',
+          eyebrow: '',
+          title: 'Een goede staat staat niet door de macht van wetten, maar door de macht van gerechtigheid.',
           subtitle: 'Immanuel Kant',
           cta: '',
           ctaHref: '',
@@ -318,8 +318,8 @@ const baseTranslations = {
       slide1Alt: 'Av. Yusuf Ziya Kahya — Ankara Barosu',
       slides: [
         {
-          eyebrow: 'Ankara Barosu · Avukat',
-          title: '"İyi bir devlet, yasaların gücüyle değil, adaletin gücüyle ayakta durur."',
+          eyebrow: '',
+          title: 'İyi bir devlet, yasaların gücüyle değil, adaletin gücüyle ayakta durur.',
           subtitle: 'Immanuel Kant',
           cta: '',
           ctaHref: '',
