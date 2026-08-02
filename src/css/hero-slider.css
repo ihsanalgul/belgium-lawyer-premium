@@ -73,39 +73,92 @@
 }
 
 .hero-slide-content--cover .hero-slide-content__inner--quote {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: clamp(1.25rem, 3vh, 2rem);
-  min-height: min(14rem, 40vh);
-  background: rgba(15, 23, 41, 0.52);
+  align-items: stretch;
+  gap: 0;
+  width: fit-content;
+  max-width: min(56rem, 92vw);
+  margin-top: clamp(1rem, 4vh, 2.5rem);
+  padding: clamp(0.875rem, 2vw, 1.125rem) clamp(1rem, 2.5vw, 1.375rem);
+  overflow: visible;
+  background: rgba(15, 23, 41, 0.42);
+  backdrop-filter: blur(10px);
+  border-radius: 0 0.25rem 0.25rem 0.25rem;
+  border-top: 1px solid rgba(184, 149, 106, 0.25);
 }
 
 .hero-slide-content__quote {
-  font-family: var(--font-display);
-  font-size: clamp(1.375rem, 3.2vw + 0.25rem, 2.125rem);
-  font-weight: 600;
-  font-style: normal;
-  line-height: 1.45;
-  letter-spacing: 0.01em;
-  color: var(--color-hero-quote-text);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  gap: clamp(0.5rem, 1vh, 0.625rem);
+  width: 100%;
+  max-width: min(58ch, 100%);
   margin: 0;
-  max-width: min(36ch, 100%);
-  text-wrap: balance;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+  padding: clamp(1.75rem, 5vw, 2.5rem) 0 0 clamp(2.75rem, 8vw, 4rem);
+  border: none;
+  background: none;
+  box-shadow: none;
 }
 
-.hero-slide-content__attribution {
-  margin: auto 0 0;
-  padding-top: clamp(0.75rem, 2vh, 1.25rem);
-  font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: clamp(1rem, 2vw, 1.25rem);
+.hero-slide-content__inner--quote .hero-slide-content__quote-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transform: translateY(-52%);
+  pointer-events: none;
+  font-size: clamp(3.5rem, 12vw, 6.5rem);
+  line-height: 1;
+  filter: drop-shadow(0 0 12px rgba(255, 231, 166, 0.4));
+}
+
+.hero-slide-content__quote-icon::before {
+  background: linear-gradient(
+    180deg,
+    #ffe7a6 0%,
+    #f5d77f 25%,
+    #be9057 65%,
+    rgba(190, 144, 87, 0.35) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.hero-slide-content--cover .hero-slide-content__quote .hero-slide-content__title {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.35;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+  margin: 0;
+  padding-left: 0;
+  text-wrap: balance;
+}
+
+.hero-slide-content--cover .hero-slide-content__quote .hero-slide-content__eyebrow {
+  position: relative;
+  z-index: 1;
+  color: #f5d77f;
+  font-size: 0.95rem;
   font-weight: 600;
-  font-style: normal;
-  letter-spacing: 0.08em;
+  letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--color-gold);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
+  margin: 0;
+}
+
+.hero-slide-content__rule--quote {
+  position: relative;
+  z-index: 1;
+  margin: 0.5rem auto;
+  width: 2rem;
 }
 
 .hero-slide-content__eyebrow {
@@ -301,6 +354,30 @@
   object-position: center center;
 }
 
+.hero-slider__slide--ankara img {
+  object-position: 82% 22% !important;
+  transform: scale(1.18);
+  transform-origin: 75% 35%;
+}
+
+.hero-slider__slide--ankara::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: min(42vw, 22rem);
+  height: min(42vh, 18rem);
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 41, 0.95) 0%,
+    rgba(15, 23, 41, 0.65) 35%,
+    rgba(15, 23, 41, 0.2) 60%,
+    transparent 80%
+  );
+}
+
 .hero-slider__slide--portrait-split {
   background-color: #be9057;
   background-image: url('/images/hero/golden_frame_with_bright.jpg');
@@ -426,22 +503,53 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .hero-slide-content--cover .hero-slide-content__inner--quote {
+    max-width: min(50rem, 90vw);
+  }
+
+  .hero-slide-content--cover .hero-slide-content__quote .hero-slide-content__title {
+    font-size: clamp(1.5rem, 3.2vw, 2.125rem);
+  }
+
+  .hero-slide-content__inner--quote .hero-slide-content__quote-icon {
+    transform: translateY(-50%);
+    font-size: clamp(3rem, 10vw, 5.5rem);
+  }
+}
+
 @media (max-width: 640px) {
   .hero-slide-content {
     padding-bottom: 5rem;
+  }
+
+  .hero-slider__slide--ankara img {
+    object-position: 78% 26% !important;
+    transform: scale(1.12);
+    transform-origin: 72% 38%;
   }
 
   .hero-slide-content__title {
     font-size: clamp(1.75rem, 7vw, 2.5rem);
   }
 
+  .hero-slide-content--cover .hero-slide-content__quote .hero-slide-content__title {
+    font-size: clamp(1.375rem, 5vw, 1.875rem);
+  }
+
+  .hero-slide-content__inner--quote .hero-slide-content__quote-icon {
+    transform: translateY(-48%);
+    font-size: clamp(2.75rem, 12vw, 4.5rem);
+  }
+
   .hero-slide-content__quote {
-    font-size: clamp(1.125rem, 4.5vw, 1.5rem);
     max-width: min(32ch, 100%);
+    padding-left: clamp(2.25rem, 9vw, 3rem);
   }
 
   .hero-slide-content--cover .hero-slide-content__inner--quote {
-    max-width: min(28rem, 94vw);
+    width: fit-content;
+    max-width: min(calc(100vw - 2rem), 36rem);
   }
 
   .hero-slide-content--portrait-split .hero-slide-content__title {

@@ -1,3 +1,4 @@
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import { siteConfig } from '../data/site-config.js';
 import { translations } from '../data/translations.js';
 
@@ -59,8 +60,11 @@ function renderSlideContent(contentEl, slideData, index, slideConfig, lang) {
   if (index === 0) {
     contentEl.innerHTML = `
     <div class="hero-slide-content__inner is-entering hero-slide-content__inner--quote">
-      <blockquote class="hero-slide-content__quote">${slideData.title}</blockquote>
-      ${slideData.subtitle ? `<p class="hero-slide-content__attribution">${slideData.subtitle}</p>` : ''}
+      <i class="fa-solid fa-quote-left hero-slide-content__quote-icon" aria-hidden="true"></i>
+      <blockquote class="hero-slide-content__quote">
+        <p class="hero-slide-content__title">${slideData.title}</p>
+        ${slideData.subtitle ? `<div class="rule-gold hero-slide-content__rule hero-slide-content__rule--quote"></div><p class="hero-slide-content__eyebrow">${slideData.subtitle}</p>` : ''}
+      </blockquote>
     </div>`;
   } else {
     contentEl.innerHTML = `
@@ -84,7 +88,7 @@ function createSlide(slideConfig, index, lang) {
     ? ' hero-slider__slide--portrait-split'
     : ' hero-slider__slide--cover';
 
-  slide.className = `hero-slider__slide${index === 0 ? ' is-active' : ''}${layoutClass}`;
+  slide.className = `hero-slider__slide hero-slider__slide--${slideConfig.id}${index === 0 ? ' is-active' : ''}${layoutClass}`;
   slide.setAttribute('role', 'group');
   slide.setAttribute('aria-roledescription', 'slide');
   slide.setAttribute('aria-label', `${index + 1} of ${siteConfig.heroSlides.length}`);

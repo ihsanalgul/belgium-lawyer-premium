@@ -37,7 +37,7 @@ export const siteConfig = {
       altKey: 'slide0Alt',
       layout: 'cover',
       overlay: false,
-      objectPosition: 'center center',
+      objectPosition: '82% 22%',
     },
     {
       id: 'portrait',
