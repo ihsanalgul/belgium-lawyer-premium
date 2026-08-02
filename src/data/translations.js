@@ -10,7 +10,6 @@ const baseTranslations = {
     },
     skip: 'Skip to main content',
     nav: {
-      about: 'About',
       expertise: 'Expertise',
       appointments: 'Appointments',
       blogArchive: 'Blog',
@@ -28,8 +27,7 @@ const baseTranslations = {
       cta: 'Book an appointment',
       ctaContact: 'Contact us',
       slide0Alt: 'Ankara Courthouse',
-      slide1Alt: 'Scales of justice and law books',
-      slide2Alt: 'Av. Yusuf Ziya Kahya — Ankara Bar Association',
+      slide1Alt: 'Av. Yusuf Ziya Kahya — Ankara Bar Association',
       slides: [
         {
           eyebrow: 'Ankara Bar · Lawyer',
@@ -39,13 +37,6 @@ const baseTranslations = {
           ctaHref: '',
         },
         {
-          eyebrow: 'Practice Areas',
-          title: 'Criminal, Administrative, Labour & Immigration Law',
-          subtitle: 'Constitutional court, ECtHR and UN applications · Petition drafting',
-          cta: 'Book an appointment',
-          ctaHref: '#appointments',
-        },
-        {
           eyebrow: 'Lawyer & Legal Consultancy',
           title: 'Av. Yusuf Ziya Kahya',
           subtitle: 'Legal counsel in Turkey on criminal, administrative, labour and immigration law',
@@ -53,13 +44,6 @@ const baseTranslations = {
           ctaHref: '#contact',
         },
       ],
-    },
-    about: {
-      eyebrow: 'About',
-      title: 'Ankara-based legal counsel',
-      p1: 'Av. Yusuf Ziya Kahya is a lawyer registered with the Ankara Bar Association, practising primarily in Turkey across criminal, administrative, labour and immigration law.',
-      p2: 'From the Pursaklar, Ankara office he provides confidential counsel with procedural precision; an abroad office is available for correspondence when required.',
-      imageAlt: 'Av. Yusuf Ziya Kahya — Ankara Bar Association',
     },
     expertise: {
       eyebrow: 'Practice Areas',
@@ -122,7 +106,6 @@ const baseTranslations = {
     },
     skip: 'Aller au contenu principal',
     nav: {
-      about: 'À propos',
       expertise: 'Expertises',
       appointments: 'Rendez-vous',
       blogArchive: 'Blog',
@@ -140,8 +123,7 @@ const baseTranslations = {
       cta: 'Prendre rendez-vous',
       ctaContact: 'Nous contacter',
       slide0Alt: 'Palais de justice d\'Ankara',
-      slide1Alt: 'Balance de la justice et livres de droit',
-      slide2Alt: 'Av. Yusuf Ziya Kahya — Barreau d\'Ankara',
+      slide1Alt: 'Av. Yusuf Ziya Kahya — Barreau d\'Ankara',
       slides: [
         {
           eyebrow: 'Barreau d\'Ankara · Avocat',
@@ -151,13 +133,6 @@ const baseTranslations = {
           ctaHref: '',
         },
         {
-          eyebrow: 'Domaines d\'intervention',
-          title: 'Droit pénal, administratif, du travail et des migrations',
-          subtitle: 'Recours AYM, CEDH et ONU · Rédaction de requêtes',
-          cta: 'Prendre rendez-vous',
-          ctaHref: '#appointments',
-        },
-        {
           eyebrow: 'Avocat & Conseil Juridique',
           title: 'Av. Yusuf Ziya Kahya',
           subtitle: 'Conseil juridique en Turquie en droit pénal, administratif, du travail et des migrations',
@@ -165,13 +140,6 @@ const baseTranslations = {
           ctaHref: '#contact',
         },
       ],
-    },
-    about: {
-      eyebrow: 'À propos',
-      title: 'Cabinet juridique basé à Ankara',
-      p1: 'Av. Yusuf Ziya Kahya est avocat inscrit au Barreau d\'Ankara, exerçant principalement en Turquie en droit pénal, administratif, du travail et des migrations.',
-      p2: 'Depuis le bureau de Pursaklar, Ankara, il conseille avec discrétion et rigueur procédurale ; un bureau à l\'étranger est disponible pour la correspondance si nécessaire.',
-      imageAlt: 'Av. Yusuf Ziya Kahya — Barreau d\'Ankara',
     },
     expertise: {
       eyebrow: 'Domaines d\'intervention',
@@ -234,7 +202,6 @@ const baseTranslations = {
     },
     skip: 'Ga naar hoofdinhoud',
     nav: {
-      about: 'Over',
       expertise: 'Expertise',
       appointments: 'Afspraken',
       blogArchive: 'Blog',
@@ -252,8 +219,7 @@ const baseTranslations = {
       cta: 'Afspraak maken',
       ctaContact: 'Contact opnemen',
       slide0Alt: 'Gerechtsgebouw Ankara',
-      slide1Alt: 'Weegschaal der rechtvaardigheid en juridische boeken',
-      slide2Alt: 'Av. Yusuf Ziya Kahya — Ankara Balie',
+      slide1Alt: 'Av. Yusuf Ziya Kahya — Ankara Balie',
       slides: [
         {
           eyebrow: 'Ankara Balie · Advocaat',
@@ -263,13 +229,6 @@ const baseTranslations = {
           ctaHref: '',
         },
         {
-          eyebrow: 'Praktijkgebieden',
-          title: 'Straf-, bestuurs-, arbeids- en migratierecht',
-          subtitle: 'AYM-, EVRM- en VN-beroepen · Verzoekschriftvoorbereiding',
-          cta: 'Afspraak maken',
-          ctaHref: '#appointments',
-        },
-        {
           eyebrow: 'Advocaat & Juridisch Advies',
           title: 'Av. Yusuf Ziya Kahya',
           subtitle: 'Juridisch advies in Turkije op straf-, bestuurs-, arbeids- en migratierecht',
@@ -277,13 +236,6 @@ const baseTranslations = {
           ctaHref: '#contact',
         },
       ],
-    },
-    about: {
-      eyebrow: 'Over',
-      title: 'Juridisch kantoor gevestigd in Ankara',
-      p1: 'Av. Yusuf Ziya Kahya is advocaat ingeschreven bij de Ankara Balie en werkt voornamelijk in Turkije op het gebied van straf-, bestuurs-, arbeids- en migratierecht.',
-      p2: 'Vanuit het kantoor in Pursaklar, Ankara biedt hij vertrouwelijk advies met procedurele precisie; een buitenlands kantoor is beschikbaar voor correspondentie indien nodig.',
-      imageAlt: 'Av. Yusuf Ziya Kahya — Ankara Balie',
     },
     expertise: {
       eyebrow: 'Praktijkgebieden',
@@ -346,7 +298,6 @@ const baseTranslations = {
     },
     skip: 'Ana içeriğe geç',
     nav: {
-      about: 'Hakkında',
       expertise: 'Uzmanlık',
       appointments: 'Randevu',
       blogArchive: 'Blog',
@@ -364,8 +315,7 @@ const baseTranslations = {
       cta: 'Randevu alın',
       ctaContact: 'İletişime geçin',
       slide0Alt: 'Ankara Adliyesi',
-      slide1Alt: 'Adalet terazisi ve hukuk kitapları',
-      slide2Alt: 'Av. Yusuf Ziya Kahya — Ankara Barosu',
+      slide1Alt: 'Av. Yusuf Ziya Kahya — Ankara Barosu',
       slides: [
         {
           eyebrow: 'Ankara Barosu · Avukat',
@@ -375,13 +325,6 @@ const baseTranslations = {
           ctaHref: '',
         },
         {
-          eyebrow: 'Çalışma Alanları',
-          title: 'Ceza, İdari, İş ve Göçmen Hukuku',
-          subtitle: 'AYM, AİHM ve BM başvuruları · Dilekçe hazırlığı',
-          cta: 'Randevu alın',
-          ctaHref: '#appointments',
-        },
-        {
           eyebrow: 'Avukat & Hukuk Danışmanlığı',
           title: 'Av. Yusuf Ziya Kahya',
           subtitle: 'Türkiye\'de ceza, idari, iş ve göçmen hukuku alanlarında danışmanlık',
@@ -389,13 +332,6 @@ const baseTranslations = {
           ctaHref: '#contact',
         },
       ],
-    },
-    about: {
-      eyebrow: 'Hakkında',
-      title: 'Ankara merkezli hukuk ve danışmanlık',
-      p1: 'Av. Yusuf Ziya Kahya, Ankara Barosu\'na kayıtlı avukattır; ceza, idari, iş ve göçmen hukuku başta olmak üzere Türkiye odaklı hukuki danışmanlık ve temsil sunmaktadır.',
-      p2: 'Pursaklar, Ankara ofisinden gizlilik ve usul hassasiyetiyle hizmet vermektedir; yurtdışı ofis yalnızca yazışma adresi olarak kullanılmaktadır.',
-      imageAlt: 'Av. Yusuf Ziya Kahya — Ankara Barosu',
     },
     expertise: {
       eyebrow: 'Çalışma Alanları',

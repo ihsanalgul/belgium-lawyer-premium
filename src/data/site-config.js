@@ -40,17 +40,9 @@ export const siteConfig = {
       objectPosition: 'center center',
     },
     {
-      id: 'justice',
-      src: '/images/hero/pexels-pixabay-159832.jpg',
-      altKey: 'slide1Alt',
-      layout: 'cover',
-      overlay: false,
-      objectPosition: 'center center',
-    },
-    {
       id: 'portrait',
       src: '/images/lawyer/yusuf-ziya-kahya-slider.png',
-      altKey: 'slide2Alt',
+      altKey: 'slide1Alt',
       layout: 'portrait-split',
       overlay: false,
       background: 'pattern',
