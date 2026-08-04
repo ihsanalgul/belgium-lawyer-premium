@@ -12,7 +12,8 @@ backend:
 #   base_url: https://api.decapbridge.com
 #   auth_endpoint: auth
 
-local_backend: true
+# Enable only for local CMS dev with `npx decap-server`
+# local_backend: true
 
 media_folder: public/images/uploads
 public_folder: /images/uploads

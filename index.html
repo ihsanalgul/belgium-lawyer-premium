@@ -8,6 +8,18 @@
         if (t === 'dark') document.documentElement.dataset.theme = 'dark';
       })();
     </script>
+    <script>
+      (function () {
+        var hash = window.location.hash;
+        if (
+          hash.indexOf('invite_token') !== -1 ||
+          hash.indexOf('recovery_token') !== -1 ||
+          hash.indexOf('confirmation_token') !== -1
+        ) {
+          window.location.replace('/admin/' + hash);
+        }
+      })();
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f8f9fb" />
     <meta
