@@ -263,9 +263,40 @@ function escapeJsonString(str) {
   return JSON.stringify(String(str ?? ''));
 }
 
+function normalizeMarkdownTables(md) {
+  if (!md) return md;
+
+  const lines = md.split('\n');
+  const out = [];
+  let inTable = false;
+
+  const isTableRow = (line) => /^\s*\|.+\|\s*$/.test(line);
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    if (isTableRow(line)) {
+      inTable = true;
+      out.push(line);
+      continue;
+    }
+
+    if (inTable && line.trim() === '') {
+      let j = i + 1;
+      while (j < lines.length && lines[j].trim() === '') j++;
+      if (j < lines.length && isTableRow(lines[j])) continue;
+      inTable = false;
+    }
+
+    out.push(line);
+  }
+
+  return out.join('\n');
+}
+
 function mdToHtml(md) {
   if (!md) return '';
-  let html = marked.parse(md.trim()).trim();
+  let html = marked.parse(normalizeMarkdownTables(md.trim()).trim()).trim();
   html = html.replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, '</table></div>');
   return html
     .split('\n')

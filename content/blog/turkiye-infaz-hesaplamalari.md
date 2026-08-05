@@ -46,17 +46,11 @@ tr:
     
     
     | Suç Türü | Koşullu Salıverilme Oranı |
-    
     | :--- | :--- |
-    
     | **Genel Suçlar** (Hırsızlık, dolandırıcılık, yağma vb.) | 1/2 (%50) |
-    
     | **Ağır Suçlar** (Kasten öldürme, işkence, eziyet, cinsel saldırı, özel hayata karşı suçlar, tekerrür) | 2/3 (%66,6) |
-    
     | **Çok Ağır Suçlar** (Nitelikli cinsel saldırı, çocuğun cinsel istismarı, uyuşturucu ticareti, terör suçları, ikinci tekerrür) | 3/4 (%75) |
-    
     | **Müebbet Hapis** | 24 yıl |
-    
     | **Ağırlaştırılmış Müebbet Hapis** | 30 yıl |
     
     
