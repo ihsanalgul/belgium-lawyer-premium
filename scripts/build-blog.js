@@ -26,7 +26,7 @@ function parseFrontmatter(raw) {
 
   for (const line of yaml.split('\n')) {
     if (inBody) {
-      if (/^[a-z]{2}:$/.test(line) || /^[a-z_]+:/.test(line)) {
+      if (/^(tr|en|fr|nl):$/.test(line) || (/^[a-z_]+: /.test(line) && !/^\s/.test(line))) {
         if (currentLang && currentKey) {
           data[currentLang][currentKey] = bodyLines.join('\n').trim();
         }
@@ -78,6 +78,76 @@ function parseFrontmatter(raw) {
   }
 
   return data;
+}
+
+function parseEmbeddedFrontmatter(body) {
+  if (!body || typeof body !== 'string') return null;
+  const match = body.trim().match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+  if (!match) return null;
+
+  const imported = {};
+  for (const line of match[1].split('\n')) {
+    const kv = line.match(/^([a-zA-Z_]+):\s*(.*)$/);
+    if (kv) {
+      imported[kv[1]] = kv[2].replace(/^['"]|['"]$/g, '').trim();
+    }
+  }
+
+  return { imported, body: match[2].trim() };
+}
+
+function normalizeDate(dateStr) {
+  if (!dateStr) return '';
+  const parsed = new Date(dateStr);
+  if (Number.isNaN(parsed.getTime())) return String(dateStr).slice(0, 10);
+  return parsed.toISOString().slice(0, 10);
+}
+
+function slugify(title) {
+  return String(title)
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function stripLeadingH1(body, title) {
+  const lines = body.split('\n');
+  if (!/^#\s+/.test(lines[0] || '')) return body.trim();
+
+  const h1 = lines[0].replace(/^#\s+/, '').trim();
+  if (!title || h1 === title || h1.toLowerCase() === title.toLowerCase()) {
+    lines.shift();
+    while (lines.length && lines[0].trim() === '') lines.shift();
+  }
+
+  return lines.join('\n').trim();
+}
+
+function normalizeImportedBody(meta) {
+  if (!meta?.tr?.body) return meta;
+
+  meta.tr = meta.tr || {};
+  let body = meta.tr.body;
+  const embedded = parseEmbeddedFrontmatter(body);
+
+  if (embedded) {
+    const { imported } = embedded;
+    const title = imported.title || '';
+    const description = imported.description || imported.excerpt || '';
+
+    if (!meta.tr.title && title) meta.tr.title = title;
+    if (!meta.tr.metaDescription && description) meta.tr.metaDescription = description;
+    if (!meta.tr.excerpt && description) meta.tr.excerpt = description;
+    if (!meta.date && imported.date) meta.date = normalizeDate(imported.date);
+    if (!meta.slug && title) meta.slug = slugify(title);
+
+    body = embedded.body;
+  }
+
+  meta.tr.body = stripLeadingH1(body, meta.tr.title);
+  return meta;
 }
 
 function escapeHtml(str) {
@@ -138,22 +208,23 @@ function buildTagsMeta(meta) {
 }
 
 function renderPostPage(meta, template) {
-  const tr = meta.tr || {};
-  const slug = meta.slug;
+  const normalized = normalizeImportedBody({ ...meta, tr: { ...(meta.tr || {}) } });
+  const tr = normalized.tr || {};
+  const slug = normalized.slug;
   const title = tr.title || slug;
   const description = tr.metaDescription || tr.excerpt || '';
   const bodyHtml = mdToHtml(tr.body);
-  const dateFormatted = formatDateTr(meta.date);
+  const dateFormatted = formatDateTr(normalized.date);
 
   return template
     .replace(/\{\{TITLE\}\}/g, escapeHtml(title))
     .replace(/\{\{JSON_TITLE\}\}/g, escapeJsonString(title))
     .replace(/\{\{DESCRIPTION\}\}/g, escapeHtml(description))
     .replace(/\{\{SLUG\}\}/g, escapeHtml(slug))
-    .replace(/\{\{DATE\}\}/g, escapeHtml(meta.date))
+    .replace(/\{\{DATE\}\}/g, escapeHtml(normalized.date))
     .replace(/\{\{DATE_FORMATTED\}\}/g, escapeHtml(dateFormatted))
-    .replace(/\{\{EYEBROW\}\}/g, escapeHtml(resolveEyebrow(meta)))
-    .replace(/\{\{TAGS_META\}\}/g, buildTagsMeta(meta))
+    .replace(/\{\{EYEBROW\}\}/g, escapeHtml(resolveEyebrow(normalized)))
+    .replace(/\{\{TAGS_META\}\}/g, buildTagsMeta(normalized))
     .replace(/\{\{BODY_HTML\}\}/g, bodyHtml);
 }
 
@@ -201,12 +272,17 @@ const allMeta = [];
 for (const file of files) {
   const raw = readFileSync(join(blogContentDir, file), 'utf8');
   const meta = parseFrontmatter(raw);
-  if (!meta?.slug) {
+  if (!meta) {
+    console.warn(`Skip ${file}: invalid frontmatter`);
+    continue;
+  }
+  const normalized = normalizeImportedBody(meta);
+  if (!normalized?.slug) {
     console.warn(`Skip ${file}: missing slug`);
     continue;
   }
-  allMeta.push(meta);
-  syncBlogPost(meta, template);
+  allMeta.push(normalized);
+  syncBlogPost(normalized, template);
 }
 
 if (allMeta.length) {

@@ -32,17 +32,17 @@ collections:
     extension: md
     format: frontmatter
     fields:
-      - { label: Slug, name: slug, widget: string, hint: 'URL parçası, örn. tutukluluk-haklari' }
+      - { label: Slug, name: slug, widget: string, hint: 'URL parçası; boş bırakılırsa başlıktan otomatik üretilir' }
       - { label: Tarih, name: date, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false }
       - { label: Etiketler, name: tags, widget: list, default: [] }
       - label: Türkçe
         name: tr
         widget: object
         fields:
-          - { label: Başlık, name: title, widget: string }
-          - { label: Özet, name: excerpt, widget: text }
-          - { label: Meta Açıklama, name: metaDescription, widget: text }
-          - { label: İçerik, name: body, widget: markdown }
+          - { label: Başlık, name: title, widget: string, hint: 'Sayfa başlığı (H1); .md içindeki title alanından da alınabilir' }
+          - { label: Özet, name: excerpt, widget: text, hint: 'Blog listesinde görünen kısa özet' }
+          - { label: Meta Açıklama, name: metaDescription, widget: text, hint: 'Arama motorları için açıklama' }
+          - { label: İçerik, name: body, widget: markdown, hint: 'Tam .md dosyasını yapıştırabilirsiniz. Kayıtta başlık, tarih ve açıklama otomatik ayrılır. Bölümler için ## kullanın.' }
       - label: English
         name: en
         widget: object

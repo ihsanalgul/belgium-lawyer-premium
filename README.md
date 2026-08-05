@@ -63,6 +63,16 @@ npm run dev
 
 Required frontmatter fields per post: `slug`, `date`, `tags`, and `tr` (title, excerpt, metaDescription, body). Other languages (`en`, `fr`, `nl`) are optional in CMS but only `tr.body` is rendered on the site today.
 
+### Pasting a full .md file
+
+You can paste a complete markdown file (with `---` frontmatter and `#` title) into **Türkçe → İçerik**. On **Save** or **Publish**, the CMS automatically:
+
+- Extracts `title`, `date`, and `description` into the form fields (when empty)
+- Generates `slug` from the title (when empty)
+- Removes frontmatter and duplicate `#` heading from the body
+
+After saving, the preview shows only the article content. The live site applies the same cleanup during `npm run build`.
+
 ### CMS preview vs published appearance
 
 The Decap CMS markdown editor preview uses default styling — it does **not** match the live site typography. That is expected.
