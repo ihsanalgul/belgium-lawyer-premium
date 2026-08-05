@@ -1,11 +1,17 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { marked } from 'marked';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
 const blogContentDir = join(root, 'content/blog');
 const blogHtmlDir = join(root, 'blog');
+const postTemplatePath = join(blogHtmlDir, '_post.template.html');
+const blogIndexPath = join(blogHtmlDir, 'index.html');
+const SITE_URL = 'https://yusufziyakahya.com';
+
+marked.setOptions({ gfm: true, breaks: false });
 
 function parseFrontmatter(raw) {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
@@ -74,79 +80,137 @@ function parseFrontmatter(raw) {
   return data;
 }
 
-function mdToHtml(md) {
-  if (!md) return '';
-  return md
-    .trim()
-    .split(/\n\n+/)
-    .map((block) => {
-      const trimmed = block.trim();
-      if (trimmed.startsWith('## ')) {
-        return `<h2>${escapeHtml(trimmed.slice(3))}</h2>`;
-      }
-      if (trimmed.startsWith('*') && trimmed.endsWith('*')) {
-        return `<p><em>${escapeHtml(trimmed.slice(1, -1))}</em></p>`;
-      }
-      return `<p>${escapeHtml(trimmed.replace(/\n/g, ' '))}</p>`;
-    })
-    .join('\n          ');
-}
-
 function escapeHtml(str) {
-  return str
+  return String(str ?? '')
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 }
 
+function escapeJsonString(str) {
+  return JSON.stringify(String(str ?? ''));
+}
+
+function mdToHtml(md) {
+  if (!md) return '';
+  let html = marked.parse(md.trim()).trim();
+  html = html.replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, '</table></div>');
+  return html
+    .split('\n')
+    .map((line) => `          ${line}`)
+    .join('\n');
+}
+
 function formatDateTr(dateStr) {
   const d = new Date(dateStr);
-  const months = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+  const months = [
+    'Ocak',
+    'Şubat',
+    'Mart',
+    'Nisan',
+    'Mayıs',
+    'Haziran',
+    'Temmuz',
+    'Ağustos',
+    'Eylül',
+    'Ekim',
+    'Kasım',
+    'Aralık',
+  ];
   return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
 }
 
-function syncBlogPost(meta) {
-  const slug = meta.slug;
-  const htmlPath = join(blogHtmlDir, `${slug}.html`);
-  if (!existsSync(htmlPath)) {
-    console.warn(`Skip ${slug}: ${htmlPath} not found`);
-    return;
-  }
-
-  const tr = meta.tr || {};
-  let html = readFileSync(htmlPath, 'utf8');
-  const bodyHtml = mdToHtml(tr.body);
-  const tags = (meta.tags || []).join(' · ');
-  const dateFormatted = formatDateTr(meta.date);
-
-  html = html.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(tr.title)} | Av. Yusuf Ziya KAHYA</title>`);
-  html = html.replace(
-    /<meta name="description" content="[^"]*"/,
-    `<meta name="description" content="${escapeHtml(tr.metaDescription || tr.excerpt || '')}"`
-  );
-  html = html.replace(
-    /<h1 class="text-display-lg">[^<]*<\/h1>/,
-    `<h1 class="text-display-lg">${escapeHtml(tr.title)}</h1>`
-  );
-  html = html.replace(
-    /<p class="article-meta">[\s\S]*?<\/p>/,
-    `<p class="article-meta"><time datetime="${meta.date}">${dateFormatted}</time> · ${escapeHtml(tags)}</p>`
-  );
-  html = html.replace(
-    /<div class="article-body text-prose">[\s\S]*?<\/div>/,
-    `<div class="article-body text-prose">\n          ${bodyHtml}\n        </div>`
-  );
-
-  writeFileSync(htmlPath, html);
-  console.log(`Updated blog/${slug}.html`);
+function resolveEyebrow(meta) {
+  const tags = meta.tags || [];
+  const category = tags.find((tag) => tag.includes(' ')) || tags[tags.length - 1];
+  if (!category) return 'Ceza Hukuku';
+  return category
+    .split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
 }
 
+function buildTagsMeta(meta) {
+  const tags = meta.tags || [];
+  if (!tags.length) return '';
+  return ` · ${escapeHtml(tags.join(' · '))}`;
+}
+
+function renderPostPage(meta, template) {
+  const tr = meta.tr || {};
+  const slug = meta.slug;
+  const title = tr.title || slug;
+  const description = tr.metaDescription || tr.excerpt || '';
+  const bodyHtml = mdToHtml(tr.body);
+  const dateFormatted = formatDateTr(meta.date);
+
+  return template
+    .replace(/\{\{TITLE\}\}/g, escapeHtml(title))
+    .replace(/\{\{JSON_TITLE\}\}/g, escapeJsonString(title))
+    .replace(/\{\{DESCRIPTION\}\}/g, escapeHtml(description))
+    .replace(/\{\{SLUG\}\}/g, escapeHtml(slug))
+    .replace(/\{\{DATE\}\}/g, escapeHtml(meta.date))
+    .replace(/\{\{DATE_FORMATTED\}\}/g, escapeHtml(dateFormatted))
+    .replace(/\{\{EYEBROW\}\}/g, escapeHtml(resolveEyebrow(meta)))
+    .replace(/\{\{TAGS_META\}\}/g, buildTagsMeta(meta))
+    .replace(/\{\{BODY_HTML\}\}/g, bodyHtml);
+}
+
+function syncBlogPost(meta, template) {
+  const slug = meta.slug;
+  const htmlPath = join(blogHtmlDir, `${slug}.html`);
+  const html = renderPostPage(meta, template);
+  const action = existsSync(htmlPath) ? 'Updated' : 'Created';
+  writeFileSync(htmlPath, html);
+  console.log(`${action} blog/${slug}.html`);
+}
+
+function buildBlogListItem(meta) {
+  const tr = meta.tr || {};
+  const slug = meta.slug;
+  const dateFormatted = formatDateTr(meta.date);
+  const excerpt = tr.excerpt || '';
+
+  return `        <article class="blog-list-item">
+          <h2><a href="/blog/${escapeHtml(slug)}.html">${escapeHtml(tr.title)}</a></h2>
+          <p class="article-meta"><time datetime="${escapeHtml(meta.date)}">${escapeHtml(dateFormatted)}</time></p>
+          <p>${escapeHtml(excerpt)}</p>
+          <a href="/blog/${escapeHtml(slug)}.html" class="link-underline text-small">Devamını oku</a>
+        </article>`;
+}
+
+function syncBlogIndex(allMeta) {
+  const sorted = [...allMeta].sort((a, b) => new Date(b.date) - new Date(a.date));
+  const listHtml = sorted.map(buildBlogListItem).join('\n');
+  let indexHtml = readFileSync(blogIndexPath, 'utf8');
+
+  indexHtml = indexHtml.replace(
+    /<div class="blog-list">[\s\S]*?<\/div>/,
+    `<div class="blog-list">\n${listHtml}\n      </div>`
+  );
+
+  writeFileSync(blogIndexPath, indexHtml);
+  console.log(`Updated blog/index.html (${sorted.length} posts)`);
+}
+
+const template = readFileSync(postTemplatePath, 'utf8');
 const files = readdirSync(blogContentDir).filter((f) => f.endsWith('.md'));
+const allMeta = [];
+
 for (const file of files) {
   const raw = readFileSync(join(blogContentDir, file), 'utf8');
   const meta = parseFrontmatter(raw);
-  if (meta?.slug) syncBlogPost(meta);
+  if (!meta?.slug) {
+    console.warn(`Skip ${file}: missing slug`);
+    continue;
+  }
+  allMeta.push(meta);
+  syncBlogPost(meta, template);
 }
 
-console.log(`Processed ${files.length} blog markdown file(s).`);
+if (allMeta.length) {
+  syncBlogIndex(allMeta);
+}
+
+console.log(`Processed ${allMeta.length} blog markdown file(s).`);

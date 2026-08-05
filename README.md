@@ -52,6 +52,30 @@ npx decap-server
 npm run dev
 ```
 
+### Blog content pipeline
+
+1. Create or edit posts in `/admin/` (saved to `content/blog/*.md`).
+2. On deploy, `npm run build` runs [`scripts/build-blog.js`](scripts/build-blog.js), which:
+   - Converts markdown to HTML (tables, lists, bold, links supported via `marked`)
+   - Creates or updates `blog/{slug}.html` from [`blog/_post.template.html`](blog/_post.template.html)
+   - Regenerates the post list in [`blog/index.html`](blog/index.html)
+3. Published URL: `/blog/{slug}.html`
+
+Required frontmatter fields per post: `slug`, `date`, `tags`, and `tr` (title, excerpt, metaDescription, body). Other languages (`en`, `fr`, `nl`) are optional in CMS but only `tr.body` is rendered on the site today.
+
+### CMS preview vs published appearance
+
+The Decap CMS markdown editor preview uses default styling — it does **not** match the live site typography. That is expected.
+
+To see the real layout locally:
+
+```bash
+npm run build
+npm run preview
+```
+
+Then open `/blog/{slug}.html`.
+
 ## CMS Security
 
 CMS write access is protected by **Netlify Identity (invite-only)** and the **`cms` role**. Repo config enforces roles via `accept_roles` in [`public/admin/config.yml`](public/admin/config.yml).
