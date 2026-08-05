@@ -9,7 +9,7 @@
   position: relative;
   width: 100%;
   height: calc(100dvh - var(--header-height));
-  min-height: 36rem;
+  min-height: min(36rem, calc(100dvh - var(--header-height)));
   overflow: hidden;
 }
 
@@ -381,13 +381,15 @@
 .hero-slider__slide--portrait-split {
   background-color: #be9057;
   background-image: url('/images/hero/golden_frame_with_bright.jpg');
-  
-  /* Sağda boşluk kalmaması ve 6genin rahat kayması için görseli %130 büyütüyoruz 
-  background-size: 130% auto; */
-  
+
   /* 6geni sola kaydırarak sol yarısını gizler */
-  background-position: calc(65% - 50vw) center; 
-  
+  background-position: calc(65% - 50vw) center;
+}
+
+@media (max-width: 768px) {
+  .hero-slider__slide--portrait-split {
+    background-position: center center;
+  }
 }
 
 .hero-slider__dots {
@@ -476,7 +478,7 @@
   right: clamp(0.75rem, 2vw, 1.5rem);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hero-portrait-split {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
@@ -519,6 +521,10 @@
 }
 
 @media (max-width: 640px) {
+  .hero-slider-wrap {
+    min-height: min(28rem, calc(100dvh - var(--header-height)));
+  }
+
   .hero-slide-content {
     padding-bottom: 5rem;
   }

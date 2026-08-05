@@ -62,7 +62,14 @@
   text-transform: uppercase;
   color: var(--color-muted);
   text-align: center;
-  max-width: 8rem;
+  max-width: min(8rem, 30vw);
+}
+
+@media (max-width: 480px) {
+  .appt-step-indicator__label {
+    font-size: 0.625rem;
+    max-width: min(8rem, 28vw);
+  }
 }
 
 .appt-step {
@@ -207,10 +214,16 @@
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
+  .packages-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .packages-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
   }
 }
 
@@ -245,6 +258,18 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--color-gold);
+}
+
+@media (max-width: 640px) {
+  .pkg-card.is-selected {
+    padding-top: 2.75rem;
+  }
+
+  .pkg-card.is-selected::after {
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.5625rem;
+  }
 }
 
 .pkg-duration {

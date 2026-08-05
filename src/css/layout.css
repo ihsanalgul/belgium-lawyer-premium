@@ -91,6 +91,16 @@
   color: var(--color-gold);
 }
 
+@media (max-width: 480px) {
+  .logo-wordmark {
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+  }
+
+  .logo-wordmark span {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+  }
+}
+
 /* Hero slider starts below fixed header */
 body.has-hero-slider .hero-section--fullscreen {
   margin-top: var(--header-height);
@@ -266,6 +276,12 @@ body.has-hero-slider .site-header:not(.is-scrolled) {
 
 .why-block:nth-child(2) {
   padding-top: 3.5rem;
+}
+
+@media (max-width: 767px) {
+  .why-block:nth-child(2) {
+    padding-top: 1.75rem;
+  }
 }
 
 .why-block .text-prose {
@@ -577,8 +593,8 @@ body.has-hero-slider .site-header:not(.is-scrolled) {
 /* WhatsApp pill FAB */
 .whatsapp-fab {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
+  bottom: max(1.5rem, env(safe-area-inset-bottom));
+  right: max(1.5rem, env(safe-area-inset-right));
   z-index: var(--z-whatsapp);
   display: inline-flex;
   align-items: stretch;
@@ -638,8 +654,10 @@ body.has-hero-slider .site-header:not(.is-scrolled) {
 @media (min-width: 768px) {
   .footer-inner {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 1.5rem 2rem;
   }
 }
 

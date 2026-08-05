@@ -50,6 +50,13 @@ export function initNav() {
     }
   });
 
+  const desktopQuery = window.matchMedia('(min-width: 1024px)');
+  desktopQuery.addEventListener('change', (e) => {
+    if (e.matches && mobileMenu?.classList.contains('is-open')) {
+      closeMenu();
+    }
+  });
+
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
       const targetId = anchor.getAttribute('href');

@@ -249,6 +249,41 @@ export function initHeroSlider() {
     }
   });
 
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  slider.addEventListener(
+    'touchstart',
+    (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+      paused = true;
+    },
+    { passive: true },
+  );
+
+  slider.addEventListener(
+    'touchend',
+    (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
+      const touchEndY = e.changedTouches[0].screenY;
+      const deltaX = touchEndX - touchStartX;
+      const deltaY = touchEndY - touchStartY;
+      const threshold = 50;
+
+      if (Math.abs(deltaX) > threshold && Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX < 0) {
+          next();
+        } else {
+          prev();
+        }
+        startAutoplay();
+      }
+      paused = false;
+    },
+    { passive: true },
+  );
+
   slider.setAttribute('tabindex', '0');
   updateContent(currentLang);
   updateAlts(currentLang);
