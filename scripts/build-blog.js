@@ -14,10 +14,30 @@ const SITE_URL = 'https://yusufziyakahya.com';
 marked.setOptions({ gfm: true, breaks: false });
 
 function parseFrontmatter(raw) {
-  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-  if (!match) return null;
+  if (!raw.startsWith('---')) return null;
 
-  const yaml = match[1];
+  const lines = raw.split('\n');
+  let closeIdx = -1;
+
+  for (let i = lines.length - 1; i >= 1; i--) {
+    if (lines[i] === '---') {
+      closeIdx = i;
+      break;
+    }
+  }
+
+  if (closeIdx === -1) {
+    for (let i = 1; i < lines.length; i++) {
+      if (lines[i] === '---') {
+        closeIdx = i;
+        break;
+      }
+    }
+  }
+
+  if (closeIdx === -1) return null;
+
+  const yaml = lines.slice(1, closeIdx).join('\n');
   const data = {};
   let currentLang = null;
   let currentKey = null;
@@ -78,6 +98,87 @@ function parseFrontmatter(raw) {
   }
 
   return data;
+}
+
+function extractFoldedScalar(raw, field, indent = 4) {
+  const marker = `${' '.repeat(indent)}${field}: >-`;
+  const start = raw.indexOf(marker);
+  if (start === -1) return '';
+
+  const contentStart = start + marker.length;
+  const rest = raw.slice(contentStart);
+  const lines = rest.split('\n');
+  const bodyLines = [];
+
+  for (const line of lines) {
+    if (line && !line.startsWith(' '.repeat(indent + 2)) && line.trim() !== '') {
+      if (/^ {0,2}[a-zA-Z_]+:/.test(line)) break;
+    }
+    if (line.startsWith(' '.repeat(indent + 2))) {
+      bodyLines.push(line.slice(indent + 2));
+    } else if (line.trim() === '') {
+      bodyLines.push('');
+    }
+  }
+
+  return bodyLines.join('\n').trim();
+}
+
+function parseDecapCorruptedFrontmatter(raw) {
+  if (!raw.includes('partial:') || !raw.includes('\ndata:')) return null;
+
+  const slugMatch = raw.match(/^  slug: (.+)$/m);
+  if (!slugMatch) return null;
+
+  const dateMatch = raw.match(/^  date: (.+)$/m);
+  const titleMatch = raw.match(/^    title: "?(.+?)"?\s*$/m);
+  const bodyStart = raw.indexOf('    body:');
+
+  const tags = [];
+  const tagRe = /^    - (.+)$/gm;
+  let tagMatch;
+  while ((tagMatch = tagRe.exec(raw)) !== null) {
+    if (bodyStart === -1 || tagMatch.index < bodyStart) tags.push(tagMatch[1]);
+  }
+
+  const excerpt = extractFoldedScalar(raw, 'excerpt', 4).replace(/\n+/g, ' ').trim();
+  const metaBlock = raw.match(/^    metaDescription: "?([\s\S]*?)"?\s*$/m);
+  let metaDescription = '';
+  if (metaBlock) {
+    metaDescription = metaBlock[1].replace(/\n      /g, ' ').trim();
+  }
+
+  let body = extractFoldedScalar(raw, 'body', 4);
+  if (!body) {
+    const blockMatch = raw.match(/^    body: \|\n([\s\S]*?)(?=^  [a-z]|^author:|^---)/m);
+    if (blockMatch) {
+      body = blockMatch[1]
+        .split('\n')
+        .map((line) => line.replace(/^      /, ''))
+        .join('\n')
+        .trim();
+    }
+  }
+
+  return {
+    slug: slugMatch[1].trim(),
+    date: dateMatch?.[1]?.trim() || '',
+    tags,
+    tr: {
+      title: titleMatch?.[1] || '',
+      excerpt,
+      metaDescription,
+      body,
+    },
+  };
+}
+
+function slugFromFilename(filename) {
+  const base = filename.replace(/\.md$/, '');
+  const embedded = base.match(/(?:^|-)slug-([a-z0-9]+(?:-[a-z0-9]+)*)$/);
+  if (embedded) return embedded[1];
+  if (/^map-partial-/.test(base)) return '';
+  return base;
 }
 
 function parseEmbeddedFrontmatter(body) {
@@ -271,10 +372,16 @@ const allMeta = [];
 
 for (const file of files) {
   const raw = readFileSync(join(blogContentDir, file), 'utf8');
-  const meta = parseFrontmatter(raw);
+  let meta = parseFrontmatter(raw);
+  if (!meta?.slug) {
+    meta = parseDecapCorruptedFrontmatter(raw);
+  }
   if (!meta) {
     console.warn(`Skip ${file}: invalid frontmatter`);
     continue;
+  }
+  if (!meta.slug) {
+    meta.slug = slugFromFilename(file);
   }
   const normalized = normalizeImportedBody(meta);
   if (!normalized?.slug) {

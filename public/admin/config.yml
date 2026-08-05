@@ -31,8 +31,10 @@ collections:
     slug: '{{slug}}'
     extension: md
     format: frontmatter
+    identifier_field: slug
+    summary: '{{tr.title}}'
     fields:
-      - { label: Slug, name: slug, widget: string, hint: 'URL parçası; boş bırakılırsa başlıktan otomatik üretilir' }
+      - { label: Slug, name: slug, widget: string, hint: 'URL parçası; boş bırakılırsa başlıktan otomatik üretilir', pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'Küçük harf, rakam ve tire (ör. turkiye-infaz-hesaplamalari)'] }
       - { label: Tarih, name: date, widget: datetime, date_format: 'YYYY-MM-DD', time_format: false }
       - { label: Etiketler, name: tags, widget: list, default: [] }
       - label: Türkçe
