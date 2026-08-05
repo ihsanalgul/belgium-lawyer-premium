@@ -46,27 +46,33 @@ collections:
       - label: English
         name: en
         widget: object
+        required: false
+        collapsed: true
         fields:
-          - { label: Title, name: title, widget: string }
-          - { label: Excerpt, name: excerpt, widget: text }
-          - { label: Meta Description, name: metaDescription, widget: text }
-          - { label: Body, name: body, widget: markdown }
+          - { label: Title, name: title, widget: string, required: false, hint: 'Opsiyonel — site şu an yalnızca Türkçe gösterir' }
+          - { label: Excerpt, name: excerpt, widget: text, required: false }
+          - { label: Meta Description, name: metaDescription, widget: text, required: false }
+          - { label: Body, name: body, widget: markdown, required: false }
       - label: Français
         name: fr
         widget: object
+        required: false
+        collapsed: true
         fields:
-          - { label: Titre, name: title, widget: string }
-          - { label: Résumé, name: excerpt, widget: text }
-          - { label: Meta, name: metaDescription, widget: text }
-          - { label: Contenu, name: body, widget: markdown }
+          - { label: Titre, name: title, widget: string, required: false, hint: 'Optionnel — le site n''affiche que le turc pour l''instant' }
+          - { label: Résumé, name: excerpt, widget: text, required: false }
+          - { label: Meta, name: metaDescription, widget: text, required: false }
+          - { label: Contenu, name: body, widget: markdown, required: false }
       - label: Nederlands
         name: nl
         widget: object
+        required: false
+        collapsed: true
         fields:
-          - { label: Titel, name: title, widget: string }
-          - { label: Samenvatting, name: excerpt, widget: text }
-          - { label: Meta, name: metaDescription, widget: text }
-          - { label: Inhoud, name: body, widget: markdown }
+          - { label: Titel, name: title, widget: string, required: false, hint: 'Optioneel — de site toont momenteel alleen Turks' }
+          - { label: Samenvatting, name: excerpt, widget: text, required: false }
+          - { label: Meta, name: metaDescription, widget: text, required: false }
+          - { label: Inhoud, name: body, widget: markdown, required: false }
 
   - name: pages
     label: Sayfalar

@@ -61,7 +61,7 @@ npm run dev
    - Regenerates the post list in [`blog/index.html`](blog/index.html)
 3. Published URL: `/blog/{slug}.html`
 
-Required frontmatter fields per post: `slug`, `date`, `tags`, and `tr` (title, excerpt, metaDescription, body). Other languages (`en`, `fr`, `nl`) are optional in CMS but only `tr.body` is rendered on the site today.
+Required frontmatter fields per post: `slug`, `date`, `tags`, and **Türkçe** (`tr.title`, `tr.excerpt`, `tr.metaDescription`, `tr.body`). You can publish with Turkish only — **English, Français, and Nederlands are optional** in the CMS form and may be left blank. Only `tr.body` is rendered on the live blog today; other languages are stored for future use.
 
 ### Pasting a full .md file
 
