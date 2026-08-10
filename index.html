@@ -188,84 +188,40 @@
             </h2>
             <p class="text-prose" data-i18n="appointments.subtitle"></p>
           </div>
-          <div class="appt-wizard">
-            <ol class="appt-step-indicator" aria-label="Appointment steps">
-              <li class="appt-step-indicator__item is-active" data-step="1">
-                <span class="appt-step-indicator__num">1</span>
-                <span class="appt-step-indicator__label" data-i18n="appointments.step1Title">Danışmanlık türü</span>
-              </li>
-              <li class="appt-step-indicator__item" data-step="2">
-                <span class="appt-step-indicator__num">2</span>
-                <span class="appt-step-indicator__label" data-i18n="appointments.step2Title">Tarih ve saat</span>
-              </li>
-              <li class="appt-step-indicator__item" data-step="3">
-                <span class="appt-step-indicator__num">3</span>
-                <span class="appt-step-indicator__label" data-i18n="appointments.step3Title">İletişim bilgileri</span>
-              </li>
-            </ol>
+          <div class="appt-layout">
+            <div class="appt-intro reveal" id="appt-intro"></div>
 
-            <div class="appt-step is-active" data-step="1">
-              <div
-                class="packages-grid"
-                id="packages-grid"
-                role="radiogroup"
-                aria-label="Consultation types"
-              ></div>
-              <div class="appt-step-actions">
-                <button type="button" class="btn-primary" id="appt-step1-next" disabled data-i18n="appointments.stepNext">
-                  Devam
-                </button>
-              </div>
+            <div class="appt-fees reveal">
+              <h3 class="appt-fees__title" id="appt-fees-title" data-i18n="appointments.feesTitle">Ücret tarifesi</h3>
+              <div class="appt-fees__list" id="appt-fees-list"></div>
             </div>
 
-            <div class="appt-step" data-step="2" hidden>
-              <div class="booker-panel">
-                <h3 class="booker-panel__title" data-i18n="appointments.booker.title">Tarih ve saat seçin</h3>
-                <div class="date-chips" id="date-chips" role="group" aria-label="Available dates"></div>
-                <div class="slot-grid" id="slot-grid" role="group" aria-label="Available times"></div>
+            <div class="booker-panel reveal">
+              <h3 class="booker-panel__title" data-i18n="appointments.booker.title">Randevu takvimi</h3>
+              <div class="calendar-embed-wrap" id="calendar-embed-wrap" hidden>
+                <iframe
+                  id="calendar-embed"
+                  title="Randevu takvimi"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+                <p class="calendar-embed-hint" data-i18n="appointments.booker.calendarHint">
+                  Randevunuzu yukarıdaki takvimden tamamlayın.
+                </p>
               </div>
-              <div class="appt-step-actions">
-                <button type="button" class="btn-outline" id="appt-step2-back" data-i18n="appointments.stepBack">Geri</button>
-                <button type="button" class="btn-primary" id="appt-step2-next" disabled data-i18n="appointments.stepNext">Devam</button>
-              </div>
-            </div>
-
-            <div class="appt-step" data-step="3" hidden>
-              <div class="booker-panel">
-                <div class="booker-contact">
-                  <div class="form-group">
-                    <label class="form-label" for="bk-name" data-i18n="appointments.booker.name">Ad soyad</label>
-                    <input class="form-input" type="text" id="bk-name" name="bk-name" autocomplete="name" />
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="bk-email" data-i18n="appointments.booker.email">E-posta</label>
-                    <input class="form-input" type="email" id="bk-email" name="bk-email" autocomplete="email" />
-                  </div>
-                  <div class="form-group form-group--full">
-                    <label class="form-label" for="bk-note" data-i18n="appointments.booker.note">Kısa not (isteğe bağlı)</label>
-                    <input class="form-input" type="text" id="bk-note" name="bk-note" data-i18n="appointments.booker.notePlaceholder" placeholder="Görüşmek istediğiniz konu" />
-                  </div>
-                </div>
-                <div class="booker-summary">
-                  <p class="summary-line" id="summary-line" data-i18n="appointments.booker.summaryEmpty">Henüz seçim yapılmadı.</p>
-                  <button type="button" class="btn-primary" id="confirm-btn" disabled data-i18n="appointments.booker.confirm">
-                    Randevuyu onayla
-                  </button>
-                </div>
-              </div>
-              <div class="appt-step-actions">
-                <button type="button" class="btn-outline" id="appt-step3-back" data-i18n="appointments.stepBack">Geri</button>
-              </div>
-            </div>
-
-            <div class="booking-success" id="booking-success" role="status" aria-live="polite" hidden>
-              <div class="booking-success-mark" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8.5l3.2 3.2L13 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </div>
-              <h3 data-i18n="appointments.booker.successTitle">Randevu talebiniz alındı</h3>
-              <p class="text-prose" data-i18n="appointments.booker.successBody"></p>
+              <p class="calendar-embed-empty" id="calendar-embed-empty" hidden data-i18n="appointments.booker.calendarEmpty">
+                Takvim henüz yapılandırılmadı. Lütfen WhatsApp üzerinden iletişime geçin.
+              </p>
+              <a
+                id="calendar-fallback-link"
+                class="calendar-fallback-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                hidden
+                data-i18n="appointments.booker.calendarFallback"
+              >
+                Takvim açılmıyorsa buraya tıklayın
+              </a>
             </div>
           </div>
 
@@ -333,6 +289,15 @@
                   />
                 </svg>
                 <span data-i18n="contact.whatsappCta">WhatsApp mesajı gönder</span>
+              </a>
+              <a
+                href="#appointments"
+                id="contact-calendar"
+                class="btn-outline contact-calendar-btn"
+                hidden
+                data-i18n="contact.calendarCta"
+              >
+                Online randevu alın
               </a>
             </div>
 

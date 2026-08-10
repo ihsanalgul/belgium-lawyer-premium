@@ -54,4 +54,10 @@ export function initSiteConfig() {
   if (mapFrame && siteConfig.maps?.ankaraEmbedUrl) {
     mapFrame.src = siteConfig.maps.ankaraEmbedUrl;
   }
+
+  const calendarUrl = siteConfig.googleCalendar?.default;
+  const contactCalendar = document.getElementById('contact-calendar');
+  if (contactCalendar && calendarUrl) {
+    contactCalendar.hidden = false;
+  }
 }

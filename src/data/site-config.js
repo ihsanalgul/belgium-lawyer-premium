@@ -25,7 +25,13 @@ export const siteConfig = {
     ankaraEmbedUrl:
       'https://www.google.com/maps?q=Merkez+Mah.+Sun+Sok.+No:33/20+Pursaklar+Ankara+06140&output=embed',
   },
-  googleCalendarUrl: '',
+  /** Google Calendar Appointment Scheduling — replace with your embed URLs */
+  googleCalendar: {
+    default: 'https://calendar.app.google/dn5csCQLp2rJdFnWA',
+    byPackage: {
+      'online-appointment': 'https://calendar.app.google/dn5csCQLp2rJdFnWA',
+    },
+  },
   x: {
     handle: '@y_ziya_kahya',
     profileUrl: 'https://x.com/y_ziya_kahya',

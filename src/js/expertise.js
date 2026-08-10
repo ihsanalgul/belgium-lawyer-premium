@@ -3,8 +3,8 @@ import { expertiseIcons } from './expertise-icons.js';
 import { observeRevealElements } from './scroll-reveal.js';
 
 const ICON_KEYS = [
-  'reinstatement',
   'sentence',
+  'reinstatement',
   'immigration',
   'criminal',
   'labour',

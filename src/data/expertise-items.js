@@ -1,12 +1,12 @@
 export const expertiseItems = {
   tr: [
     {
-      title: 'KHK Göreve İade',
-      desc: 'KHK kapsamında ihraç edilen kamu görevlilerinin göreve iade süreçlerinde başvuru, dava ve temyiz aşamalarında hukuki destek.',
+      title: 'İnfaz Hesabı',
+      desc: 'Ceza infaz kurumlarında infaz süresi, koşullu salıverilme, denetimli serbestlik ve indirimlerin hesaplanması ve itirazları.',
     },
     {
-      title: 'İnfaz Hesaplamaları',
-      desc: 'Ceza infaz kurumlarında infaz süresi, koşullu salıverilme, denetimli serbestlik ve indirimlerin hesaplanması ve itirazları.',
+      title: 'Memur soruşturmaları ve göreve iade süreci',
+      desc: 'Kamu görevlilerine yönelik disiplin ve soruşturma süreçlerinde savunma; göreve iade başvuruları, dava ve temyiz aşamalarında hukuki destek.',
     },
     {
       title: 'Göçmen Hukuku',
@@ -43,12 +43,12 @@ export const expertiseItems = {
   ],
   en: [
     {
-      title: 'Decree Reinstatement (KHK)',
-      desc: 'Legal support in reinstatement proceedings for public servants dismissed under decree laws — applications, litigation, and appeals.',
-    },
-    {
       title: 'Sentence Calculation',
       desc: 'Calculation and challenge of execution periods, conditional release, supervised liberty, and remissions in penal institutions.',
+    },
+    {
+      title: 'Public Servant Investigations and Reinstatement',
+      desc: 'Defence in disciplinary and investigative proceedings against public servants; legal support for reinstatement applications, litigation, and appeals.',
     },
     {
       title: 'Immigration Law',
@@ -85,12 +85,12 @@ export const expertiseItems = {
   ],
   fr: [
     {
-      title: 'Réintégration (KHK)',
-      desc: 'Accompagnement juridique des fonctionnaires révoqués par décret — demandes, contentieux et recours.',
-    },
-    {
       title: 'Calcul de peine',
       desc: 'Calcul et contestation des durées d\'exécution, libération conditionnelle, liberté surveillée et remises de peine.',
+    },
+    {
+      title: 'Enquêtes disciplinaires et réintégration',
+      desc: 'Défense dans les enquêtes et procédures disciplinaires visant les agents publics ; accompagnement des demandes de réintégration, contentieux et recours.',
     },
     {
       title: 'Droit des migrations',
@@ -127,12 +127,12 @@ export const expertiseItems = {
   ],
   nl: [
     {
-      title: 'Herintreding (KHK)',
-      desc: 'Juridische bijstand bij herintreding voor ambtenaren ontslagen bij decreet — aanvragen, procedures en beroep.',
-    },
-    {
       title: 'Strafuitvoeringsberekening',
       desc: 'Berekening en betwisting van detentieduur, voorwaardelijke invrijheidstelling, en strafverminderingen.',
+    },
+    {
+      title: 'Ambtenarenonderzoeken en herintreding',
+      desc: 'Verdediging in disciplinaire en onderzoekstrajecten tegen ambtenaren; juridische bijstand bij herintredingsaanvragen, procedures en beroep.',
     },
     {
       title: 'Migratierecht',

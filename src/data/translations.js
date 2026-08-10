@@ -79,6 +79,7 @@ const baseTranslations = {
       },
       whatsappLabel: 'WhatsApp only',
       whatsappCta: 'Send a WhatsApp message',
+      calendarCta: 'Book online',
     },
     footer: {
       disclaimer:
@@ -175,6 +176,7 @@ const baseTranslations = {
       },
       whatsappLabel: 'WhatsApp uniquement',
       whatsappCta: 'Envoyer un message WhatsApp',
+      calendarCta: 'Prendre rendez-vous en ligne',
     },
     footer: {
       disclaimer:
@@ -271,6 +273,7 @@ const baseTranslations = {
       },
       whatsappLabel: 'Alleen WhatsApp',
       whatsappCta: 'Stuur een WhatsApp-bericht',
+      calendarCta: 'Online afspraak maken',
     },
     footer: {
       disclaimer:
@@ -367,6 +370,7 @@ const baseTranslations = {
       },
       whatsappLabel: 'Sadece WhatsApp',
       whatsappCta: 'WhatsApp mesajı gönder',
+      calendarCta: 'Online randevu alın',
     },
     footer: {
       disclaimer:
