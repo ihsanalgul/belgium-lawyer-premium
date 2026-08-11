@@ -17,6 +17,10 @@ export const expertiseItems = {
       desc: 'Soruşturma, kovuşturma ve yargılama aşamalarında müdafaa; tutukluluk, itiraz ve temyiz süreçleri.',
     },
     {
+      title: 'Interpol İşlemleri',
+      desc: 'Kırmızı bülten, yakalama, iade (ekstradisyon) ve sınır ötesi ceza işlemlerinde hukuki destek.',
+    },
+    {
       title: 'İş Hukuku',
       desc: 'İşçi ve işveren uyuşmazlıkları, fesih, tazminat ve iş mahkemesi davalarında temsil ve danışmanlık.',
     },
@@ -57,6 +61,10 @@ export const expertiseItems = {
     {
       title: 'Criminal Law',
       desc: 'Defence at investigation, prosecution, and trial stages; detention challenges, objections, and appeals.',
+    },
+    {
+      title: 'Interpol Proceedings',
+      desc: 'Legal support in red notice, arrest, extradition, and cross-border criminal proceedings.',
     },
     {
       title: 'Labour Law',
@@ -101,6 +109,10 @@ export const expertiseItems = {
       desc: 'Défense en enquête, instruction et procès ; contestation de la détention, recours et appels.',
     },
     {
+      title: 'Procédures Interpol',
+      desc: 'Accompagnement juridique en notice rouge, arrestation, extradition et procédures pénales transfrontalières.',
+    },
+    {
       title: 'Droit du travail',
       desc: 'Litiges employeur-salarié, licenciement, indemnités et représentation devant les tribunaux du travail.',
     },
@@ -141,6 +153,10 @@ export const expertiseItems = {
     {
       title: 'Strafrecht',
       desc: 'Verdediging in onderzoek, vervolging en berechting; voorlopige hechtenis, bezwaren en hoger beroep.',
+    },
+    {
+      title: 'Interpol-procedures',
+      desc: 'Juridische bijstand bij rode berichten, aanhouding, uitlevering en grensoverschrijdende strafzaken.',
     },
     {
       title: 'Arbeidsrecht',

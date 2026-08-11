@@ -7,6 +7,7 @@ const ICON_KEYS = [
   'reinstatement',
   'immigration',
   'criminal',
+  'interpol',
   'labour',
   'administrative',
   'constitutional',

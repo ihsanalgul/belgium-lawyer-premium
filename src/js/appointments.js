@@ -88,14 +88,71 @@ function renderFees() {
     .join('');
 }
 
+async function copyIban(iban, button) {
+  const t = getT();
+  try {
+    await navigator.clipboard.writeText(iban);
+    const original = t.copyIban || 'Copy IBAN';
+    button.textContent = t.copiedIban || 'Copied';
+    window.setTimeout(() => {
+      button.textContent = original;
+    }, 2000);
+  } catch {
+    /* ignore clipboard failures */
+  }
+}
+
+function renderPayment() {
+  const el = document.getElementById('appt-payment');
+  if (!el) return;
+
+  const bank = siteConfig.bank;
+  if (!bank?.iban) {
+    el.innerHTML = '';
+    el.hidden = true;
+    return;
+  }
+
+  el.hidden = false;
+  const t = getT();
+
+  el.innerHTML = `
+    <h3 class="appt-payment__title">${t.paymentTitle || ''}</h3>
+    <p class="appt-payment__note">${t.paymentNote || ''}</p>
+    <dl class="appt-payment__details">
+      <div class="appt-payment__row">
+        <dt>${t.paymentIbanLabel || 'IBAN'}</dt>
+        <dd>
+          <span class="appt-payment__iban" id="appt-iban-value">${bank.iban}</span>
+          <button type="button" class="appt-payment__copy" id="appt-copy-iban">${t.copyIban || 'Copy IBAN'}</button>
+        </dd>
+      </div>
+      <div class="appt-payment__row">
+        <dt>${t.paymentNameLabel || ''}</dt>
+        <dd>${bank.accountName}</dd>
+      </div>
+      <div class="appt-payment__row">
+        <dt>${t.paymentBankLabel || ''}</dt>
+        <dd>${bank.bankName}</dd>
+      </div>
+    </dl>
+  `;
+
+  document.getElementById('appt-copy-iban')?.addEventListener('click', (e) => {
+    copyIban(bank.iban, e.currentTarget);
+  });
+}
+
 export function refreshAppointmentsLocale() {
   renderAppointmentIntro();
   renderFees();
+  renderPayment();
   loadCalendarEmbed();
 }
 
 export function initAppointments() {
   renderAppointmentIntro();
   renderFees();
+  renderPayment();
   loadCalendarEmbed();
 }

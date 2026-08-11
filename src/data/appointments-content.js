@@ -5,8 +5,16 @@ export const appointmentsContent = {
     title: 'Schedule an online consultation',
     subtitle:
       'Book a 15-minute online appointment. The meeting can be extended if needed.',
-    footnote: 'Payment instructions for fee-based services are sent with the appointment confirmation.',
+    footnote: 'For fee-based services, please transfer to the bank account shown above. The same payment details are repeated in the appointment confirmation email.',
     feesTitle: 'Fee schedule',
+    paymentTitle: 'Payment / bank transfer',
+    paymentNote:
+      'For fee-based services, a bank transfer to this account may be requested.',
+    paymentIbanLabel: 'IBAN',
+    paymentNameLabel: 'Account holder',
+    paymentBankLabel: 'Bank',
+    copyIban: 'Copy IBAN',
+    copiedIban: 'Copied',
     appointment: {
       id: 'online-appointment',
       duration: '15 Minutes',
@@ -60,8 +68,16 @@ export const appointmentsContent = {
     title: 'Planifier une consultation en ligne',
     subtitle:
       'Réservez un rendez-vous en ligne de 15 minutes. L\'entretien peut être prolongé si nécessaire.',
-    footnote: 'Les instructions de paiement pour les prestations payantes sont envoyées avec la confirmation.',
+    footnote: 'Pour les prestations payantes, veuillez virer sur le compte indiqué ci-dessus. Les mêmes coordonnées figurent dans l\'e-mail de confirmation du rendez-vous.',
     feesTitle: 'Tarifs',
+    paymentTitle: 'Paiement / virement',
+    paymentNote:
+      'Pour les prestations payantes, un virement vers ce compte peut être demandé.',
+    paymentIbanLabel: 'IBAN',
+    paymentNameLabel: 'Titulaire',
+    paymentBankLabel: 'Banque',
+    copyIban: 'Copier l\'IBAN',
+    copiedIban: 'Copié',
     appointment: {
       id: 'online-appointment',
       duration: '15 Minutes',
@@ -115,8 +131,16 @@ export const appointmentsContent = {
     title: 'Plan een online consult',
     subtitle:
       'Boek een online afspraak van 15 minuten. Het gesprek kan indien nodig worden verlengd.',
-    footnote: 'Betalingsinstructies voor betaalde diensten worden meegestuurd met de bevestiging.',
+    footnote: 'Voor betaalde diensten kunt u overmaken naar de hierboven vermelde bankrekening. Dezelfde betalingsgegevens staan in de bevestigingsmail van de afspraak.',
     feesTitle: 'Tarieven',
+    paymentTitle: 'Betaling / overschrijving',
+    paymentNote:
+      'Voor betaalde diensten kan een overschrijving naar deze rekening worden gevraagd.',
+    paymentIbanLabel: 'IBAN',
+    paymentNameLabel: 'Rekeninghouder',
+    paymentBankLabel: 'Bank',
+    copyIban: 'IBAN kopiëren',
+    copiedIban: 'Gekopieerd',
     appointment: {
       id: 'online-appointment',
       duration: '15 Minuten',
@@ -170,8 +194,16 @@ export const appointmentsContent = {
     title: 'Online görüşme planlayın',
     subtitle:
       '15 dakikalık online randevu alın. Görüşme ihtiyaç halinde uzatılabilir.',
-    footnote: 'Ücretli hizmetler için ödeme talimatları randevu onayıyla birlikte gönderilir.',
+    footnote: 'Ücretli hizmetler için yukarıdaki hesaba havale yapmanız istenebilir. Aynı ödeme bilgileri randevu onay e-postasında da yer alır.',
     feesTitle: 'Ücret tarifesi',
+    paymentTitle: 'Ödeme / Havale',
+    paymentNote:
+      'Ücretli hizmetler için bu hesaba havale yapılması istenebilir.',
+    paymentIbanLabel: 'IBAN',
+    paymentNameLabel: 'Alıcı',
+    paymentBankLabel: 'Banka',
+    copyIban: 'IBAN kopyala',
+    copiedIban: 'Kopyalandı',
     appointment: {
       id: 'online-appointment',
       duration: '15 Dakika',

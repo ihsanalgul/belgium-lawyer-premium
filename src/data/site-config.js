@@ -32,6 +32,11 @@ export const siteConfig = {
       'online-appointment': 'https://calendar.app.google/dn5csCQLp2rJdFnWA',
     },
   },
+  bank: {
+    iban: 'TR400020500001013711000001',
+    accountName: 'Yusuf Ziya Kahya',
+    bankName: 'Kuveyttürk',
+  },
   x: {
     handle: '@y_ziya_kahya',
     profileUrl: 'https://x.com/y_ziya_kahya',
