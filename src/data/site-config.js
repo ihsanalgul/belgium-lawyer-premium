@@ -6,6 +6,7 @@ export const siteConfig = {
   barSicilNo: 'Ankara 1 nolu Barosu 43223',
   kvkkUrl: '/kvkk.html',
   privacyUrl: '/gizlilik.html',
+  email: 'av.ziyakahya@gmail.com',
   whatsapp: {
     number: '905067151119',
     display: '0506 715 11 19',
@@ -18,7 +19,7 @@ export const siteConfig = {
     },
     be: {
       label: 'Yurtdışı Ofis',
-      line: 'Brüksel, Belçika',
+      line: 'Avenue Louise 149, 1050 Brüksel, Belçika',
     },
   },
   maps: {

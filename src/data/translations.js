@@ -68,17 +68,36 @@ const baseTranslations = {
       eyebrow: 'Contact',
       title: 'Reach counsel directly',
       subtitle:
-        'Communication is available via WhatsApp only. The Ankara office address is listed below.',
+        'Send a message via the form, or reach us on WhatsApp. Office addresses are listed below.',
       ankara: {
         label: 'Ankara Office',
         address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
-        note: 'Abroad office: Brussels, Belgium',
+        label: 'Abroad Office',
+        address: 'Avenue Louise 149, 1050 Brussels, Belgium',
       },
-      whatsappLabel: 'WhatsApp only',
+      emailLabel: 'Email',
+      whatsappLabel: 'WhatsApp',
       whatsappCta: 'Send a WhatsApp message',
       calendarCta: 'Book online',
+      form: {
+        title: 'Send a message',
+        name: 'Full name',
+        email: 'Email',
+        phone: 'Phone',
+        subject: 'Subject',
+        subjectPlaceholder: 'Select',
+        message: 'Message',
+        submit: 'Send message',
+        success: 'Your message has been received. We will get back to you shortly.',
+        topics: {
+          execution: 'Sentence calculation',
+          consultation: 'Legal consultation',
+          interpol: 'Interpol proceedings',
+          other: 'Other',
+        },
+      },
     },
     footer: {
       disclaimer:
@@ -87,6 +106,8 @@ const baseTranslations = {
       kvkk: 'Privacy Notice (KVKK)',
       privacy: 'Privacy Policy',
       barSicilPrefix: 'Ankara Bar Registry No:',
+      callHint: 'Reach us on WhatsApp',
+      officesHeading: 'Offices',
     },
     theme: {
       toLight: 'Switch to light theme',
@@ -164,17 +185,36 @@ const baseTranslations = {
       eyebrow: 'Contact',
       title: 'Contacter le conseil directement',
       subtitle:
-        'La communication se fait uniquement via WhatsApp. L\'adresse du bureau d\'Ankara figure ci-dessous.',
+        'Envoyez un message via le formulaire ou contactez-nous sur WhatsApp. Les adresses des bureaux figurent ci-dessous.',
       ankara: {
         label: 'Bureau d\'Ankara',
         address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
-        note: 'Bureau à l\'étranger : Bruxelles, Belgique',
+        label: 'Bureau à l\'étranger',
+        address: 'Avenue Louise 149, 1050 Bruxelles, Belgique',
       },
-      whatsappLabel: 'WhatsApp uniquement',
+      emailLabel: 'E-mail',
+      whatsappLabel: 'WhatsApp',
       whatsappCta: 'Envoyer un message WhatsApp',
       calendarCta: 'Prendre rendez-vous en ligne',
+      form: {
+        title: 'Envoyer un message',
+        name: 'Nom complet',
+        email: 'E-mail',
+        phone: 'Téléphone',
+        subject: 'Sujet',
+        subjectPlaceholder: 'Choisir',
+        message: 'Message',
+        submit: 'Envoyer le message',
+        success: 'Votre message a bien été reçu. Nous vous répondrons sous peu.',
+        topics: {
+          execution: 'Calcul de peine',
+          consultation: 'Consultation juridique',
+          interpol: 'Procédures Interpol',
+          other: 'Autre',
+        },
+      },
     },
     footer: {
       disclaimer:
@@ -183,6 +223,8 @@ const baseTranslations = {
       kvkk: 'Avis KVKK',
       privacy: 'Politique de confidentialité',
       barSicilPrefix: 'N° au Barreau d\'Ankara :',
+      callHint: 'Contactez-nous sur WhatsApp',
+      officesHeading: 'Bureaux',
     },
     theme: {
       toLight: 'Passer au thème clair',
@@ -260,17 +302,36 @@ const baseTranslations = {
       eyebrow: 'Contact',
       title: 'Neem rechtstreeks contact op',
       subtitle:
-        'Communicatie verloopt uitsluitend via WhatsApp. Het adres van het kantoor in Ankara staat hieronder.',
+        'Stuur een bericht via het formulier of neem contact op via WhatsApp. Kantooradressen staan hieronder.',
       ankara: {
         label: 'Kantoor Ankara',
         address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
-        note: 'Buitenlands kantoor: Brussel, België',
+        label: 'Buitenlands kantoor',
+        address: 'Avenue Louise 149, 1050 Brussel, België',
       },
-      whatsappLabel: 'Alleen WhatsApp',
+      emailLabel: 'E-mail',
+      whatsappLabel: 'WhatsApp',
       whatsappCta: 'Stuur een WhatsApp-bericht',
       calendarCta: 'Online afspraak maken',
+      form: {
+        title: 'Stuur een bericht',
+        name: 'Volledige naam',
+        email: 'E-mail',
+        phone: 'Telefoon',
+        subject: 'Onderwerp',
+        subjectPlaceholder: 'Kies',
+        message: 'Bericht',
+        submit: 'Bericht versturen',
+        success: 'Uw bericht is ontvangen. We nemen spoedig contact met u op.',
+        topics: {
+          execution: 'Strafuitvoeringsberekening',
+          consultation: 'Juridische consultatie',
+          interpol: 'Interpol-procedures',
+          other: 'Overig',
+        },
+      },
     },
     footer: {
       disclaimer:
@@ -279,6 +340,8 @@ const baseTranslations = {
       kvkk: 'KVKK-verklaring',
       privacy: 'Privacybeleid',
       barSicilPrefix: 'Ankara Balie nr.:',
+      callHint: 'Bereik ons via WhatsApp',
+      officesHeading: 'Kantoren',
     },
     theme: {
       toLight: 'Schakel over naar licht thema',
@@ -356,17 +419,36 @@ const baseTranslations = {
       eyebrow: 'İletişim',
       title: 'Doğrudan ulaşın',
       subtitle:
-        'İletişim yalnızca WhatsApp üzerinden sağlanmaktadır. Ankara ofis adresi aşağıdadır.',
+        'Form üzerinden mesaj gönderin veya WhatsApp ile ulaşın. Ofis adresleri aşağıdadır.',
       ankara: {
         label: 'Ankara Ofisi',
         address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
-        note: 'Yurtdışı ofis: Brüksel, Belçika',
+        label: 'Yurtdışı Ofis',
+        address: 'Avenue Louise 149, 1050 Brüksel, Belçika',
       },
-      whatsappLabel: 'Sadece WhatsApp',
+      emailLabel: 'E-posta',
+      whatsappLabel: 'WhatsApp',
       whatsappCta: 'WhatsApp mesajı gönder',
       calendarCta: 'Online randevu alın',
+      form: {
+        title: 'Mesaj gönderin',
+        name: 'Ad Soyad',
+        email: 'E-posta',
+        phone: 'Telefon',
+        subject: 'Konu',
+        subjectPlaceholder: 'Seçiniz',
+        message: 'Mesaj',
+        submit: 'Mesaj gönder',
+        success: 'Mesajınız alındı. En kısa sürede size dönüş yapılacaktır.',
+        topics: {
+          execution: 'İnfaz Hesabı',
+          consultation: 'Hukuki Danışma',
+          interpol: 'Interpol İşlemleri',
+          other: 'Diğer',
+        },
+      },
     },
     footer: {
       disclaimer:
@@ -375,6 +457,8 @@ const baseTranslations = {
       kvkk: 'KVKK Aydınlatma Metni',
       privacy: 'Gizlilik Politikası',
       barSicilPrefix: 'Ankara Barosu Sicil No:',
+      callHint: 'WhatsApp ile ulaşın',
+      officesHeading: 'Ofisler',
     },
     theme: {
       toLight: 'Açık temaya geç',

@@ -26,11 +26,28 @@ npm run preview
 
 ## Netlify Forms
 
-The contact form uses `data-netlify="true"`. Form submissions work on Netlify deploy. For local testing with form handling:
+The contact form on the homepage (`name="contact"`) uses:
+
+- `data-netlify="true"`
+- Honeypot field `bot-field`
+- Netlify reCAPTCHA (`data-netlify-recaptcha="true"`)
+
+Submissions appear in **Netlify → Site → Forms**. Email delivery is **not** automatic from code.
+
+### Required once after deploy
+
+1. Open **Netlify → Site configuration → Forms → Form notifications**
+2. Add an **Email notification** for form `contact`
+3. Set the recipient to **`av.ziyakahya@gmail.com`**
+4. Confirm the inbox (Netlify sends a verification mail)
+
+Local testing with form handling:
 
 ```bash
 netlify dev
 ```
+
+Field names in the notification (`ad_soyad`, `eposta`, `telefon`, `konu`, `mesaj`) are Turkish so the lawyer can read submissions clearly. Subject line: `Yeni iletişim talebi — Av. Yusuf Ziya Kahya sitesi`.
 
 ## i18n
 

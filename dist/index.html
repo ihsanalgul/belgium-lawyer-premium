@@ -41,9 +41,9 @@
       rel="stylesheet"
     />
     <title>Av. Yusuf Ziya KAHYA | Avukat · Ankara</title>
-    <script type="module" crossorigin src="/assets/main-6xblZ7Xy.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/nav-BmkYs8nF.js">
-    <link rel="stylesheet" crossorigin href="/assets/nav-IdauLlRI.css">
+    <script type="module" crossorigin src="/assets/main-CgntHh03.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/nav-BY_bEukt.js">
+    <link rel="stylesheet" crossorigin href="/assets/nav-CKWG8wsR.css">
   </head>
   <body class="site-bg">
     <a href="#main" class="skip-link" data-i18n="skip">Ana içeriğe geç</a>
@@ -271,74 +271,215 @@
         </div>
       </section>
 
-      <section id="contact" class="site-section">
-        <div class="site-container contact-layout reveal">
-          <div class="contact-main">
+      <section id="contact" class="site-section contact-section">
+        <div class="site-container">
+          <div class="contact-intro reveal">
             <p class="text-eyebrow" data-i18n="contact.eyebrow">İletişim</p>
-            <div class="rule-gold"></div>
+            <div class="rule-gold" style="margin-inline: auto"></div>
             <h2 class="text-display-lg" data-i18n="contact.title">Doğrudan ulaşın</h2>
             <p class="text-prose" data-i18n="contact.subtitle"></p>
+          </div>
 
-            <div class="contact-whatsapp-block">
-              <p class="contact-whatsapp-label" data-i18n="contact.whatsappLabel">Sadece WhatsApp</p>
-              <a
-                href="https://wa.me/905067151119"
-                id="contact-whatsapp"
-                class="btn-whatsapp"
-                target="_blank"
-                rel="noopener noreferrer"
+          <div
+            id="contact-form-success"
+            class="contact-form-success"
+            role="status"
+            hidden
+            data-i18n="contact.form.success"
+          >
+            Mesajınız alındı. En kısa sürede size dönüş yapılacaktır.
+          </div>
+
+          <div class="contact-band reveal">
+            <div class="contact-form-panel">
+              <h3 class="contact-panel-title" data-i18n="contact.form.title">Mesaj gönderin</h3>
+              <form
+                name="contact"
+                method="POST"
+                action="/?form=ok#contact"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                data-netlify-recaptcha="true"
+                netlify-honeypot="bot-field"
+                id="contact-form"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.89-11.893a11.821 11.821 0 00-3.48-8.413z"
-                  />
-                </svg>
-                <span data-i18n="contact.whatsappCta">WhatsApp mesajı gönder</span>
-              </a>
-              <a
-                href="#appointments"
-                id="contact-calendar"
-                class="btn-outline contact-calendar-btn"
-                hidden
-                data-i18n="contact.calendarCta"
-              >
-                Online randevu alın
-              </a>
+                <input type="hidden" name="form-name" value="contact" />
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="Yeni iletişim talebi — Av. Yusuf Ziya Kahya sitesi"
+                />
+                <p class="form-honeypot">
+                  <label>
+                    Don’t fill this out:
+                    <input name="bot-field" tabindex="-1" autocomplete="off" />
+                  </label>
+                </p>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="contact-ad-soyad" data-i18n="contact.form.name"
+                      >Ad Soyad</label
+                    >
+                    <input
+                      class="form-input"
+                      type="text"
+                      id="contact-ad-soyad"
+                      name="ad_soyad"
+                      required
+                      autocomplete="name"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="contact-eposta" data-i18n="contact.form.email"
+                      >E-posta</label
+                    >
+                    <input
+                      class="form-input"
+                      type="email"
+                      id="contact-eposta"
+                      name="eposta"
+                      required
+                      autocomplete="email"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="contact-telefon" data-i18n="contact.form.phone"
+                      >Telefon</label
+                    >
+                    <input
+                      class="form-input"
+                      type="tel"
+                      id="contact-telefon"
+                      name="telefon"
+                      autocomplete="tel"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="contact-konu" data-i18n="contact.form.subject"
+                      >Konu</label
+                    >
+                    <select class="form-select" id="contact-konu" name="konu" required>
+                      <option value="" data-i18n="contact.form.subjectPlaceholder">Seçiniz</option>
+                      <option value="İnfaz Hesabı" data-i18n="contact.form.topics.execution">
+                        İnfaz Hesabı
+                      </option>
+                      <option value="Hukuki Danışma" data-i18n="contact.form.topics.consultation">
+                        Hukuki Danışma
+                      </option>
+                      <option value="Interpol İşlemleri" data-i18n="contact.form.topics.interpol">
+                        Interpol İşlemleri
+                      </option>
+                      <option value="Diğer" data-i18n="contact.form.topics.other">Diğer</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="contact-mesaj" data-i18n="contact.form.message"
+                    >Mesaj</label
+                  >
+                  <textarea
+                    class="form-textarea"
+                    id="contact-mesaj"
+                    name="mesaj"
+                    required
+                    rows="5"
+                  ></textarea>
+                </div>
+
+                <div class="form-recaptcha" data-netlify-recaptcha="true"></div>
+
+                <button type="submit" class="btn-primary contact-form-submit" data-i18n="contact.form.submit">
+                  Mesaj gönder
+                </button>
+              </form>
             </div>
 
-          </div>
+            <div class="contact-info-panel">
+              <article class="office-block">
+                <div class="office-block__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linejoin="round"
+                    />
+                    <circle cx="12" cy="10" r="2.25" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </div>
+                <div class="office-block__body">
+                  <p class="office-block__label" data-i18n="contact.ankara.label">Ankara Ofisi</p>
+                  <p class="office-block__address" data-i18n="contact.ankara.address"></p>
+                </div>
+              </article>
 
-          <div class="contact-map-wrap">
-            <iframe
-              id="contact-map"
-              title="Ankara ofis konumu"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
+              <article class="office-block">
+                <div class="office-block__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linejoin="round"
+                    />
+                    <circle cx="12" cy="10" r="2.25" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                </div>
+                <div class="office-block__body">
+                  <p class="office-block__label" data-i18n="contact.brussels.label">Yurtdışı Ofis</p>
+                  <p class="office-block__address" data-i18n="contact.brussels.address"></p>
+                </div>
+              </article>
 
-        <div class="site-container">
-          <div class="offices-wrap reveal">
-            <article class="office-block">
-              <div class="office-block__icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11z"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linejoin="round"
-                  />
-                  <circle cx="12" cy="10" r="2.25" stroke="currentColor" stroke-width="1.5" />
-                </svg>
+              <div class="contact-info-actions">
+                <a
+                  id="contact-email"
+                  class="contact-info-link"
+                  href="mailto:av.ziyakahya@gmail.com"
+                >
+                  <span class="contact-info-link__label" data-i18n="contact.emailLabel">E-posta</span>
+                  <span class="contact-info-link__value">av.ziyakahya@gmail.com</span>
+                </a>
+                <a
+                  href="https://wa.me/905067151119"
+                  id="contact-whatsapp"
+                  class="btn-whatsapp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.89-11.893a11.821 11.821 0 00-3.48-8.413z"
+                    />
+                  </svg>
+                  <span data-i18n="contact.whatsappCta">WhatsApp mesajı gönder</span>
+                </a>
+                <a
+                  href="#appointments"
+                  id="contact-calendar"
+                  class="btn-outline contact-calendar-btn"
+                  hidden
+                  data-i18n="contact.calendarCta"
+                >
+                  Online randevu alın
+                </a>
               </div>
-              <div class="office-block__body">
-                <p class="office-block__label" data-i18n="contact.ankara.label">Ankara Ofisi</p>
-                <p class="office-block__address" data-i18n="contact.ankara.address"></p>
-              </div>
-            </article>
-            <p class="office-abroad-note" data-i18n="contact.brussels.note">Yurtdışı ofis: Brüksel, Belçika</p>
+            </div>
+
+            <div class="contact-map-wrap">
+              <iframe
+                id="contact-map"
+                title="Ankara ofis konumu"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
@@ -349,9 +490,32 @@
         <div class="footer-brand">
           <p class="footer-brand__name" id="footer-brand-name">Yusuf Ziya Kahya</p>
           <div class="rule-gold footer-brand__rule" aria-hidden="true"></div>
+          <p class="footer-brand__cta" data-i18n="footer.callHint">WhatsApp ile ulaşın</p>
+          <a
+            id="footer-whatsapp"
+            class="footer-brand__phone"
+            href="https://wa.me/905067151119"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            0506 715 11 19
+          </a>
         </div>
-        <p class="text-small footer-disclaimer" data-i18n="footer.disclaimer"></p>
+
+        <div class="footer-offices">
+          <p class="footer-offices__heading" data-i18n="footer.officesHeading">Ofisler</p>
+          <p class="footer-offices__item">
+            <span data-i18n="contact.ankara.label">Ankara Ofisi</span><br />
+            <span data-i18n="contact.ankara.address"></span>
+          </p>
+          <p class="footer-offices__item">
+            <span data-i18n="contact.brussels.label">Yurtdışı Ofis</span><br />
+            <span data-i18n="contact.brussels.address"></span>
+          </p>
+        </div>
+
         <div class="footer-aside">
+          <p class="text-small footer-disclaimer" data-i18n="footer.disclaimer"></p>
           <p class="footer-meta text-small">
             <span id="footer-bar-sicil" hidden></span>
             <a id="footer-kvkk" href="/kvkk.html" data-i18n="footer.kvkk">KVKK Aydınlatma Metni</a>

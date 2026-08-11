@@ -24,6 +24,19 @@ export function initSiteConfig() {
     contactWa.href = siteConfig.whatsapp.url;
   }
 
+  const footerWa = document.getElementById('footer-whatsapp');
+  if (footerWa) {
+    footerWa.href = siteConfig.whatsapp.url;
+    footerWa.textContent = siteConfig.whatsapp.display;
+  }
+
+  const contactEmail = document.getElementById('contact-email');
+  if (contactEmail && siteConfig.email) {
+    contactEmail.href = `mailto:${siteConfig.email}`;
+    const valueEl = contactEmail.querySelector('.contact-info-link__value');
+    if (valueEl) valueEl.textContent = siteConfig.email;
+  }
+
   const footerBrand = document.getElementById('footer-brand-name');
   if (footerBrand) {
     footerBrand.textContent = `${siteConfig.nameShort.first} ${siteConfig.nameShort.last}`;
