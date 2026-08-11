@@ -310,41 +310,6 @@ body.has-hero-slider .site-header:not(.is-scrolled) {
   margin-top: 1.5rem;
 }
 
-.offices-wrap {
-  margin-top: 3.5rem;
-}
-
-.office-block {
-  padding-bottom: 2.25rem;
-  border-bottom: 1px solid var(--color-border-subtle);
-}
-
-.office-block + .office-block {
-  margin-top: 2.25rem;
-}
-
-.office-block--secondary {
-  opacity: 0.72;
-  padding-top: 0.25rem;
-}
-
-.office-block--secondary .text-eyebrow {
-  font-size: 0.625rem;
-}
-
-.office-block:last-of-type {
-  border-bottom: none;
-}
-
-.office-block .text-prose {
-  margin-top: 0.75rem;
-}
-
-.office-block .link-underline {
-  display: inline-block;
-  margin-top: 1rem;
-}
-
 .contact-email {
   display: inline-block;
   margin-top: 2.5rem;
@@ -641,30 +606,65 @@ body.has-hero-slider .site-header:not(.is-scrolled) {
 
 /* Footer */
 .site-footer {
-  padding-block: 3.5rem;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+  padding-block: clamp(2.75rem, 5vw, 4rem);
+  background: var(--color-elevated);
   border-top: 1px solid var(--color-border-subtle);
 }
 
 .footer-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+  align-items: start;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .footer-inner {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem 2rem;
+    grid-template-columns: minmax(10rem, 0.9fr) minmax(16rem, 1.4fr) minmax(12rem, 1fr);
+    gap: clamp(2rem, 4vw, 3.5rem);
+    align-items: end;
   }
+}
+
+.footer-brand__name {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--color-ink);
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.01em;
+}
+
+.footer-brand__rule {
+  margin: 0;
+  width: 2.5rem;
 }
 
 .footer-disclaimer {
   color: var(--color-muted);
   max-width: 46ch;
   letter-spacing: 0.02em;
+  margin: 0;
+  line-height: 1.65;
+}
+
+.footer-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 900px) {
+  .footer-aside {
+    align-items: flex-end;
+    text-align: right;
+  }
+}
+
+.footer-copy {
+  color: var(--color-muted);
+  margin: 0;
 }
 
 /* Skip link */

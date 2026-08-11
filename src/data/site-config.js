@@ -18,7 +18,7 @@ export const siteConfig = {
     },
     be: {
       label: 'Yurtdışı Ofis',
-      line: 'Avenue Louise 149, 1050 Brüksel, Belçika',
+      line: 'Brüksel, Belçika',
     },
   },
   maps: {

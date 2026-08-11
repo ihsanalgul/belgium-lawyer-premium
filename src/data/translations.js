@@ -68,14 +68,13 @@ const baseTranslations = {
       eyebrow: 'Contact',
       title: 'Reach counsel directly',
       subtitle:
-        'Communication is available via WhatsApp only. Office addresses are listed below for correspondence.',
+        'Communication is available via WhatsApp only. The Ankara office address is listed below.',
       ankara: {
         label: 'Ankara Office',
         address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
-        label: 'Abroad Office',
-        address: 'Avenue Louise 149, 1050 Brussels, Belgium',
+        note: 'Abroad office: Brussels, Belgium',
       },
       whatsappLabel: 'WhatsApp only',
       whatsappCta: 'Send a WhatsApp message',
@@ -165,14 +164,13 @@ const baseTranslations = {
       eyebrow: 'Contact',
       title: 'Contacter le conseil directement',
       subtitle:
-        'La communication se fait uniquement via WhatsApp. Les adresses des bureaux sont indiquées ci-dessous.',
+        'La communication se fait uniquement via WhatsApp. L\'adresse du bureau d\'Ankara figure ci-dessous.',
       ankara: {
         label: 'Bureau d\'Ankara',
         address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
-        label: 'Bureau à l\'étranger',
-        address: 'Avenue Louise 149, 1050 Bruxelles, Belgique',
+        note: 'Bureau à l\'étranger : Bruxelles, Belgique',
       },
       whatsappLabel: 'WhatsApp uniquement',
       whatsappCta: 'Envoyer un message WhatsApp',
@@ -262,14 +260,13 @@ const baseTranslations = {
       eyebrow: 'Contact',
       title: 'Neem rechtstreeks contact op',
       subtitle:
-        'Communicatie verloopt uitsluitend via WhatsApp. Kantooradressen staan hieronder vermeld.',
+        'Communicatie verloopt uitsluitend via WhatsApp. Het adres van het kantoor in Ankara staat hieronder.',
       ankara: {
         label: 'Kantoor Ankara',
         address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
-        label: 'Buitenlands kantoor',
-        address: 'Avenue Louise 149, 1050 Brussel, België',
+        note: 'Buitenlands kantoor: Brussel, België',
       },
       whatsappLabel: 'Alleen WhatsApp',
       whatsappCta: 'Stuur een WhatsApp-bericht',
@@ -359,14 +356,13 @@ const baseTranslations = {
       eyebrow: 'İletişim',
       title: 'Doğrudan ulaşın',
       subtitle:
-        'İletişim yalnızca WhatsApp üzerinden sağlanmaktadır. Ofis adresleri aşağıdadır.',
+        'İletişim yalnızca WhatsApp üzerinden sağlanmaktadır. Ankara ofis adresi aşağıdadır.',
       ankara: {
         label: 'Ankara Ofisi',
         address: 'Merkez Mah. Sun Sok. No:33/20 Pursaklar Ankara 06140',
       },
       brussels: {
-        label: 'Yurtdışı Ofis',
-        address: 'Avenue Louise 149, 1050 Brüksel, Belçika',
+        note: 'Yurtdışı ofis: Brüksel, Belçika',
       },
       whatsappLabel: 'Sadece WhatsApp',
       whatsappCta: 'WhatsApp mesajı gönder',

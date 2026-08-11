@@ -303,20 +303,6 @@
               </a>
             </div>
 
-            <div class="offices-wrap">
-              <div class="office-block">
-                <p class="text-eyebrow" style="color: var(--color-muted)" data-i18n="contact.ankara.label">
-                  Ankara Ofisi
-                </p>
-                <p class="text-prose text-prose-light" data-i18n="contact.ankara.address"></p>
-              </div>
-              <div class="office-block office-block--secondary">
-                <p class="text-eyebrow" style="color: var(--color-muted)" data-i18n="contact.brussels.label">
-                  Yurtdışı Ofis
-                </p>
-                <p class="text-prose text-prose-light" data-i18n="contact.brussels.address"></p>
-              </div>
-            </div>
           </div>
 
           <div class="contact-map-wrap">
@@ -329,22 +315,51 @@
             ></iframe>
           </div>
         </div>
+
+        <div class="site-container">
+          <div class="offices-wrap reveal">
+            <article class="office-block">
+              <div class="office-block__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="12" cy="10" r="2.25" stroke="currentColor" stroke-width="1.5" />
+                </svg>
+              </div>
+              <div class="office-block__body">
+                <p class="office-block__label" data-i18n="contact.ankara.label">Ankara Ofisi</p>
+                <p class="office-block__address" data-i18n="contact.ankara.address"></p>
+              </div>
+            </article>
+            <p class="office-abroad-note" data-i18n="contact.brussels.note">Yurtdışı ofis: Brüksel, Belçika</p>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="site-container footer-inner">
+        <div class="footer-brand">
+          <p class="footer-brand__name" id="footer-brand-name">Yusuf Ziya Kahya</p>
+          <div class="rule-gold footer-brand__rule" aria-hidden="true"></div>
+        </div>
         <p class="text-small footer-disclaimer" data-i18n="footer.disclaimer"></p>
-        <p class="text-small footer-copy" style="color: var(--color-muted)">
-          <span id="footer-copy"></span>
-          <span data-i18n="footer.rights">Tüm hakları saklıdır.</span>
-        </p>
-        <p class="footer-meta text-small">
-          <span id="footer-bar-sicil" hidden></span>
-          <a id="footer-kvkk" href="/kvkk.html" data-i18n="footer.kvkk">KVKK Aydınlatma Metni</a>
-          <span class="footer-meta-sep" aria-hidden="true">·</span>
-          <a id="footer-privacy" href="/gizlilik.html" data-i18n="footer.privacy">Gizlilik Politikası</a>
-        </p>
+        <div class="footer-aside">
+          <p class="footer-meta text-small">
+            <span id="footer-bar-sicil" hidden></span>
+            <a id="footer-kvkk" href="/kvkk.html" data-i18n="footer.kvkk">KVKK Aydınlatma Metni</a>
+            <span class="footer-meta-sep" aria-hidden="true">·</span>
+            <a id="footer-privacy" href="/gizlilik.html" data-i18n="footer.privacy">Gizlilik Politikası</a>
+          </p>
+          <p class="text-small footer-copy">
+            <span id="footer-copy"></span>
+            <span data-i18n="footer.rights">Tüm hakları saklıdır.</span>
+          </p>
+        </div>
       </div>
     </footer>
 

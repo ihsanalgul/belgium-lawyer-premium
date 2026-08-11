@@ -24,6 +24,11 @@ export function initSiteConfig() {
     contactWa.href = siteConfig.whatsapp.url;
   }
 
+  const footerBrand = document.getElementById('footer-brand-name');
+  if (footerBrand) {
+    footerBrand.textContent = `${siteConfig.nameShort.first} ${siteConfig.nameShort.last}`;
+  }
+
   const footerCopy = document.getElementById('footer-copy');
   if (footerCopy) {
     footerCopy.textContent = `© ${new Date().getFullYear()} ${siteConfig.name}. `;
