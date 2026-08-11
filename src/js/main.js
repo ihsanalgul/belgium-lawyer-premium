@@ -6,8 +6,10 @@ import { initNav } from './nav.js';
 import { initAppointments } from './appointments.js';
 import { initHeroSliderModule } from './hero-slider.js';
 import { initContactForm } from './contact-form.js';
+import { initCookieConsent } from './cookie-consent.js';
 
 initTheme();
+initCookieConsent();
 initSiteConfig();
 initHeroSliderModule();
 

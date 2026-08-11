@@ -1,5 +1,6 @@
 import { siteConfig } from '../data/site-config.js';
 import { translations } from '../data/translations.js';
+import { allowsFunctionalCookies } from './cookie-consent.js';
 
 const APPT_ID = 'online-appointment';
 
@@ -17,12 +18,43 @@ function getCalendarUrl() {
   return cfg.byPackage?.[APPT_ID] || cfg.default || '';
 }
 
+function ensureCalendarBlockedNote() {
+  let note = document.getElementById('calendar-consent-note');
+  if (note) return note;
+  const panel = document.querySelector('.booker-panel');
+  if (!panel) return null;
+  note = document.createElement('p');
+  note.id = 'calendar-consent-note';
+  note.className = 'embed-consent-note';
+  note.hidden = true;
+  const title = panel.querySelector('.booker-panel__title');
+  if (title) title.insertAdjacentElement('afterend', note);
+  else panel.prepend(note);
+  return note;
+}
+
 function loadCalendarEmbed() {
   const url = getCalendarUrl();
   const iframe = document.getElementById('calendar-embed');
   const fallback = document.getElementById('calendar-fallback-link');
   const wrap = document.getElementById('calendar-embed-wrap');
   const empty = document.getElementById('calendar-embed-empty');
+  const blocked = ensureCalendarBlockedNote();
+  const blockedText = translations[getLang()]?.cookies?.embedBlocked || '';
+
+  if (!allowsFunctionalCookies()) {
+    if (iframe) iframe.removeAttribute('src');
+    if (wrap) wrap.hidden = true;
+    if (fallback) fallback.hidden = true;
+    if (empty) empty.hidden = true;
+    if (blocked) {
+      blocked.textContent = blockedText;
+      blocked.hidden = false;
+    }
+    return;
+  }
+
+  if (blocked) blocked.hidden = true;
 
   if (!url) {
     if (wrap) wrap.hidden = true;
@@ -155,4 +187,5 @@ export function initAppointments() {
   renderFees();
   renderPayment();
   loadCalendarEmbed();
+  document.addEventListener('cookie-consent-change', () => loadCalendarEmbed());
 }

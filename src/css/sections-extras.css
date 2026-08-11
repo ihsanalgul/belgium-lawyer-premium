@@ -366,9 +366,126 @@
   overflow: hidden;
 }
 
-.form-recaptcha {
-  margin: 0.5rem 0 1.25rem;
-  min-height: 1.5rem;
+.form-consent-note {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: rgba(248, 249, 251, 0.75);
+  margin: 0 0 1rem;
+}
+
+.form-check-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: rgba(248, 249, 251, 0.85);
+  cursor: pointer;
+}
+
+.form-check input {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.form-check a {
+  color: var(--color-gold);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.embed-consent-note {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--color-muted);
+  padding: 1rem 1.25rem;
+  margin: 0;
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-elevated);
+}
+
+.contact-map-wrap .embed-consent-note {
+  position: absolute;
+  inset: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.contact-map-wrap .embed-consent-note[hidden] {
+  display: none;
+}
+
+.cookie-banner {
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 80;
+  padding: 1rem 0 calc(1rem + env(safe-area-inset-bottom, 0px));
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -8px 32px rgba(15, 23, 41, 0.08);
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-banner__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .cookie-banner__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+}
+
+.cookie-banner__title {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  margin: 0 0 0.35rem;
+  color: var(--color-ink);
+}
+
+.cookie-banner__text {
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--color-muted);
+  max-width: 52rem;
+}
+
+.cookie-banner__link {
+  color: var(--color-gold);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  flex-shrink: 0;
+}
+
+.cookie-banner__btn {
+  white-space: nowrap;
+}
+
+body:has(.cookie-banner:not([hidden])) .whatsapp-fab {
+  bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px));
 }
 
 .contact-form-submit {

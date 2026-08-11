@@ -388,7 +388,34 @@
                   ></textarea>
                 </div>
 
+                <div class="form-group form-check-group">
+                  <label class="form-check">
+                    <input
+                      type="checkbox"
+                      name="kvkk_onay"
+                      value="Kabul edildi"
+                      required
+                    />
+                    <span class="form-check__text">
+                      <a href="/kvkk.html" data-i18n="footer.kvkk">KVKK Aydınlatma Metni</a>
+                      <span data-i18n="contact.form.privacyConsentJoin"> ve </span>
+                      <a href="/gizlilik.html" data-i18n="footer.privacy">Gizlilik Politikası</a>
+                      <span data-i18n="contact.form.privacyConsent">
+                        metinlerini okudum ve kabul ediyorum.</span
+                      >
+                    </span>
+                  </label>
+                </div>
+
                 <div class="form-recaptcha" data-netlify-recaptcha="true"></div>
+                <p
+                  id="form-recaptcha-blocked"
+                  class="form-consent-note"
+                  hidden
+                  data-i18n="cookies.formBlocked"
+                >
+                  Form gönderimi için çerez tercihlerinden işlevsel çerezleri kabul etmeniz gerekir.
+                </p>
 
                 <button type="submit" class="btn-primary contact-form-submit" data-i18n="contact.form.submit">
                   Mesaj gönder
@@ -518,6 +545,10 @@
             <a id="footer-kvkk" href="/kvkk.html" data-i18n="footer.kvkk">KVKK Aydınlatma Metni</a>
             <span class="footer-meta-sep" aria-hidden="true">·</span>
             <a id="footer-privacy" href="/gizlilik.html" data-i18n="footer.privacy">Gizlilik Politikası</a>
+            <span class="footer-meta-sep" aria-hidden="true">·</span>
+            <a id="footer-cookies" href="/gizlilik.html#cerezler" data-i18n="footer.cookies"
+              >Çerez Politikası</a
+            >
           </p>
           <p class="text-small footer-copy">
             <span id="footer-copy"></span>

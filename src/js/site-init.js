@@ -1,10 +1,60 @@
 import { siteConfig } from '../data/site-config.js';
+import { allowsFunctionalCookies } from './cookie-consent.js';
+import { translations } from '../data/translations.js';
 
 export function updateFooterBarSicil(prefix) {
   const el = document.getElementById('footer-bar-sicil');
   if (!el || !siteConfig.barSicilNo) return;
   el.textContent = `${prefix} ${siteConfig.barSicilNo}`;
   el.hidden = false;
+}
+
+function getLang() {
+  return document.documentElement.lang || 'tr';
+}
+
+export function loadContactMap() {
+  const mapFrame = document.getElementById('contact-map');
+  const wrap = document.querySelector('.contact-map-wrap');
+  if (!mapFrame || !wrap) return;
+
+  let note = document.getElementById('map-consent-note');
+  if (!note) {
+    note = document.createElement('p');
+    note.id = 'map-consent-note';
+    note.className = 'embed-consent-note';
+    wrap.appendChild(note);
+  }
+
+  if (!allowsFunctionalCookies()) {
+    mapFrame.removeAttribute('src');
+    mapFrame.hidden = true;
+    note.textContent = translations[getLang()]?.cookies?.embedBlocked || '';
+    note.hidden = false;
+    return;
+  }
+
+  note.hidden = true;
+  mapFrame.hidden = false;
+  if (siteConfig.maps?.ankaraEmbedUrl) {
+    mapFrame.src = siteConfig.maps.ankaraEmbedUrl;
+  }
+}
+
+export function syncFormRecaptchaConsent() {
+  const recaptcha = document.querySelector('.form-recaptcha');
+  const blocked = document.getElementById('form-recaptcha-blocked');
+  const submit = document.querySelector('.contact-form-submit');
+  const allowed = allowsFunctionalCookies();
+
+  if (recaptcha) recaptcha.hidden = !allowed;
+  if (blocked) {
+    blocked.hidden = allowed;
+    blocked.textContent = translations[getLang()]?.cookies?.formBlocked || '';
+  }
+  if (submit) {
+    submit.disabled = !allowed;
+  }
 }
 
 export function initSiteConfig() {
@@ -68,9 +118,9 @@ export function initSiteConfig() {
     privacyLink.href = siteConfig.privacyUrl;
   }
 
-  const mapFrame = document.getElementById('contact-map');
-  if (mapFrame && siteConfig.maps?.ankaraEmbedUrl) {
-    mapFrame.src = siteConfig.maps.ankaraEmbedUrl;
+  const cookiesLink = document.getElementById('footer-cookies');
+  if (cookiesLink) {
+    cookiesLink.href = `${siteConfig.privacyUrl}#cerezler`;
   }
 
   const calendarUrl = siteConfig.googleCalendar?.default;
@@ -78,4 +128,11 @@ export function initSiteConfig() {
   if (contactCalendar && calendarUrl) {
     contactCalendar.hidden = false;
   }
+
+  loadContactMap();
+  syncFormRecaptchaConsent();
+  document.addEventListener('cookie-consent-change', () => {
+    loadContactMap();
+    syncFormRecaptchaConsent();
+  });
 }
