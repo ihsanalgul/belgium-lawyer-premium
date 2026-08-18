@@ -75,7 +75,7 @@ const baseTranslations = {
       },
       brussels: {
         label: 'Abroad Office',
-        address: 'Avenue Louise 149, 1050 Brussels, Belgium',
+        address: 'Sastraat 1/1.03, 3500 Hasselt, Belgium',
       },
       emailLabel: 'Email',
       whatsappLabel: 'WhatsApp',
@@ -205,7 +205,7 @@ const baseTranslations = {
       },
       brussels: {
         label: 'Bureau à l\'étranger',
-        address: 'Avenue Louise 149, 1050 Bruxelles, Belgique',
+        address: 'Sastraat 1/1.03, 3500 Hasselt, Belgique',
       },
       emailLabel: 'E-mail',
       whatsappLabel: 'WhatsApp',
@@ -335,7 +335,7 @@ const baseTranslations = {
       },
       brussels: {
         label: 'Buitenlands kantoor',
-        address: 'Avenue Louise 149, 1050 Brussel, België',
+        address: 'Sastraat 1/1.03, 3500 Hasselt, België',
       },
       emailLabel: 'E-mail',
       whatsappLabel: 'WhatsApp',
@@ -465,7 +465,7 @@ const baseTranslations = {
       },
       brussels: {
         label: 'Yurtdışı Ofis',
-        address: 'Avenue Louise 149, 1050 Brüksel, Belçika',
+        address: 'Sastraat 1/1.03, 3500 Hasselt, Belçika',
       },
       emailLabel: 'E-posta',
       whatsappLabel: 'WhatsApp',
