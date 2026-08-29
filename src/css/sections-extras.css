@@ -493,6 +493,15 @@ body:has(.cookie-banner:not([hidden])) .whatsapp-fab {
   justify-content: center;
 }
 
+.contact-form-panel .btn-primary {
+  color: var(--color-bg);
+}
+
+.contact-form-panel .btn-primary:hover,
+.contact-form-panel .btn-primary:focus-visible {
+  color: var(--color-gold);
+}
+
 .contact-form-panel .form-group {
   margin-bottom: 1.25rem;
 }
