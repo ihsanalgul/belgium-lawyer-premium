@@ -314,20 +314,20 @@
 }
 
 .contact-form-panel {
-  background: var(--color-ink);
-  color: var(--color-bg);
+  background: var(--color-inverse);
+  color: var(--color-on-inverse);
   padding: clamp(1.5rem, 3vw, 2rem);
 }
 
 .contact-form-panel .form-label {
-  color: rgba(248, 249, 251, 0.65);
+  color: var(--color-on-inverse-muted);
 }
 
 .contact-form-panel .form-input,
 .contact-form-panel .form-textarea,
 .contact-form-panel .form-select {
-  background: var(--color-surface);
-  color: var(--color-ink);
+  background: var(--color-inverse-field);
+  color: var(--color-inverse-field-ink);
   border-color: transparent;
 }
 
@@ -341,7 +341,7 @@
   font-family: var(--font-display);
   font-size: 1.375rem;
   font-weight: 400;
-  color: var(--color-bg);
+  color: var(--color-on-inverse);
   margin: 0 0 1.5rem;
 }
 
@@ -369,7 +369,7 @@
 .form-consent-note {
   font-size: 0.8125rem;
   line-height: 1.55;
-  color: rgba(248, 249, 251, 0.75);
+  color: var(--color-on-inverse-muted);
   margin: 0 0 1rem;
 }
 
@@ -383,7 +383,7 @@
   gap: 0.625rem;
   font-size: 0.8125rem;
   line-height: 1.55;
-  color: rgba(248, 249, 251, 0.85);
+  color: var(--color-on-inverse-muted);
   cursor: pointer;
 }
 
@@ -494,7 +494,7 @@ body:has(.cookie-banner:not([hidden])) .whatsapp-fab {
 }
 
 .contact-form-panel .btn-primary {
-  color: var(--color-bg);
+  color: var(--color-on-inverse);
 }
 
 .contact-form-panel .btn-primary:hover,
