@@ -1,6 +1,6 @@
 import { siteConfig } from '../data/site-config.js';
 import { translations } from '../data/translations.js';
-import { allowsFunctionalCookies } from './cookie-consent.js';
+import { allowsFunctionalCookies, fillEmbedBlockedNote } from './cookie-consent.js';
 
 const APPT_ID = 'online-appointment';
 
@@ -23,7 +23,7 @@ function ensureCalendarBlockedNote() {
   if (note) return note;
   const panel = document.querySelector('.booker-panel');
   if (!panel) return null;
-  note = document.createElement('p');
+  note = document.createElement('div');
   note.id = 'calendar-consent-note';
   note.className = 'embed-consent-note';
   note.hidden = true;
@@ -40,7 +40,6 @@ function loadCalendarEmbed() {
   const wrap = document.getElementById('calendar-embed-wrap');
   const empty = document.getElementById('calendar-embed-empty');
   const blocked = ensureCalendarBlockedNote();
-  const blockedText = translations[getLang()]?.cookies?.embedBlocked || '';
 
   if (!allowsFunctionalCookies()) {
     if (iframe) iframe.removeAttribute('src');
@@ -48,7 +47,7 @@ function loadCalendarEmbed() {
     if (fallback) fallback.hidden = true;
     if (empty) empty.hidden = true;
     if (blocked) {
-      blocked.textContent = blockedText;
+      fillEmbedBlockedNote(blocked);
       blocked.hidden = false;
     }
     return;

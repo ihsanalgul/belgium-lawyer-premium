@@ -8,7 +8,7 @@ import { updateFooterBarSicil } from './site-init.js';
 import { refreshHeroSliderContent } from './hero-slider.js';
 import { refreshContactFormLocale } from './contact-form.js';
 import { refreshCookieBannerLocale } from './cookie-consent.js';
-import { syncFormRecaptchaConsent } from './site-init.js';
+import { syncFormRecaptchaConsent, loadContactMap } from './site-init.js';
 
 const STORAGE_KEY = 'lang';
 const MANUAL_KEY = 'lang-manual';
@@ -116,6 +116,7 @@ export function setLanguage(lang, { manual = false } = {}) {
   refreshContactFormLocale();
   refreshCookieBannerLocale();
   syncFormRecaptchaConsent();
+  loadContactMap();
   refreshHeroSliderContent(lang);
   updateFooterBarSicil(t.footer?.barSicilPrefix ?? '');
   updateMeta(lang);

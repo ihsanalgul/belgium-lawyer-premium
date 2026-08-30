@@ -622,8 +622,13 @@ body.has-hero-slider .site-header:not(.is-scrolled) {
   color: #9b9590;
 }
 
-.site-footer .footer-meta a:hover {
+.site-footer .footer-meta a:hover,
+.site-footer .footer-meta__btn:hover {
   color: var(--color-gold);
+}
+
+.site-footer .footer-meta__btn {
+  color: #9b9590;
 }
 
 .site-footer .footer-brand__name,

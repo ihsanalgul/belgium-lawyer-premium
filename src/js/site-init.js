@@ -1,5 +1,5 @@
 import { siteConfig } from '../data/site-config.js';
-import { allowsFunctionalCookies } from './cookie-consent.js';
+import { allowsFunctionalCookies, fillEmbedBlockedNote } from './cookie-consent.js';
 import { translations } from '../data/translations.js';
 
 export function updateFooterBarSicil(prefix) {
@@ -20,7 +20,7 @@ export function loadContactMap() {
 
   let note = document.getElementById('map-consent-note');
   if (!note) {
-    note = document.createElement('p');
+    note = document.createElement('div');
     note.id = 'map-consent-note';
     note.className = 'embed-consent-note';
     wrap.appendChild(note);
@@ -29,7 +29,7 @@ export function loadContactMap() {
   if (!allowsFunctionalCookies()) {
     mapFrame.removeAttribute('src');
     mapFrame.hidden = true;
-    note.textContent = translations[getLang()]?.cookies?.embedBlocked || '';
+    fillEmbedBlockedNote(note);
     note.hidden = false;
     return;
   }

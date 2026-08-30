@@ -50,6 +50,46 @@ function setConsent(value) {
   hideBanner(document.getElementById('cookie-banner'));
 }
 
+export function acceptAllCookies() {
+  setConsent('all');
+}
+
+export function reopenCookieBanner() {
+  let banner = document.getElementById('cookie-banner');
+  if (!banner) {
+    banner = buildBanner();
+    document.body.appendChild(banner);
+  }
+  banner.hidden = false;
+  banner.setAttribute('aria-hidden', 'false');
+  refreshCookieBannerLocale();
+}
+
+export function fillEmbedBlockedNote(note) {
+  if (!note) return;
+  const c = tCookies();
+  note.replaceChildren();
+
+  const text = document.createElement('span');
+  text.className = 'embed-consent-note__text';
+  text.textContent = c.embedBlocked || '';
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'btn-primary embed-consent-note__accept';
+  btn.textContent = c.accept || '';
+  btn.addEventListener('click', () => acceptAllCookies());
+
+  note.append(text, btn);
+}
+
+function bindManageCookies() {
+  document.getElementById('cookie-manage')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    reopenCookieBanner();
+  });
+}
+
 function buildBanner() {
   const c = tCookies();
   const banner = document.createElement('div');
@@ -90,7 +130,7 @@ function buildBanner() {
 
 export function refreshCookieBannerLocale() {
   const existing = document.getElementById('cookie-banner');
-  if (!existing || existing.hidden) return;
+  if (!existing) return;
   const c = tCookies();
   const title = existing.querySelector('.cookie-banner__title');
   const text = existing.querySelector('.cookie-banner__text');
@@ -109,6 +149,8 @@ export function refreshCookieBannerLocale() {
 }
 
 export function initCookieConsent() {
+  bindManageCookies();
+
   const stored = getCookieConsent();
   if (stored === 'all' || stored === 'essential') {
     applyConsentToPage();
