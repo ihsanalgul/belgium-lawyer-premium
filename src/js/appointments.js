@@ -92,99 +92,13 @@ function renderAppointmentIntro() {
   `;
 }
 
-function renderFees() {
-  const list = document.getElementById('appt-fees-list');
-  const titleEl = document.getElementById('appt-fees-title');
-  if (!list) return;
-
-  const t = getT();
-  if (titleEl) titleEl.textContent = t.feesTitle || '';
-
-  const fees = t.fees || [];
-  list.innerHTML = fees
-    .map(
-      (fee) => `
-    <article class="appt-fee-card">
-      <h4 class="appt-fee-card__title">${fee.title}</h4>
-      <p class="appt-fee-card__price">
-        ${fee.price}${fee.priceNote ? `<span class="appt-fee-card__price-note"> ${fee.priceNote}</span>` : ''}
-      </p>
-      ${
-        fee.items?.length
-          ? `<ul class="appt-fee-card__items">${fee.items.map((item) => `<li>${item}</li>`).join('')}</ul>`
-          : ''
-      }
-    </article>`
-    )
-    .join('');
-}
-
-async function copyIban(iban, button) {
-  const t = getT();
-  try {
-    await navigator.clipboard.writeText(iban);
-    const original = t.copyIban || 'Copy IBAN';
-    button.textContent = t.copiedIban || 'Copied';
-    window.setTimeout(() => {
-      button.textContent = original;
-    }, 2000);
-  } catch {
-    /* ignore clipboard failures */
-  }
-}
-
-function renderPayment() {
-  const el = document.getElementById('appt-payment');
-  if (!el) return;
-
-  const bank = siteConfig.bank;
-  if (!bank?.iban) {
-    el.innerHTML = '';
-    el.hidden = true;
-    return;
-  }
-
-  el.hidden = false;
-  const t = getT();
-
-  el.innerHTML = `
-    <h3 class="appt-payment__title">${t.paymentTitle || ''}</h3>
-    <p class="appt-payment__note">${t.paymentNote || ''}</p>
-    <dl class="appt-payment__details">
-      <div class="appt-payment__row">
-        <dt>${t.paymentIbanLabel || 'IBAN'}</dt>
-        <dd>
-          <span class="appt-payment__iban" id="appt-iban-value">${bank.iban}</span>
-          <button type="button" class="appt-payment__copy" id="appt-copy-iban">${t.copyIban || 'Copy IBAN'}</button>
-        </dd>
-      </div>
-      <div class="appt-payment__row">
-        <dt>${t.paymentNameLabel || ''}</dt>
-        <dd>${bank.accountName}</dd>
-      </div>
-      <div class="appt-payment__row">
-        <dt>${t.paymentBankLabel || ''}</dt>
-        <dd>${bank.bankName}</dd>
-      </div>
-    </dl>
-  `;
-
-  document.getElementById('appt-copy-iban')?.addEventListener('click', (e) => {
-    copyIban(bank.iban, e.currentTarget);
-  });
-}
-
 export function refreshAppointmentsLocale() {
   renderAppointmentIntro();
-  renderFees();
-  renderPayment();
   loadCalendarEmbed();
 }
 
 export function initAppointments() {
   renderAppointmentIntro();
-  renderFees();
-  renderPayment();
   loadCalendarEmbed();
   document.addEventListener('cookie-consent-change', () => loadCalendarEmbed());
 }

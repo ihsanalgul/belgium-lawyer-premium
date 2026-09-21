@@ -1,60 +1,16 @@
-/** Appointment content and fee schedule per locale */
+/** Appointment content per locale */
 export const appointmentsContent = {
   en: {
     eyebrow: 'Appointments',
     title: 'Schedule an online consultation',
     subtitle:
       'Book a 15-minute online appointment. The meeting can be extended if needed.',
-    footnote: 'For fee-based services, please transfer to the bank account shown above. The same payment details are repeated in the appointment confirmation email.',
-    feesTitle: 'Fee schedule',
-    paymentTitle: 'Payment / bank transfer',
-    paymentNote:
-      'For fee-based services, a bank transfer to this account may be requested.',
-    paymentIbanLabel: 'IBAN',
-    paymentNameLabel: 'Account holder',
-    paymentBankLabel: 'Bank',
-    copyIban: 'Copy IBAN',
-    copiedIban: 'Copied',
     appointment: {
       id: 'online-appointment',
       duration: '15 Minutes',
       title: 'Online Appointment',
       desc: 'A 15-minute consultation. The meeting can be extended if needed.',
     },
-    fees: [
-      {
-        title: 'Total Sentence and Execution Status Briefing',
-        price: '₺5.000 – ₺10.000',
-        items: [
-          '0–5 files: ₺5.000',
-          '5–20 files: ₺7.500',
-          'Over 20 files: ₺10.000',
-        ],
-      },
-      {
-        title: 'Case File Briefing',
-        price: '₺5.000',
-        priceNote: '/ per file',
-        items: [],
-      },
-      {
-        title: 'Legal Questions and Consultation',
-        price: '₺5.000',
-        priceNote: '/ per matter',
-        items: [
-          'Optional video call with the lawyer on request',
-          'Optional written response to the other party on request',
-        ],
-      },
-      {
-        title: 'Legal Opinion Preparation',
-        price: '₺35.000 – ₺70.000',
-        items: [
-          'Under CMK Art. 67 and HMK Art. 293',
-          'Fee varies with the complexity of the matter',
-        ],
-      },
-    ],
     booker: {
       title: 'Appointment calendar',
       calendarHint: 'Complete your booking using the calendar above.',
@@ -68,56 +24,12 @@ export const appointmentsContent = {
     title: 'Planifier une consultation en ligne',
     subtitle:
       'Réservez un rendez-vous en ligne de 15 minutes. L\'entretien peut être prolongé si nécessaire.',
-    footnote: 'Pour les prestations payantes, veuillez virer sur le compte indiqué ci-dessus. Les mêmes coordonnées figurent dans l\'e-mail de confirmation du rendez-vous.',
-    feesTitle: 'Tarifs',
-    paymentTitle: 'Paiement / virement',
-    paymentNote:
-      'Pour les prestations payantes, un virement vers ce compte peut être demandé.',
-    paymentIbanLabel: 'IBAN',
-    paymentNameLabel: 'Titulaire',
-    paymentBankLabel: 'Banque',
-    copyIban: 'Copier l\'IBAN',
-    copiedIban: 'Copié',
     appointment: {
       id: 'online-appointment',
       duration: '15 Minutes',
       title: 'Rendez-vous en ligne',
       desc: 'Consultation de 15 minutes. L\'entretien peut être prolongé si nécessaire.',
     },
-    fees: [
-      {
-        title: 'Briefing peine totale et situation d\'exécution',
-        price: '₺5.000 – ₺10.000',
-        items: [
-          '0–5 dossiers : ₺5.000',
-          '5–20 dossiers : ₺7.500',
-          'Plus de 20 dossiers : ₺10.000',
-        ],
-      },
-      {
-        title: 'Briefing de dossier judiciaire',
-        price: '₺5.000',
-        priceNote: '/ par dossier',
-        items: [],
-      },
-      {
-        title: 'Questions juridiques et consultation',
-        price: '₺5.000',
-        priceNote: '/ par sujet',
-        items: [
-          'Visioconférence avec l\'avocat sur demande',
-          'Réponse écrite à la partie adverse sur demande',
-        ],
-      },
-      {
-        title: 'Préparation d\'avis juridique',
-        price: '₺35.000 – ₺70.000',
-        items: [
-          'Dans le cadre des art. 67 CMK et 293 HMK',
-          'Honoraires selon la complexité du dossier',
-        ],
-      },
-    ],
     booker: {
       title: 'Calendrier de rendez-vous',
       calendarHint: 'Finalisez votre réservation via le calendrier ci-dessus.',
@@ -131,56 +43,12 @@ export const appointmentsContent = {
     title: 'Plan een online consult',
     subtitle:
       'Boek een online afspraak van 15 minuten. Het gesprek kan indien nodig worden verlengd.',
-    footnote: 'Voor betaalde diensten kunt u overmaken naar de hierboven vermelde bankrekening. Dezelfde betalingsgegevens staan in de bevestigingsmail van de afspraak.',
-    feesTitle: 'Tarieven',
-    paymentTitle: 'Betaling / overschrijving',
-    paymentNote:
-      'Voor betaalde diensten kan een overschrijving naar deze rekening worden gevraagd.',
-    paymentIbanLabel: 'IBAN',
-    paymentNameLabel: 'Rekeninghouder',
-    paymentBankLabel: 'Bank',
-    copyIban: 'IBAN kopiëren',
-    copiedIban: 'Gekopieerd',
     appointment: {
       id: 'online-appointment',
       duration: '15 Minuten',
       title: 'Online afspraak',
       desc: 'Een consult van 15 minuten. Het gesprek kan indien nodig worden verlengd.',
     },
-    fees: [
-      {
-        title: 'Briefing totale straf en executiestatus',
-        price: '₺5.000 – ₺10.000',
-        items: [
-          '0–5 dossiers: ₺5.000',
-          '5–20 dossiers: ₺7.500',
-          'Meer dan 20 dossiers: ₺10.000',
-        ],
-      },
-      {
-        title: 'Dossierbriefing',
-        price: '₺5.000',
-        priceNote: '/ per dossier',
-        items: [],
-      },
-      {
-        title: 'Juridische vragen en consultatie',
-        price: '₺5.000',
-        priceNote: '/ per onderwerp',
-        items: [
-          'Optioneel videogesprek met de advocaat op verzoek',
-          'Optioneel schriftelijk antwoord aan de wederpartij op verzoek',
-        ],
-      },
-      {
-        title: 'Juridisch advies / deskundigenoordeel',
-        price: '₺35.000 – ₺70.000',
-        items: [
-          'In het kader van CMK art. 67 en HMK art. 293',
-          'Honorarium naar complexiteit van de zaak',
-        ],
-      },
-    ],
     booker: {
       title: 'Afspraakagenda',
       calendarHint: 'Rond uw afspraak af via de agenda hierboven.',
@@ -194,56 +62,12 @@ export const appointmentsContent = {
     title: 'Online görüşme planlayın',
     subtitle:
       '15 dakikalık online randevu alın. Görüşme ihtiyaç halinde uzatılabilir.',
-    footnote: 'Ücretli hizmetler için yukarıdaki hesaba havale yapmanız istenebilir. Aynı ödeme bilgileri randevu onay e-postasında da yer alır.',
-    feesTitle: 'Ücret tarifesi',
-    paymentTitle: 'Ödeme / Havale',
-    paymentNote:
-      'Ücretli hizmetler için bu hesaba havale yapılması istenebilir.',
-    paymentIbanLabel: 'IBAN',
-    paymentNameLabel: 'Alıcı',
-    paymentBankLabel: 'Banka',
-    copyIban: 'IBAN kopyala',
-    copiedIban: 'Kopyalandı',
     appointment: {
       id: 'online-appointment',
       duration: '15 Dakika',
       title: 'Online Randevu',
       desc: 'Görüşme 15 dakikadır; ihtiyaç halinde uzatılabilir.',
     },
-    fees: [
-      {
-        title: 'Toplam Ceza ve İnfaz Durumu Brifingi',
-        price: '₺5.000 – ₺10.000',
-        items: [
-          '0–5 dosya: ₺5.000',
-          '5–20 dosya: ₺7.500',
-          '20 üstü dosya: ₺10.000',
-        ],
-      },
-      {
-        title: 'Dava Dosya Brifingi',
-        price: '₺5.000',
-        priceNote: '/ dosya başı',
-        items: [],
-      },
-      {
-        title: 'Hukuki Soru ve Danışma',
-        price: '₺5.000',
-        priceNote: '/ konu başı',
-        items: [
-          'Talep üzerine avukat ile görüntülü görüşme',
-          'Talep üzerine karşı tarafa yazılı cevap',
-        ],
-      },
-      {
-        title: 'Hukuki Mütalaa Hazırlama',
-        price: '₺35.000 – ₺70.000',
-        items: [
-          'CMK 67 / HMK 293 kapsamında',
-          'Konunun yoğunluğuna göre ücret',
-        ],
-      },
-    ],
     booker: {
       title: 'Randevu takvimi',
       calendarHint: 'Randevunuzu yukarıdaki takvimden tamamlayın.',
